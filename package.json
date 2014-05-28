@@ -16,10 +16,24 @@
     "education"
   ],
   "author": "merunga",
-  "license": "GPLv2",
+  "license": "GPLv3",
   "bugs": {
     "url": "https://github.com/merunga/papitas/issues"
   },
-  "homepage": "https://merunga.github.io/papitas"
+  "homepage": "https://merunga.github.io/papitas",
+  "dependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-cssmin": "*",
+    "bower": "*",
+    "grunt-exec": "*"
+  },
+  "devDependencies": {
+    "grunt-gh-pages": "^0.9.1",
+    "grunt-concurrent": "^0.5.0"
+  }
 }
-

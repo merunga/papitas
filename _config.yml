@@ -1,0 +1,17 @@
+# Jekyll Configuration
+# --------------------
+
+name: papitas
+url: https://merunga.github.io/papitas
+safe: false
+markdown: kramdown
+pygments: true
+
+source: ./src
+destination: ./dist
+
+keep_files: [ 'assets' ]
+
+permalink: /:categories/:year/:month/:day/:title
+
+exclude: [node_modules, bower_components]

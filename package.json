@@ -1,0 +1,25 @@
+{
+  "name": "papitas",
+  "version": "0.0.0",
+  "description": "papitas",
+  "main": "index.html",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/merunga/papitas.git"
+  },
+  "keywords": [
+    "games",
+    "papas nativas",
+    "education"
+  ],
+  "author": "merunga",
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/merunga/papitas/issues"
+  },
+  "homepage": "https://merunga.github.io/papitas"
+}
+

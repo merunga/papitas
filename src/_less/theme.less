@@ -5,31 +5,31 @@
 @import "fonts.less";
 @import "bootstrap.less";
 
-body {
+.background-cover(@image-name) {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
-
-  background-repeat: no-repeat;
-  background-attachment:fixed;
-  background-position: center;
-  background-image: url("../images/web/fondo-xs.png");
+  background: url(~"../images/web/@{image-name}") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
 
-  .responsive-background(@screen-min, @image-size) {
+body {
+  .background-cover("fondo-xs.jpg");
+
+  .background-responsive(@screen-min, @image-size) {
     @media (min-width: @screen-min) {
       background-image: url(~"../images/web/fondo-@{image-size}.jpg");
     }   
   }
 
-  .responsive-background(@screen-xs-min, 'xs');
-  .responsive-background(@screen-sm-min, 'sm');
-  .responsive-background(@screen-md-min, 'md');
-  .responsive-background(@screen-lg-min, 'lg');
+  .background-responsive(@screen-xs-min, 'xs');
+  .background-responsive(@screen-sm-min, 'sm');
+  .background-responsive(@screen-md-min, 'md');
+  .background-responsive(@screen-lg-min, 'lg');
 }
 
 #home-header {
@@ -42,4 +42,11 @@ body {
   background-image: url("../images/web/pizarra.png");
   background-repeat: no-repeat;
   background-position: center;
+}
+
+#home-papas {
+  .background-cover("fondo-papas.png");
+  position:absolute;
+  left:0px;
+  top:0px;
 }

@@ -6,4 +6,28 @@
 @import "bootstrap.less";
 
 body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-position: center;
+  background-image: url("../images/web/fondo-xs.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  .responsive-background(@screen-min, @image-size) {
+    @media (min-width: @screen-min) {
+      background-image: url(~"../images/web/fondo-@{image-size}.png");
+    }   
+  }
+
+  .responsive-background(@screen-xs-min, 'xs');
+  .responsive-background(@screen-sm-min, 'sm');
+  .responsive-background(@screen-md-min, 'md');
+  .responsive-background(@screen-lg-min, 'lg');
 }

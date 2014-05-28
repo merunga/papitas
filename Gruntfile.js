@@ -102,6 +102,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
 
   //grunt.registerTask('default', [ 'less', 'uglify', 'copy', 'exec:build' ]);
-  grunt.registerTask('default', [ 'copy:src-files', 'less', 'uglify', 'cssmin', 'copy:dist-files', 'concurrent:dev'  ]);
-  grunt.registerTask('deploy',  [ 'uglify', 'cssmin', 'copy', 'exec:build', 'gh-pages' ]);
+  grunt.registerTask('default', [ 'copy:src-files', 'less', 'uglify', 'cssmin', 'copy:dist-files', 'clean', 'concurrent:dev'  ]);
+  grunt.registerTask('deploy',  [ 'copy:src-files', 'less', 'uglify', 'cssmin', 'copy:dist-files', 'exec:build', 'clean', 'gh-pages' ]);
 };

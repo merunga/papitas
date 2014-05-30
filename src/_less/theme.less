@@ -18,6 +18,10 @@
 }
 
 body {
+  .container {
+    padding-top: 4em;
+  }
+
   .background-cover("fondo-xs.jpg");
 
   .background-responsive(@screen-min, @image-size) {
@@ -35,7 +39,7 @@ body {
 #home-header {
   color: white;
   text-align: center;
-  padding: 2em 1em;
+  padding: 1.2em 1em;
   vertical-align: middle;
   font-size: 4em;
   font-family: 'Cabin Sketch', cursive;
@@ -44,11 +48,62 @@ body {
   background-position: center;
 }
 
+ul.nav-papas {
+  li {
+    @h: 90px;
+    @w: 104px;
+    a {
+      color: white;
+      font-family: 'Skranji', cursive;
+      font-size: 14pt;
+
+      text-align: center;
+      vertical-align: middle;
+      padding-top: 15px;
+
+      height: @h;
+      width: @w;
+
+      pointer-events: auto;
+    }
+
+    .papa-btn(@image) {
+      a {
+        background: url(@image) 0 0;
+        &:hover {
+          background: url(@image) @w 0;
+        }
+      }
+      &.active {
+        a {
+          background: url(@image) @w 0;
+        }
+      }
+    }
+
+    &:first-child {
+      .papa-btn('../images/web/papa-btn-1.png');
+    }
+    &:nth-child(2) {
+      .papa-btn('../images/web/papa-btn-2.png');
+    }
+    &:nth-child(3) {
+      .papa-btn('../images/web/papa-btn-3.png');
+    }
+
+    background-size: @h @w;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+
 #home-papas {
   .background-cover("fondo-papas.png");
   position:absolute;
   left:0px;
   top:0px;
+  pointer-events: none;
 }
 
 footer#footer {

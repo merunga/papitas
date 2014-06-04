@@ -79,8 +79,6 @@ ul.nav-papas {
 
       height: @h;
       width: @w;
-
-      pointer-events: auto;
     }
 
     .papa-btn(@image) {
@@ -93,6 +91,7 @@ ul.nav-papas {
       &.active {
         a {
           background: url(@image) @w 0;
+          pointer-events: none;
         }
       }
     }

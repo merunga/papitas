@@ -3,17 +3,20 @@ layout: default
 ---
 <div class="row">
   <div id="juego-header" class="col-lg-offset-1 col-lg-5 text-center">
-    <a href="../">
+    <a href="index.html">
       Las PAPITAS <br/>
       de mi COMUNIDAD
     </a>
   </div>
   <div id="home-sidebar" class="col-lg-5 text-center">
     <ul class="nav nav-pills nav-papas">
-      <li {% if page.active == 'rompecabezas' %} class="active" {% endif %}
-        ><a href="rompecabezas.html">rompe cabezas</a></li>
+      <li {% if page.active == 'rompecabezas' %} class="active" {% endif %}>
+        <a href="rompecabezas.html">rompe cabezas</a>
+      </li>
+
       <li{% if page.active == 'adivina-quien' %} class="active" {% endif %}
         ><a href="#">adivina quien</a></li>
+        
       <li{% if page.active == 'videos' %} class="active" {% endif %}
         ><a href="#">videos</a></li>
     </ul>

@@ -11,8 +11,15 @@
 }
 
 body {
-  .container {
-    padding-top: 4em;
+  &.home {
+    .container {
+      padding-top: 4em;
+    }
+  }
+  &:not(.home) {
+    .container {
+      padding-top: 1em;
+    }
   }
 
   .background-cover("fondo-xs.jpg");
@@ -29,16 +36,32 @@ body {
   .background-responsive(@screen-lg-min, 'lg');
 }
 
-#home-header {
-  color: white;
-  text-align: center;
-  padding: 1.2em 1em;
-  vertical-align: middle;
-  font-size: 4em;
+.papas-header {
   font-family: 'Cabin Sketch', cursive;
   background-image: url("../images/web/pizarra.png");
   background-repeat: no-repeat;
   background-position: center;
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+  padding: 1.2em 1em;
+  a {
+    color: white;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+#home-header {
+  font-size: 4em;
+  .papas-header();
+}
+
+#juego-header {
+  font-size: 2em;
+  .papas-header();
+  background-size: 50%;
 }
 
 ul.nav-papas {

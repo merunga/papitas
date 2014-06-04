@@ -5,7 +5,7 @@ name: papitas
 url: https://merunga.github.io/papitas
 safe: false
 markdown: kramdown
-pygments: true
+highlighter: pygments
 
 source: ./src
 destination: ./dist
@@ -14,4 +14,4 @@ keep_files: [ 'assets' ]
 
 permalink: /:categories/:year/:month/:day/:title
 
-exclude: [node_modules, bower_components]
+exclude: [node_modules, bower_components, src/_styles, src/_rompecabezas]

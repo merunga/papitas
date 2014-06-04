@@ -5,25 +5,48 @@ module.exports = function(grunt) {
       compile: {
         options: {
           compress: false,
-          paths: ['src/_less', 'tmp', '<%= bowerDirectory %>/bootstrap/less']
+          paths: ['src/_styles', 'tmp', '<%= bowerDirectory %>/bootstrap/less']
         },
         files: {
-          'tmp/assets/css/bootstrap.css': ['src/_less/theme.less']
+          'tmp/assets/css/bootstrap.css': ['src/_styles/theme.less']
         }
       }
     },
     watch: {
       less: {
-        files: ['src/_less/*.less'],
+        files: ['src/_styles/*.less'],
         tasks: ['less:compile', 'cssmin:minify', 'clean']
-      }
+      },
+      js: {
+        files: ['src/_rompecabezas/src/*.js', 'src/_rompecabezas/src/**/*.js'],
+        tasks: ['uglify:games']
+      },
     },
     uglify: {
-      js: {
+      libs: {
         files: {
-          'dist/assets/js/site.js': [
-            '<%= bowerDirectory %>/jquery/dist/jquery.min.js', 
+          'dist/assets/js/lib/base.js': [
+            '<%= bowerDirectory %>/jquery/dist/jquery.min.js',
             '<%= bowerDirectory %>/bootstrap/dist/js/bootstrap.min.js'
+          ],
+          'dist/assets/js/lib/phaser.js': [
+            '<%= bowerDirectory %>/phaser-official/build/custom/phaser-arcade-physics.min.js'
+          ]
+        },
+      },
+      games: {
+        files: {
+          'dist/assets/js/rompecabezas.js': [
+            'src/_rompecabezas/src/Main.js',
+            'src/_rompecabezas/src/Prefabs/NumberBlock.js',
+            'src/_rompecabezas/src/Prefabs/Board.js',
+            'src/_rompecabezas/src/Solver.js',
+            'src/_rompecabezas/src/States/Boot.js',
+            'src/_rompecabezas/src/States/Preloader.js',
+            'src/_rompecabezas/src/States/MainMenu.js',
+            'src/_rompecabezas/src/States/LeaderBoards.js',
+            'src/_rompecabezas/src/States/Credits.js',
+            'src/_rompecabezas/src/States/Play.js'
           ]
         }
       }
@@ -51,6 +74,12 @@ module.exports = function(grunt) {
             cwd: 'images',
             src: ['**'],
             dest: 'dist/assets/images/'
+          },
+          {
+            expand: true,
+            cwd: 'src/_rompecabezas/res',
+            src: ['**'],
+            dest: 'dist/assets/res/'
           }
         ],
       },
@@ -82,7 +111,7 @@ module.exports = function(grunt) {
     clean: ['tmp'],
     concurrent: {
       dev: {
-        tasks: ['exec:serve', 'watch:less'],
+        tasks: ['exec:serve', 'watch'],
         options: {
             logConcurrentOutput: true
         }

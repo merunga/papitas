@@ -11,11 +11,11 @@
 
 			this.preloadBarBg = this.add.sprite(300, 400, 'loadingBG');
 			this.preloadBar = this.add.sprite(304, 405, 'loading');
-			this.load.image('block', '/assets/res/img/block.png');
+			this.load.image('block', 'assets/res/img/block.png');
 			this.load.atlasJSONHash(
 				'btts',
-				'/assets/res/spritesheets/btts_small.png',
-			  '/assets/res/spritesheets/btts_small.json'
+				'assets/res/spritesheets/btts_small.png',
+			  'assets/res/spritesheets/btts_small.json'
 		  );
 
 			game.add.sprite(0, 0, 'frame');

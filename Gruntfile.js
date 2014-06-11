@@ -94,6 +94,23 @@ module.exports = function(grunt) {
         ]
       }
     },
+    image: {
+      // static: {
+      //   files: { 
+      //     'dist/img.png': 'src/img.png',
+      //     'dist/img.jpg': 'src/img.jpg',
+      //     'dist/img.gif': 'src/img.gif'
+      //   }
+      // },
+      dynamic: {
+        files: [{
+          expand: true,
+          cwd: 'images/', 
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'dist/assets/images/'
+        }]
+      }
+    },
     exec: {
       build: {
         cmd: 'jekyll build'
@@ -127,10 +144,17 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-image');
   grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('grunt-exec');
 
   //grunt.registerTask('default', [ 'less', 'uglify', 'copy', 'exec:build' ]);
-  grunt.registerTask('default', [ 'copy:src-files', 'less', 'uglify', 'cssmin', 'copy:dist-files', 'clean', 'concurrent:dev'  ]);
-  grunt.registerTask('deploy',  [ 'copy:src-files', 'less', 'uglify', 'cssmin', 'copy:dist-files', 'exec:build', 'clean', 'gh-pages' ]);
+  grunt.registerTask('default', [
+    'copy:src-files', 'less', 'uglify', 'cssmin', 'image',
+    'copy:dist-files', 'clean', 'concurrent:dev'
+  ]);
+  grunt.registerTask('deploy',  [
+    'copy:src-files', 'less', 'uglify', 'cssmin', 'image',
+    'copy:dist-files', 'exec:build', 'clean', 'gh-pages'
+  ]);
 };

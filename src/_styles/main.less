@@ -1,15 +1,3 @@
-.background-cover(@image-name) {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background: url(~"../images/web/@{image-name}") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
 body {
   &.home {
     .container {
@@ -21,26 +9,10 @@ body {
       padding-top: 1em;
     }
   }
-
-  .background-cover("fondo-xs.jpg");
-
-  .background-responsive(@screen-min, @image-size) {
-    @media (min-width: @screen-min) {
-      background-image: url(~"../images/web/fondo-@{image-size}.jpg");
-    }
-  }
-
-  .background-responsive(@screen-xs-min, 'xs');
-  .background-responsive(@screen-sm-min, 'sm');
-  .background-responsive(@screen-md-min, 'md');
-  .background-responsive(@screen-lg-min, 'lg');
 }
 
 .papas-header {
   font-family: 'Cabin Sketch', cursive;
-  background-image: url("../images/web/pizarra.png");
-  background-repeat: no-repeat;
-  background-position: center;
   color: white;
   vertical-align: middle;
   text-align: center;
@@ -62,86 +34,4 @@ body {
   font-size: 2em;
   .papas-header();
   background-size: 50%;
-}
-
-ul.nav-papas {
-  li {
-    @h: 90px;
-    @w: 104px;
-    a {
-      color: white;
-      font-family: 'Skranji', cursive;
-      font-size: 14pt;
-
-      text-align: center;
-      vertical-align: middle;
-      padding-top: 15px;
-
-      height: @h;
-      width: @w;
-    }
-
-    .papa-btn(@image) {
-      a {
-        background: url(@image) 0 0;
-        &:hover {
-          background: url(@image) @w 0;
-        }
-      }
-      &.active {
-        a {
-          background: url(@image) @w 0;
-          pointer-events: none;
-        }
-      }
-    }
-
-    &:first-child {
-      .papa-btn('../images/web/papa-btn-1.png');
-    }
-    &:nth-child(2) {
-      .papa-btn('../images/web/papa-btn-2.png');
-    }
-    &:nth-child(3) {
-      .papa-btn('../images/web/papa-btn-3.png');
-    }
-
-    background-size: @h @w;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-}
-
-
-#home-papas {
-  .background-cover("fondo-papas.png");
-  position:absolute;
-  left:0px;
-  top:0px;
-  pointer-events: none;
-}
-
-footer#footer {
-  background-color: white;
-  min-height: 65px;
-  max-height: 65px;
-  text-align: center;
-  vertical-align: middle;
-  position:absolute;
-  left:0px;
-  bottom:0px;
-  margin: 0 auto;
-  padding-top: 10px;
-  width: 100%;
-  @border-radius: 45%;
-  -webkit-border-top-left-radius: @border-radius;
-  -webkit-border-top-right-radius: @border-radius;
-  -moz-border-radius-topleft: @border-radius;
-  -moz-border-radius-topright: @border-radius;
-  border-top-left-radius: @border-radius;
-  border-top-right-radius: @border-radius;
-  li {
-    margin-left: 5px;
-    margin-right: 5px;
-  }
 }

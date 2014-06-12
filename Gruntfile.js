@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     watch: {
       less: {
         files: ['src/_styles/*.less'],
-        tasks: ['less:compile', 'cssmin:minify', 'clean']
+        tasks: ['less:compile', 'copy:unminified-css-files', 'clean']
       },
       js: {
         files: ['src/_rompecabezas/src/*.js', 'src/_rompecabezas/src/**/*.js'],
@@ -61,6 +61,13 @@ module.exports = function(grunt) {
       }
     },
     copy: {
+      'unminified-css-files': {
+        expand: true,
+        cwd: 'tmp/assets/css/',
+        src: ['*'],
+        dest: 'dist/assets/css/',
+        ext: '.min.css'
+      },
       'dist-files': {
         files: [
           {
@@ -150,7 +157,7 @@ module.exports = function(grunt) {
 
   //grunt.registerTask('default', [ 'less', 'uglify', 'copy', 'exec:build' ]);
   grunt.registerTask('default', [
-    'copy:src-files', 'less', 'uglify', 'cssmin', 'image',
+    'copy:src-files', 'less', 'uglify', 'copy:unminified-css-files', //'image',
     'copy:dist-files', 'clean', 'concurrent:dev'
   ]);
   grunt.registerTask('deploy',  [

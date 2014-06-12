@@ -21,22 +21,11 @@
     {% endif %}
   </head>
 
-  <body {% if page.bodyClass %} class="{{page.bodyClass}}" {% endif %}>
+  <body class="{{page.bodyClass}}">
     <div class="container">
       {{ content }}
     </div>
 
-    <footer id="footer">
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="list-unstyled list-inline">
-            <li><a href="#"><img src="assets/images/web/logo-arcoiris.png"></img></a></li>
-            <li><a href="#"><img src="assets/images/web/logo-usaid.png"></img></a></li>
-            <li><a href="#"><img src="assets/images/web/logo-fontagro.png"></img></a></li>
-            <li><a href="#"><img src="assets/images/web/logo-iniap.png"></img></a></li>
-            <li><a href="#"><img src="assets/images/web/logo-cip.png"></img></a></li>
-          </ul>
-        </div>
-    </footer>
+    {% include footer.html %}
   </body>
 </html>

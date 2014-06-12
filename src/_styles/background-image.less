@@ -1,0 +1,115 @@
+@pizarra-lg-min-height: 360px;
+@pizarra-md-min-height: 356px;
+@pizarra-sm-min-height: 356px;
+@pizarra-xs-min-height: 170px;
+
+@pizarra-lg-max-width: 360px;
+@pizarra-md-max-width: 356px;
+@pizarra-sm-max-width: 400px;
+@pizarra-xs-max-width: 310px;
+
+
+@nav-papas-btn-width: 128px;
+@nav-papas-btn-height: 120px;
+
+.background-image-cover(@url) {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: url(@url) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.background-image-center(@url) {
+  background: url(@url) no-repeat center center;
+  //background-size: ~"@{@{image}-@{screen-size}-width}" ~"@{@{image}-@{screen-size}-height}"
+  //.background-image-cover("/assets/images/web/@{image}-@{screen-size}.@{ext}");
+}
+
+.stage-background-image-center(@screen-size, @image, @ext: 'png') {
+  .background-image-center("/assets/images/web/@{image}-@{screen-size}.@{ext}");
+}
+
+.stage-background-image-cover(@screen-size, @image, @ext: 'png') {
+  .background-image-cover("/assets/images/web/@{image}-@{screen-size}.@{ext}");
+}
+
+.stage-media-query(@screen-size, @fondo-img) {
+  @media (min-width: ~"@{screen-@{screen-size}-min}") {
+    .stage-elements(@screen-size, @fondo-img);
+  }
+}
+
+.background-size(@element) {
+  background-size: ~"@{@{element}-width}" ~"@{@{element}-height}";
+}
+
+.stage-elements(@screen-size, @fondo-img) {
+  .stage-background-image-cover(@screen-size, @fondo-img, 'jpg');
+  .pizarra {
+    .stage-background-image-center(@screen-size, 'pizarra');
+    background-size: 100% auto;
+    min-height: ~"@{pizarra-@{screen-size}-min-height}"
+  }
+  #juego-header {
+    .stage-background-image-center(@screen-size, 'pizarra');
+    background-size: 100% 100%;
+    //max-width: ~"@{pizarra-@{screen-size}-max-width}"
+  }
+  ul.nav-papas {
+    li {
+      @h: @nav-papas-btn-height;
+      @w: @nav-papas-btn-width;
+
+      .papa-btn(@image) {
+        a {
+          background: url(@image) 0 0;
+          &:hover {
+            background: url(@image) @w 0;
+          }
+        }
+        &.active {
+          a {
+            background: url(@image) @w 0;
+            pointer-events: none;
+          }
+        }
+      }
+
+      &:first-child {
+        .papa-btn('/assets/images/web/btn/papa-btn-1.png');
+      }
+      &:nth-child(2) {
+        .papa-btn('/assets/images/web/btn/papa-btn-2.png');
+      }
+      &:nth-child(3) {
+        .papa-btn('/assets/images/web/btn/papa-btn-3.png');
+      }
+
+      .background-size('nav-papas-btn');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+.stage(@fondo-img: 'fondo') {
+  .stage-elements('xs', @fondo-img);
+  .stage-media-query('sm', @fondo-img);
+  .stage-media-query('md', @fondo-img);
+  .stage-media-query('lg', @fondo-img);
+}
+
+body {
+  &.home {
+    .stage('fondo-con-papas');
+  }
+
+  &.juego {
+    .stage();
+  }
+}

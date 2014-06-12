@@ -5883,6 +5883,15 @@ body.home ul.nav-papas li:nth-child(3).active a {
   background: url('/assets/images/web/btn/papa-btn-3.png') 128px 0;
   pointer-events: none;
 }
+body.home #decoracion-hojas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url("/assets/images/web/hojas-blancas-xs.png") no-repeat center center;
+  background-size: 100% auto;
+}
 @media (min-width: 768px) {
   body.home {
     height: 100%;
@@ -5938,6 +5947,15 @@ body.home ul.nav-papas li:nth-child(3).active a {
   body.home ul.nav-papas li:nth-child(3).active a {
     background: url('/assets/images/web/btn/papa-btn-3.png') 128px 0;
     pointer-events: none;
+  }
+  body.home #decoracion-hojas {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url("/assets/images/web/hojas-blancas-sm.png") no-repeat center center;
+    background-size: 100% auto;
   }
 }
 @media (min-width: 992px) {
@@ -5996,6 +6014,15 @@ body.home ul.nav-papas li:nth-child(3).active a {
     background: url('/assets/images/web/btn/papa-btn-3.png') 128px 0;
     pointer-events: none;
   }
+  body.home #decoracion-hojas {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url("/assets/images/web/hojas-blancas-md.png") no-repeat center center;
+    background-size: 100% auto;
+  }
 }
 @media (min-width: 1200px) {
   body.home {
@@ -6053,6 +6080,15 @@ body.home ul.nav-papas li:nth-child(3).active a {
     background: url('/assets/images/web/btn/papa-btn-3.png') 128px 0;
     pointer-events: none;
   }
+  body.home #decoracion-hojas {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url("/assets/images/web/hojas-blancas-lg.png") no-repeat center center;
+    background-size: 100% auto;
+  }
 }
 body.juego {
   height: 100%;
@@ -6109,6 +6145,15 @@ body.juego ul.nav-papas li:nth-child(3).active a {
   background: url('/assets/images/web/btn/papa-btn-3.png') 128px 0;
   pointer-events: none;
 }
+body.juego #decoracion-hojas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url("/assets/images/web/hojas-blancas-xs.png") no-repeat center center;
+  background-size: 100% auto;
+}
 @media (min-width: 768px) {
   body.juego {
     height: 100%;
@@ -6164,6 +6209,15 @@ body.juego ul.nav-papas li:nth-child(3).active a {
   body.juego ul.nav-papas li:nth-child(3).active a {
     background: url('/assets/images/web/btn/papa-btn-3.png') 128px 0;
     pointer-events: none;
+  }
+  body.juego #decoracion-hojas {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url("/assets/images/web/hojas-blancas-sm.png") no-repeat center center;
+    background-size: 100% auto;
   }
 }
 @media (min-width: 992px) {
@@ -6222,6 +6276,15 @@ body.juego ul.nav-papas li:nth-child(3).active a {
     background: url('/assets/images/web/btn/papa-btn-3.png') 128px 0;
     pointer-events: none;
   }
+  body.juego #decoracion-hojas {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url("/assets/images/web/hojas-blancas-md.png") no-repeat center center;
+    background-size: 100% auto;
+  }
 }
 @media (min-width: 1200px) {
   body.juego {
@@ -6278,6 +6341,15 @@ body.juego ul.nav-papas li:nth-child(3).active a {
   body.juego ul.nav-papas li:nth-child(3).active a {
     background: url('/assets/images/web/btn/papa-btn-3.png') 128px 0;
     pointer-events: none;
+  }
+  body.juego #decoracion-hojas {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url("/assets/images/web/hojas-blancas-lg.png") no-repeat center center;
+    background-size: 100% auto;
   }
 }
 body.home .container {

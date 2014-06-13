@@ -704,14 +704,15 @@ Solver.prototype.compare = function(a,b) {
       this.enterKey = game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
       this.enterKey.onDown.add(this.startGame, this);
 
-      this.bttPlay = game.add.button(game.world.centerX+200 , game.world.centerY+200, 'botones', this.startGame, this, 'play1', 'play0', 'play2');
+      // this.bttPlay = game.add.button(game.world.centerX+200 , game.world.centerY+200, 'botones', this.startGame, this, 'play1', 'play0', 'play2');
 
-      this.text = game.add.text(game.world.centerX, game.world.centerY - 40, "Rompecabezas", {
+      this.text = game.add.text(game.world.centerX, game.world.centerY - 240, "Rompecabezas", {
         font: "60px Source Code Pro",
         fill: "#fff",
         align: "center"
       });
-      this.textTut = game.add.text(game.world.centerX, game.world.centerY + 40 , "Usa las flechas para jugar", {
+      this.textTut = game.add.text(game.world.centerX, game.world.centerY + 40 ,
+        "Usa las flechas para jugar\n Para comenzar presiona [ENTER]", {
         font: "45px Source Code Pro",
         fill: "#fff",
         align: "center"

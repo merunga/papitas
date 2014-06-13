@@ -27,15 +27,15 @@
 .background-image-center(@url) {
   background: url(@url) no-repeat center center;
   //background-size: ~"@{@{image}-@{screen-size}-width}" ~"@{@{image}-@{screen-size}-height}"
-  //.background-image-cover("/assets/images/web/@{image}-@{screen-size}.@{ext}");
+  //.background-image-cover("../images/web/@{image}-@{screen-size}.@{ext}");
 }
 
 .stage-background-image-center(@screen-size, @image, @ext: 'png') {
-  .background-image-center("/assets/images/web/@{image}-@{screen-size}.@{ext}");
+  .background-image-center("../images/web/@{image}-@{screen-size}.@{ext}");
 }
 
 .stage-background-image-cover(@screen-size, @image, @ext: 'png') {
-  .background-image-cover("/assets/images/web/@{image}-@{screen-size}.@{ext}");
+  .background-image-cover("../images/web/@{image}-@{screen-size}.@{ext}");
 }
 
 .stage-media-query(@screen-size, @fondo-img) {
@@ -81,13 +81,13 @@
       }
 
       &:first-child {
-        .papa-btn('/assets/images/web/btn/papa-btn-1.png');
+        .papa-btn('../images/web/btn/papa-btn-1.png');
       }
       &:nth-child(2) {
-        .papa-btn('/assets/images/web/btn/papa-btn-2.png');
+        .papa-btn('../images/web/btn/papa-btn-2.png');
       }
       &:nth-child(3) {
-        .papa-btn('/assets/images/web/btn/papa-btn-3.png');
+        .papa-btn('../images/web/btn/papa-btn-3.png');
       }
 
       .background-size('nav-papas-btn');

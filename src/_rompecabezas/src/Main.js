@@ -21,7 +21,7 @@ WebFontConfig = {
 window.onload = function () {
 	isMoving = false;
 
-	game = new Phaser.Game(200, 275, Phaser.AUTO, 'rompecabezas-container');
+	game = new Phaser.Game(900, 900, Phaser.AUTO, 'rompecabezas-container');
 
 	// Game States
 	game.state.add('boot', BootS);

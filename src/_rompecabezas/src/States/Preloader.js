@@ -1,31 +1,34 @@
 (function () {
-	'use strict';
-	function Preload() {
-		this.preloadBarBg = null;
-		this.preloadBar = null;
-	}
+  'use strict';
+  function Preload() {
+    this.preloadBarBg = null;
+    this.preloadBar = null;
+  }
 
-	Preload.prototype = {
-		preload: function() {
-			game.stage.backgroundColor = '#FFF';
+  Preload.prototype = {
+    preload: function() {
+      game.stage.backgroundColor = '#000';
 
-			this.preloadBarBg = this.add.sprite(300, 400, 'loadingBG');
-			this.preloadBar = this.add.sprite(304, 405, 'loading');
-			this.load.image('block', 'assets/res/img/block.png');
-			this.load.atlasJSONHash(
-				'btts',
-				'assets/res/spritesheets/btts_small.png',
-			  'assets/res/spritesheets/btts_small.json'
-		  );
+      this.preloadBarBg = this.add.sprite(300, 400, 'loadingBG');
+      this.preloadBar = this.add.sprite(304, 405, 'loading');
+      this.load.atlasJSONHash(
+        'botones',
+        '/assets/res/spritesheets/botones.png',
+        '/assets/res/spritesheets/botones.json'
+      );
+      this.load.atlasJSONHash(
+        'bloques',
+        '/assets/res/spritesheets/bloques-etapa-01.png',
+        '/assets/res/spritesheets/bloques-etapa-01.json'
+      );
 
-			game.add.sprite(0, 0, 'frame');
-			this.load.setPreloadSprite(this.preloadBar);
-		},
-		create: function() {
-			this.preloadBar.cropEnabled = false;
-			game.state.start('mainmenu');
-		}
-	};
+      this.load.setPreloadSprite(this.preloadBar);
+    },
+    create: function() {
+      this.preloadBar.cropEnabled = false;
+      game.state.start('mainmenu');
+    }
+  };
 
-	PreloaderS = Preload;
+  PreloaderS = Preload;
 }());

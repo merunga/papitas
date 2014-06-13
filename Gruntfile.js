@@ -76,16 +76,16 @@ module.exports = function(grunt) {
             src: ['**'],
             dest: 'dist/assets/fonts/'
           },
+          // {
+          //   expand: true,
+          //   cwd: 'images',
+          //   src: ['**'],
+          //   dest: 'dist/assets/images/'
+          // },
           {
             expand: true,
-            cwd: 'images',
-            src: ['**'],
-            dest: 'dist/assets/images/'
-          },
-          {
-            expand: true,
-            cwd: 'src/_rompecabezas/res',
-            src: ['**'],
+            cwd: 'src/_rompecabezas/res/',
+            src: ['**/*','!**/*.{png,jpg,gif}'],
             dest: 'dist/assets/res/'
           }
         ],
@@ -109,12 +109,20 @@ module.exports = function(grunt) {
       //     'dist/img.gif': 'src/img.gif'
       //   }
       // },
-      dynamic: {
+      assets: {
         files: [{
           expand: true,
           cwd: 'images/', 
           src: ['**/*.{png,jpg,gif}'],
           dest: 'dist/assets/images/'
+        }]
+      },
+      rompecabezas: {
+        files: [{
+          expand: true,
+          cwd: 'src/_rompecabezas/res/', 
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'dist/assets/res/'
         }]
       }
     },

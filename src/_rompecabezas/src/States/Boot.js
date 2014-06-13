@@ -6,9 +6,9 @@
 
   Boot.prototype = {
     preload: function() {
-      this.load.image('loadingBG', 'assets/res/img/LoadingBG.png');
-      this.load.image('loading', 'assets/res/img/Loading.png');
-      this.load.image('frame', 'assets/res/textures/frame.png');
+      this.load.image('loadingBG', 'assets/res/images/LoadingBG.png');
+      this.load.image('loading', 'assets/res/images/Loading.png');
+      this.load.image('fondo', 'assets/res/textures/etapa-01-bn.jpg');
     },
     create: function() {
       game.input.maxPointers = 1;

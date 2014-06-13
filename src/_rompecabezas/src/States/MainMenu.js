@@ -9,7 +9,7 @@
       this.enterKey = game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
       this.enterKey.onDown.add(this.startGame, this);
 
-      this.bttPlay = game.add.button(game.world.centerX , game.world.centerY, 'botones', this.startGame, this, 'play1', 'play0', 'play2');
+      this.bttPlay = game.add.button(game.world.centerX+200 , game.world.centerY+200, 'botones', this.startGame, this, 'play1', 'play0', 'play2');
 
       this.text = game.add.text(game.world.centerX, game.world.centerY - 40, "Rompecabezas", {
         font: "60px Source Code Pro",
@@ -29,6 +29,7 @@
     },
 
     startGame: function() {
+      console.log('start')
       game.state.start('play');
     },
     credits: function(){

@@ -13,13 +13,13 @@
       this.preloadBar = this.add.sprite(304, 405, 'loading');
       this.load.atlasJSONHash(
         'botones',
-        '/assets/res/spritesheets/botones.png',
-        '/assets/res/spritesheets/botones.json'
+        'assets/res/spritesheets/botones.png',
+        'assets/res/spritesheets/botones.json'
       );
       this.load.atlasJSONHash(
         'bloques',
-        '/assets/res/spritesheets/bloques-etapa-01.png',
-        '/assets/res/spritesheets/bloques-etapa-01.json'
+        'assets/res/spritesheets/bloques-etapa-01.jpg',
+        'assets/res/spritesheets/bloques-etapa-01.json'
       );
 
       this.load.setPreloadSprite(this.preloadBar);

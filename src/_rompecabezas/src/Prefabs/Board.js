@@ -12,6 +12,9 @@
 * This is a Simple 8Puzzle game made with Phaser
 *
 */
+
+var blockDimension = 300;
+
 'use strict';
 
 var Board = function (arrNumbs) {
@@ -127,7 +130,7 @@ Board.prototype.draw = function(){
 	{
 		for (j = 3; j > 0; j--){
 			if (this.arrNumbs[k] !== 0){
-				tmpBlock = new NumberBlock((j-3)*-50 + 25, (i-3)*-50 + 50,this.arrNumbs[k],this);
+				tmpBlock = new NumberBlock((j-3)*-blockDimension, (i-3)*-blockDimension + (blockDimension/2),this.arrNumbs[k],this);
 				this.add(tmpBlock);
 			}
 			k++;

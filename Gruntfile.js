@@ -19,7 +19,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: ['src/_rompecabezas/src/*.js', 'src/_rompecabezas/src/**/*.js'],
-        tasks: ['uglify:games']
+        tasks: ['concat:games']
       },
     },
     uglify: {
@@ -31,6 +31,35 @@ module.exports = function(grunt) {
           ],
           'dist/assets/js/lib/phaser.js': [
             '<%= bowerDirectory %>/phaser-official/build/custom/phaser-arcade-physics.min.js'
+          ]
+        },
+      },
+      games: {
+        files: {
+          'dist/assets/js/rompecabezas.js': [
+            'src/_rompecabezas/src/Main.js',
+            'src/_rompecabezas/src/Prefabs/NumberBlock.js',
+            'src/_rompecabezas/src/Prefabs/Board.js',
+            'src/_rompecabezas/src/Solver.js',
+            'src/_rompecabezas/src/States/Boot.js',
+            'src/_rompecabezas/src/States/Preloader.js',
+            'src/_rompecabezas/src/States/MainMenu.js',
+            'src/_rompecabezas/src/States/LeaderBoards.js',
+            'src/_rompecabezas/src/States/Credits.js',
+            'src/_rompecabezas/src/States/Play.js'
+          ]
+        }
+      }
+    },
+    concat: {
+      libs: {
+        files: {
+          'dist/assets/js/lib/base.js': [
+            '<%= bowerDirectory %>/jquery/dist/jquery.js',
+            '<%= bowerDirectory %>/bootstrap/dist/js/bootstrap.js'
+          ],
+          'dist/assets/js/lib/phaser.js': [
+            '<%= bowerDirectory %>/phaser-official/build/custom/phaser-arcade-physics.js'
           ]
         },
       },
@@ -154,6 +183,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-concat');
   //grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -165,7 +195,7 @@ module.exports = function(grunt) {
 
   //grunt.registerTask('default', [ 'less', 'uglify', 'copy', 'exec:build' ]);
   grunt.registerTask('default', [
-    'copy:src-files', 'less', 'uglify', 'copy:unminified-css-files', //'image',
+    'copy:src-files', 'less', 'concat', 'copy:unminified-css-files', //'image',
     'copy:dist-files', 'clean', 'concurrent:dev'
   ]);
   grunt.registerTask('deploy',  [

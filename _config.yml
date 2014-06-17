@@ -14,4 +14,4 @@ keep_files: [ 'assets' ]
 
 permalink: /:categories/:year/:month/:day/:title
 
-exclude: [node_modules, bower_components, src/_styles, src/_rompecabezas, src/app]
+exclude: [node_modules, bower_components, src/_styles, src/_rompecabezas, app, apptobe]

@@ -1,0 +1,20 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "grounddb": {}
+    },
+    "packages": {
+      "grounddb": {
+        "git": "https://github.com/GroundMeteor/Meteor-GroundDB.git",
+        "tag": "v0.0.21",
+        "commit": "7132b9dbb1dc681fd940a31bc586de059b3871bb"
+      },
+      "ejson-minimax": {
+        "git": "https://github.com/GroundMeteor/ejson-minimax.git",
+        "branch": "master",
+        "commit": "87e77a2e1704f0ae2d2a7b914030b898519f7964"
+      }
+    }
+  }
+}

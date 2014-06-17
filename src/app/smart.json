@@ -1,0 +1,8 @@
+{
+  "packages": {
+    "grounddb": {}
+  },
+  "bower": {
+    "phaser-official": "~2.0.5"
+  }
+}

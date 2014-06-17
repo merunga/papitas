@@ -106,7 +106,7 @@ module.exports = function(grunt) {
       },
       app: {
         expand: true,
-        cwd: 'src/app/.meteor/local/build/programs/client/assets',
+        cwd: 'src/app/.meteor/local/build/programs/client/assets/',
         src: ['**/*.!{png,jpg,gif}'],
         dest: 'dist/'
       },
@@ -170,7 +170,7 @@ module.exports = function(grunt) {
       app: {
         files: [{
           expand: true,
-          cwd: 'src/app/.meteor/local/build/programs/client/assets', 
+          cwd: 'src/app/.meteor/local/build/programs/client/', 
           src: ['**/*.{png,jpg,gif}'],
           dest: 'dist/'
         }]
@@ -196,13 +196,19 @@ module.exports = function(grunt) {
     clean: ['tmp'],
     concurrent: {
       dev: {
-        tasks: ['exec:meteorStart', 'exec:serve', 'watch'],
+        tasks: [ 'exec:serve','exec:meteorStart', 'watch'],
         options: {
             logConcurrentOutput: true
         }
       },
       default: {
         tasks: ['exec:serve', 'watch'],
+        options: {
+            logConcurrentOutput: true
+        }
+      },
+      build: {
+        tasks: ['exec:meteorStart', 'delayedCopyMeteorAssets'],
         options: {
             logConcurrentOutput: true
         }
@@ -232,12 +238,19 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', [
     'copy:less-src-files', 'less', 'concat', 'copy:unminified-css-files', //'image',
     'copy:less-dist-files', 'clean', 'copy:app', 'concurrent:dev'
-  ]);  
+  ]); 
+
+  grunt.registerTask('buildJekyll',  [
+    'copy:less-src-files', 'less', 'uglify', 'cssmin', 'image',
+    'copy:less-dist-files', 'exec:build', 'clean'
+  ]);
+
+  grunt.registerTask('build',  [
+    'buildJekyll', 'concurrent:build'
+  ]);
 
   grunt.registerTask('deploy',  [
-    'exec:meteorStart', 'copy:less-src-files', 'less', 'uglify', 'cssmin', 'image',
-    'copy:less-dist-files', 'exec:build', 'copyMeteorAssets',
-    'clean', 'gh-pages'
+    'build', 'gh-pages'
   ]);
 
   function fetchUrl(done, reloadurl, cb) {
@@ -287,5 +300,14 @@ module.exports = function(grunt) {
         grunt.file.write('dist/assets/css/papitas.css',pageData2);
       });
     });
+  });
+
+  grunt.registerTask('delayedCopyMeteorAssets', 'Wait for it', function() {
+    var done = this.async();
+
+    setTimeout(function() {
+      grunt.task.run('copyMeteorAssets');
+      done();
+    }, 10000);
   });
 };

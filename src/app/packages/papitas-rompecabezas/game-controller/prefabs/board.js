@@ -232,5 +232,7 @@ Board.prototype.move = function(_where){
     this.isFinal = true;
     Session.set('rompecabezasStep','fin');
   }
-  this.logBoard();
+  //this.logBoard();
+
+  return true;
 };

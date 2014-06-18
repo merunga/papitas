@@ -23,6 +23,9 @@ Play.prototype = {
     });
     this.movesTxt.anchor.setTo(0.5, 0.5);
 
+    this.efectosSonido = game.add.audio('efectos');
+    this.efectosSonido.addMarker('movimiento', 0.16, 0.232);
+
     this.upKey = game.input.keyboard.addKey(Phaser.Keyboard.UP);
     this.downKey = game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
     this.leftKey = game.input.keyboard.addKey(Phaser.Keyboard.LEFT);
@@ -34,10 +37,16 @@ Play.prototype = {
     this.board.genRandom();
     this.board.draw();
 
-    this.upKey.onDown.add(function () { this.board.move('up'); },this);
-    this.downKey.onDown.add(function () { this.board.move('down'); },this);
-    this.leftKey.onDown.add(function () { this.board.move('left'); },this);
-    this.rightKey.onDown.add(function () { this.board.move('right'); },this);
+    function move(playState, direction) {
+      if(playState.board.move(direction)) {
+        playState.efectosSonido.play('movimiento');
+      }
+    }
+
+    this.upKey.onDown.add(function () { move(this, 'up'); },this);
+    this.downKey.onDown.add(function () { move(this, 'down'); },this);
+    this.leftKey.onDown.add(function () { move(this, 'left'); },this);
+    this.rightKey.onDown.add(function () { move(this, 'right'); },this);
 
     this.spaceKey.onDown.add(function () { this.solveBoard(); },this);
   },

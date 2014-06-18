@@ -135,6 +135,14 @@ module.exports = function(grunt) {
           "cd src/app",
           "meteor --port 5000 --production"
         ].join(' && ')
+      },
+      meteorStartDev: {
+        cmd: [
+          "export MONGO_URL=' '",
+          "export DDP_DEFAULT_CONNECTION_URL=' http://norul/'",
+          "cd ./src/app",
+          "meteor"
+        ].join(' && ')
       }
     },
     'gh-pages': {

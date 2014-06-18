@@ -2,6 +2,8 @@ function Credits() {}
 
 Credits.prototype = {
   create: function() {
+    var game = Rompecabezas.game;
+
     game.add.sprite(0, 0, 'frame');
     game.stage.backgroundColor = '#333333';
 
@@ -19,16 +21,18 @@ Credits.prototype = {
   },
 
   update: function() {
+    var game = Rompecabezas.game;
+    
     if(game.input.activePointer.justPressed()) {
       game.state.start('play');
     }
   },
 
   startGame: function() {
-    game.state.start('play');
+    Rompecabezas.game.state.start('play');
   },
   mainMenu: function(){
-    game.state.start('mainmenu');
+    Rompecabezas.game.state.start('mainmenu');
   }
 };
 

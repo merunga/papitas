@@ -1,11 +1,11 @@
-var blockDimension = 300;
-
 function Play() {}
 
 Play.prototype = {
   create: function() {
+    var game = Rompecabezas.game;
+
     game.stage.backgroundColor = '#000';
-    game.add.sprite(0, blockDimension/2, 'fondo');
+    game.add.sprite(0, Rompecabezas.blockDimension/2, 'fondo');
     this.botonesolve = game.add.button(
       game.world.centerX - 75 , this.world.height - 75,
       'botones', function(){this.quitGame('mainmenu')}, this,
@@ -72,8 +72,9 @@ Play.prototype = {
     this.downKey = null;
     this.leftKey = null;
     this.rightKey = null;
-    isMoving = false;
-    game.state.start(state);
+
+    Rompecabezas.isMoving = false;
+    Rompecabezas.game.state.start(state);
   },
 
   shuffleBoard: function (){

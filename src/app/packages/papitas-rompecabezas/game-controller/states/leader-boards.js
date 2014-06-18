@@ -2,6 +2,8 @@ function LeaderBoards() {}
 
 LeaderBoards.prototype = {
   create: function() {
+    var game = Rompecabezas.game;
+    
     game.add.sprite(0, 0, 'frame');
     game.stage.backgroundColor = '#333333';
     var highScore = 0;

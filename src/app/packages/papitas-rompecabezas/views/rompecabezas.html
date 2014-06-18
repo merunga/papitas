@@ -1,5 +1,25 @@
 <template name="rompecabezas">
+  <a id="actionToggleSound" class="btn btn-primary" data-action="toggle-sound">
+    <span class="
+      {{#if Session.get 'rompecabezasIsMuted' }}
+        glyphicon glyphicon-volume-off
+      {{else}}
+        glyphicon glyphicon-volume-up
+      {{/if}}
+      "
+    ></span>
+  </a>
+
   {{> step }}
+
+  <div class="row {{# unless Session.equals 'rompecabezasStep' 'juego' }}hidden{{/unless}}">
+    <div class="col-lg-1 col-lg-offset-1">
+      <a class="btn btn-primary" href="#" data-action="volver-al-comienzo">Volver</a>
+    </div>
+    <div class="col-lg-8">
+      <div id="rompecabezas-container"></div>
+    </div>
+  </div>
 </template>
 
 <template name="rompecabezasIntro">
@@ -38,12 +58,7 @@ Texto introducción selección etapa
 </template>
 
 <template name="rompecabezasJuego">
-  <div class="col-lg-1 col-lg-offset-1">
-    <a class="btn btn-primary" href="#" data-action="volver-al-comienzo">Volver</a>
-  </div>
-  <div class="col-lg-8">
-    <div id="rompecabezas-container"></div>
-  </div>
+
 </template>
 
 <template name="rompecabezasFin">

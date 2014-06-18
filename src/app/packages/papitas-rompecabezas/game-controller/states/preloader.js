@@ -5,7 +5,11 @@ function Preload() {
 
 Preload.prototype = {
   preload: function() {
+    var game = Rompecabezas.game;
     game.stage.backgroundColor = '#000';
+
+    var etapa = Session.get('rompecabezasEtapaElegida');
+    this.load.image('fondo', 'assets/images/etapas/'+etapa.slug+'-bn.jpg');
 
     this.preloadBarBg = this.add.sprite(300, 400, 'loadingBG');
     this.preloadBar = this.add.sprite(304, 405, 'loading');
@@ -15,7 +19,6 @@ Preload.prototype = {
       'assets/spritesheets/botones.json'
     );
 
-    var etapa = Session.get('rompecabezasEtapaElegida');
     this.load.atlasJSONHash(
       'bloques',
       'assets/images/etapas/'+etapa.slug+'.jpg',
@@ -26,7 +29,7 @@ Preload.prototype = {
   },
   create: function() {
     this.preloadBar.cropEnabled = false;
-    game.state.start('play');
+    Rompecabezas.game.state.start('play');
   }
 };
 

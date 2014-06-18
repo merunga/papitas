@@ -1,5 +1,23 @@
-'use strict';
-var isMoving;
+Rompecabezas = {
+  isMoving: false,
+  blockDimension: 300,
+  init: function() {
+    Rompecabezas.isMoving = false;
+    
+    if(Rompecabezas.game) {
+      Rompecabezas.game.destroy();
+    }
+    var game = Rompecabezas.game = new Phaser.Game(900, 1200, Phaser.AUTO, 'rompecabezas-container');
+
+    game.state.add('boot', BootState);
+    game.state.add('preloader', PreloaderState);
+    game.state.add('credits', CreditsState);
+    game.state.add('leaderboards', LeaderBoardsState);
+    game.state.add('play', PlayState);
+
+    game.state.start('boot');
+  }
+};
 
 var WebFontConfig;
 WebFontConfig = {

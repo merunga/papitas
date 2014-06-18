@@ -1,11 +1,6 @@
-/*
-Class: NumberBlock
-Author: Arlefreak
-*/
-
-var blockDimension = 300;
-
 NumberBlock = function (x, y, number) {
+  var game = Rompecabezas.game;
+
   console.log("Inicia NumberBlock");
   this.number = number;
   this.position = 0;
@@ -39,10 +34,13 @@ NumberBlock.prototype.update = function() {
 };
 
 NumberBlock.prototype.move = function(_to){
+  var game = Rompecabezas.game;
+  var blockDimension = Rompecabezas.blockDimension;
+
   var e = game.add.tween(this);
   var t = game.add.tween(this.txt);
-  e.onStart.add(function(){isMoving = true;});
-  e.onComplete.add(function(){isMoving = false;})
+  e.onStart.add(function(){Rompecabezas.isMoving = true;});
+  e.onComplete.add(function(){Rompecabezas.isMoving = false;})
   switch(_to){
     case 'left':
     e.to({ x: this.x - blockDimension }, 250, Phaser.Easing.Linear.None, false, 0 , 0, false);

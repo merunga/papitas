@@ -30,6 +30,7 @@ Package.on_use(function (api) {
   ], 'client');
 
   api.export([
+    'Rompecabezas',
     'Etapas'
   ],'client');
 });

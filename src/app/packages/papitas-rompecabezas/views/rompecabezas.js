@@ -1,5 +1,3 @@
-isMoving = undefined;
-
 var events = {
   'click [data-action="comenzar"]': function(e, tmpl) {
     e.preventDefault();
@@ -24,13 +22,23 @@ var events = {
     }); 
     return false;
   },
+  'click [data-action="toggle-sound"]': function(e, tmpl) {
+    var newMute = !Rompecabezas.game.sound.mute;
+    Rompecabezas.game.sound.mute = newMute;
+    Session.set('rompecabezasIsMuted', newMute);
+  }
 };
+
+Template.rompecabezas.rendered = function() {
+  Rompecabezas.init();
+}
 
 Template.rompecabezas.step = function() {
   var step = Session.get('rompecabezasStep') || 'intro';
   return Template['rompecabezas'+_.capitalize(step)];
 }
 
+Template.rompecabezas.events(events);
 
 Template.rompecabezasIntro.events(events);
 
@@ -43,16 +51,7 @@ Template.rompecabezasElegirEtapa.events(events);
 
 
 Template.rompecabezasJuego.rendered = function(tmpl) {
-  isMoving = false;
-  game = new Phaser.Game(900, 1200, Phaser.AUTO, 'rompecabezas-container');
-
-  game.state.add('boot', BootState);
-  game.state.add('preloader', PreloaderState);
-  game.state.add('credits', CreditsState);
-  game.state.add('leaderboards', LeaderBoardsState);
-  game.state.add('play', PlayState);
-
-  game.state.start('boot');
+  Rompecabezas.game.state.start('preloader');
 }
 
 Template.rompecabezasJuego.events(events);

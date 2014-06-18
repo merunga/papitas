@@ -1,22 +1,5 @@
-/**
-* @author       Arlefreak <arlefreak@gmail.com>
-*
-* @overview
-*
-* 8Puzzle - http://www.arlefreak.com/games/8puzzle/play/
-*
-* v0.8.0
-*
-* By Mario Carballo Zama http://www.arlefreak.com
-*
-* This is a Simple 8Puzzle game made with Phaser
-*
-*/
-
-var blockDimension = 300;
-
 Board = function (arrNumbs) {
-  Phaser.Group.call(this, game);
+  Phaser.Group.call(this, Rompecabezas.game);
   this.h = 0;
   this.isFinal = false;
   this.isSolvable = false;
@@ -119,6 +102,7 @@ Board.prototype.checkPosition = function(_numb){
 }
 
 Board.prototype.draw = function(){
+  var blockDimension = Rompecabezas.blockDimension;
   this.clearBoard(this);
   var k = 0,
   i = 0,
@@ -161,15 +145,15 @@ Board.prototype.clearTxt = function(child){
 };
 
 Board.prototype.move = function(_where){
-  if(isMoving){
+  if(Rompecabezas.isMoving){
     return false;
   }
-  isMoving = true;
+  Rompecabezas.isMoving = true;
   this.position0 = this.checkPosition(0);
   var numberblock = {};
   if(_where === 'up'){
     if(this.position0 >= 6 && this.position0 <= 8){
-      isMoving = false;
+      Rompecabezas.isMoving = false;
       return false;
     }else{
       numberblock = this.getAt(this.position0 + 2);
@@ -183,7 +167,7 @@ Board.prototype.move = function(_where){
     }
   }else if(_where == 'down'){
     if(this.position0 >= 0 && this.position0 <= 2){
-      isMoving = false;
+      Rompecabezas.isMoving = false;
       return false;
     }else{
       numberblock = this.getAt(this.position0 - 3);
@@ -197,7 +181,7 @@ Board.prototype.move = function(_where){
     }
   }else if(_where == 'right'){
     if(this.position0 === 0 || this.position0 === 3 || this.position0 === 6){
-      isMoving = false;
+      Rompecabezas.isMoving = false;
       return false;
     }else{
       numberblock = this.getAt(this.position0 - 1);
@@ -211,7 +195,7 @@ Board.prototype.move = function(_where){
     }
   }else if(_where == 'left'){
     if(this.position0 === 2 || this.position0 === 5 || this.position0 === 8){
-      isMoving = false;
+      Rompecabezas.isMoving = false;
       return false;
     }else{
       numberblock = this.getAt(this.position0);
@@ -225,7 +209,7 @@ Board.prototype.move = function(_where){
     }
   }
 
-  isMoving = false;
+  Rompecabezas.isMoving = false;
   this.moves ++;
   var arrFinal = [1,2,3,4,5,6,7,8,0];
   if (this.arrNumbs.equals(arrFinal)){

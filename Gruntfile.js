@@ -36,22 +36,6 @@ module.exports = function(grunt) {
             '<%= bowerDirectory %>/phaser-official/build/custom/phaser-arcade-physics.min.js'
           ]
         },
-      },
-      games: {
-        files: {
-          'dist/assets/js/rompecabezas.js': [
-            'src/_rompecabezas/src/Main.js',
-            'src/_rompecabezas/src/Prefabs/NumberBlock.js',
-            'src/_rompecabezas/src/Prefabs/Board.js',
-            'src/_rompecabezas/src/Solver.js',
-            'src/_rompecabezas/src/States/Boot.js',
-            'src/_rompecabezas/src/States/Preloader.js',
-            'src/_rompecabezas/src/States/MainMenu.js',
-            'src/_rompecabezas/src/States/LeaderBoards.js',
-            'src/_rompecabezas/src/States/Credits.js',
-            'src/_rompecabezas/src/States/Play.js'
-          ]
-        }
       }
     },
     concat: {
@@ -91,11 +75,11 @@ module.exports = function(grunt) {
         dest: 'dist/assets/'
       },
       appPackagedJs: {
-        src: '*.js',
+        src: 'src/app/.meteor/local/build/programs/client/*.js',
         dest: 'dist/assets/js/papitas.js'
       },
       appPackagedCss: {
-        src: '*.css',
+        src: 'src/app/.meteor/local/build/programs/client/*.css',
         dest: 'dist/assets/css/papitas.css'
       },
       'less-dist-files': {

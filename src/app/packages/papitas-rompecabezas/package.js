@@ -3,31 +3,33 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-  api.use(['papitas-libs','underscore'], ['client']);
-
-  api.add_files([
-    'client/prefabs/board.js',
-    'client/prefabs/block.js',
-    'client/states/boot.js',
-    'client/states/credits.js',
-    'client/states/leader-boards.js',
-    'client/states/main-menu.js',
-    'client/states/play.js',
-    'client/states/preloader.js',
-    'client/main.js',
-    'client/solver.js'
+  api.use([
+    'coffeescript','papitas-libs','underscore','templating','spacebars',
+    'showdown','collection2'
   ], 'client');
 
-  if (typeof api.export !== 'undefined') {
-    api.use('webapp', 'server');
-  }
+  api.add_files([
+    'models/etapas.coffee'
+  ], 'client');
+
+  api.add_files([
+    'game-controller/prefabs/board.js',
+    'game-controller/prefabs/block.js',
+    'game-controller/states/boot.js',
+    'game-controller/states/credits.js',
+    'game-controller/states/leader-boards.js',
+    'game-controller/states/play.js',
+    'game-controller/states/preloader.js',
+    'game-controller/main.js',
+    'game-controller/solver.js'
+  ], 'client');
+
+  api.add_files([
+    'views/rompecabezas.html',
+    'views/rompecabezas.js'
+  ], 'client');
 
   api.export([
-    'BootState',
-    'PreloaderState',
-    'CreditsState',
-    'LeaderBoardsState',
-    'MainMenuState',
-    'PlayState'
+    'Etapas'
   ],'client');
 });

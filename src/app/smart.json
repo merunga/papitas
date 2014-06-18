@@ -1,5 +1,9 @@
 {
   "packages": {
-    "grounddb": {}
+    "grounddb": {},
+    "underscore-string-latest": {},
+    "pince": {},
+    "bootstrap-3": {},
+    "collection2": {}
   }
 }

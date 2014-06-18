@@ -24,18 +24,3 @@ Array.prototype.equals = function (array) {
   }
   return true;
 }
-
-var isMoving;
-
-Meteor.startup(function(){
-  isMoving = false;
-  game = new Phaser.Game(900, 1200, Phaser.AUTO, 'rompecabezas-container');
-
-  game.state.add('boot', BootState);
-  game.state.add('preloader', PreloaderState);
-  game.state.add('credits', CreditsState);
-  game.state.add('leaderboards', LeaderBoardsState);
-  game.state.add('mainmenu', MainMenuState);
-  game.state.add('play', PlayState);
-  game.state.start('boot');
-});

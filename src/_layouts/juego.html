@@ -14,7 +14,7 @@ assets: |
         ! Package.webapp.WebApp._isCssLoaded())
       document.location.reload(); 
     Meteor.startup(function () {
-      Meteor.disconnect();
+      UI.body.INSTANTIATED = true;
       UI.DomRange.insert(UI.render(UI.body).dom, document.querySelector('#meteor-container') );
     });
   </script>

@@ -1,0 +1,13 @@
+{
+  "name": "bootbox",
+  "_cacheHeaders": {
+    "ETag": "\"0b606f59564ef4c629e1a12784eb002becdd3db4\"",
+    "Content-Length": "23917",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:0b606f595",
+  "main": "index.js",
+  "_source": "https://raw.githubusercontent.com/makeusabrew/bootbox/master/bootbox.js",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/makeusabrew/bootbox/master/bootbox.js"
+}

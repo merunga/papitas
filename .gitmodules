@@ -1,0 +1,3 @@
+[submodule "src/apptobe/packages/phaser/phaser"]
+	path = src/apptobe/packages/phaser/phaser
+	url = git@github.com:photonstorm/phaser.git

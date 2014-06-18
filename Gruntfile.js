@@ -20,10 +20,6 @@ module.exports = function(grunt) {
         files: ['src/_styles/*.less'],
         tasks: ['less:compile', 'copy:unminified-css-files', 'clean']
       },
-      js: {
-        files: ['src/_rompecabezas/src/*.js', 'src/_rompecabezas/src/**/*.js'],
-        tasks: ['concat:games']
-      },
       meteor: {
         files: ['src/app/.meteor/local/build/programs/client/*.{js,css}'],
         tasks: ['copyMeteorAssets']
@@ -69,22 +65,6 @@ module.exports = function(grunt) {
             '<%= bowerDirectory %>/phaser-official/build/custom/phaser-arcade-physics.js'
           ]
         },
-      },
-      games: {
-        files: {
-          'dist/assets/js/rompecabezas.js': [
-            'src/_rompecabezas/src/Main.js',
-            'src/_rompecabezas/src/Prefabs/NumberBlock.js',
-            'src/_rompecabezas/src/Prefabs/Board.js',
-            'src/_rompecabezas/src/Solver.js',
-            'src/_rompecabezas/src/States/Boot.js',
-            'src/_rompecabezas/src/States/Preloader.js',
-            'src/_rompecabezas/src/States/MainMenu.js',
-            'src/_rompecabezas/src/States/LeaderBoards.js',
-            'src/_rompecabezas/src/States/Credits.js',
-            'src/_rompecabezas/src/States/Play.js'
-          ]
-        }
       }
     },
     cssmin: {
@@ -107,8 +87,8 @@ module.exports = function(grunt) {
       app: {
         expand: true,
         cwd: 'src/app/.meteor/local/build/programs/client/assets/',
-        src: ['**/*.!{png,jpg,gif}'],
-        dest: 'dist/'
+        src: ['**/*.json'],
+        dest: 'dist/assets/'
       },
       'less-dist-files': {
         files: [
@@ -117,20 +97,8 @@ module.exports = function(grunt) {
             cwd: '<%= bowerDirectory %>/bootstrap/dist/fonts/',
             src: ['**'],
             dest: 'dist/assets/fonts/'
-          },
-          // {
-          //   expand: true,
-          //   cwd: 'images',
-          //   src: ['**'],
-          //   dest: 'dist/assets/images/'
-          // },
-          {
-            expand: true,
-            cwd: 'src/_rompecabezas/res/',
-            src: ['**/*','!**/*.{png,jpg,gif}'],
-            dest: 'dist/assets/res/'
           }
-        ],
+        ]
       },
       'less-src-files': {
         files: [
@@ -144,13 +112,6 @@ module.exports = function(grunt) {
       }
     },
     image: {
-      // static: {
-      //   files: { 
-      //     'dist/img.png': 'src/img.png',
-      //     'dist/img.jpg': 'src/img.jpg',
-      //     'dist/img.gif': 'src/img.gif'
-      //   }
-      // },
       assets: {
         files: [{
           expand: true,
@@ -159,14 +120,6 @@ module.exports = function(grunt) {
           dest: 'dist/assets/images/'
         }]
       },
-      // rompecabezas: {
-      //   files: [{
-      //     expand: true,
-      //     cwd: 'src/_rompecabezas/res/', 
-      //     src: ['**/*.{png,jpg,gif}'],
-      //     dest: 'dist/assets/res/'
-      //   }]
-      // },
       app: {
         files: [{
           expand: true,
@@ -184,7 +137,12 @@ module.exports = function(grunt) {
         cmd: 'jekyll serve --watch'
       },
       meteorStart: {
-        cmd: 'cd src/app && meteor --port 5000 --production'
+        cmd: [
+          "export MONGO_URL=' '",
+          "export DDP_DEFAULT_CONNECTION_URL=' '",
+          "cd src/app",
+          "meteor --port 5000 --production"
+        ].join(' && ')
       }
     },
     'gh-pages': {
@@ -241,7 +199,7 @@ module.exports = function(grunt) {
   ]); 
 
   grunt.registerTask('buildJekyll',  [
-    'copy:less-src-files', 'less', 'uglify', 'cssmin', 'image',
+    'image', 'copy:less-src-files', 'less', 'uglify', 'cssmin',
     'copy:less-dist-files', 'exec:build', 'clean'
   ]);
 
@@ -292,11 +250,13 @@ module.exports = function(grunt) {
 
       var js = $page.find("script[src]").attr('src');
       fetchUrl(null, reloadurl+js, function(pageData2) {
+        grunt.log.writeln('Writing to: dist/assets/js/papitas.js');
         grunt.file.write('dist/assets/js/papitas.js',pageData2);
       });
 
       var css = $page.find("link[href]").attr('href');
       fetchUrl(done, reloadurl+css, function(pageData2) {
+        grunt.log.writeln('Writing to: dist/assets/css/papitas.css');
         grunt.file.write('dist/assets/css/papitas.css',pageData2);
       });
     });

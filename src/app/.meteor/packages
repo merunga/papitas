@@ -4,11 +4,11 @@
 # but you can also edit it by hand.
 
 meteor
-webapp
+# webapp
 logging
 deps
 session
-livedata
+# livedata
 # mongo-livedata
 ui
 spacebars
@@ -18,4 +18,7 @@ underscore
 jquery
 random
 ejson
+less
 grounddb
+papitas-libs
+papitas-rompecabezas

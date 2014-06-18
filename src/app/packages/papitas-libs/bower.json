@@ -1,0 +1,6 @@
+{
+  "name": "papitas-app",
+  "dependencies": {
+    "phaser": "https://github.com/photonstorm/phaser/raw/master/build/custom/phaser-arcade-physics.js"
+  }
+}

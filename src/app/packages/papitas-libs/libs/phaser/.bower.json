@@ -1,0 +1,13 @@
+{
+  "name": "phaser",
+  "_cacheHeaders": {
+    "ETag": "\"815aee5bc6fdaf8dadcf05c7a182d87455c1d787\"",
+    "Content-Length": "1680400",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:815aee5bc",
+  "main": "index.js",
+  "_source": "https://github.com/photonstorm/phaser/raw/master/build/custom/phaser-arcade-physics.js",
+  "_target": "*",
+  "_originalSource": "https://github.com/photonstorm/phaser/raw/master/build/custom/phaser-arcade-physics.js"
+}

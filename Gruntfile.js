@@ -84,11 +84,19 @@ module.exports = function(grunt) {
         dest: 'dist/assets/css/',
         ext: '.min.css'
       },
-      app: {
+      appAssets: {
         expand: true,
         cwd: 'src/app/.meteor/local/build/programs/client/assets/',
         src: ['**/*.json'],
         dest: 'dist/assets/'
+      },
+      appPackagedJs: {
+        src: '*.js',
+        dest: 'dist/assets/js/papitas.js'
+      },
+      appPackagedCss: {
+        src: '*.css',
+        dest: 'dist/assets/css/papitas.css'
       },
       'less-dist-files': {
         files: [
@@ -195,16 +203,17 @@ module.exports = function(grunt) {
 
   grunt.registerTask('dev', [
     'copy:less-src-files', 'less', 'concat', 'copy:unminified-css-files', //'image',
-    'copy:less-dist-files', 'clean', 'copy:app', 'concurrent:dev'
+    'copy:less-dist-files', 'clean', 'copy:appAssets', 'concurrent:dev'
   ]); 
 
   grunt.registerTask('buildJekyll',  [
     'image', 'copy:less-src-files', 'less', 'uglify', 'cssmin',
-    'copy:less-dist-files', 'exec:build', 'clean'
+    'copy:less-dist-files', 'exec:build', 'copy:appAssets',
+    'copy:appPackagedJs', 'copy:appPackagedCss', 'clean'
   ]);
 
   grunt.registerTask('build',  [
-    'buildJekyll', 'concurrent:build'
+    'buildJekyll'//, 'concurrent:build'
   ]);
 
   grunt.registerTask('deploy',  [

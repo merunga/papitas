@@ -32,9 +32,35 @@ Play.prototype = {
 
     this.spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
-    this.board = new Board();
-    this.board.genRandom();
-    this.board.draw();
+    function onPointerMove(playState, pointer) {
+      if(pointer.isDown && !Rompecabezas.isDragging) {
+        Rompecabezas.isDragging = true;
+      } else if(pointer.isUp && Rompecabezas.isDragging) {
+        var currPos = pointer.position;
+        var downPos = pointer.positionDown;
+
+        if(Math.abs(currPos.x-downPos.x) > Math.abs(currPos.y-downPos.y)) {
+          // drag eje X
+          if(currPos.x < downPos.x) {
+            // izquierda
+            move(playState, 'left');
+          } else {
+            // derecha
+            move(playState, 'right');
+          }
+        } else {
+          // drag eje Y
+          if(currPos.y < downPos.y) {
+            // arriba
+            move(playState, 'up');
+          } else {
+            // abajo
+            move(playState, 'down');
+          }
+        }
+        Rompecabezas.isDragging = false;
+      }
+    }
 
     function move(playState, direction) {
       if(playState.board.move(direction)) {
@@ -42,12 +68,21 @@ Play.prototype = {
       }
     }
 
+    var playState = this;
+    game.input.addMoveCallback(function(pointer) {
+      onPointerMove(playState, pointer);
+    });
+
     this.upKey.onDown.add(function () { move(this, 'up'); },this);
     this.downKey.onDown.add(function () { move(this, 'down'); },this);
     this.leftKey.onDown.add(function () { move(this, 'left'); },this);
     this.rightKey.onDown.add(function () { move(this, 'right'); },this);
 
     this.spaceKey.onDown.add(function () { this.solveBoard(); },this);
+
+    this.board = new Board();
+    this.board.genRandom();
+    this.board.draw();
   },
   update: function() {
     this.movesTxt.setText('Movimientos: ' + this.board.moves);

@@ -13,7 +13,7 @@ Boot.prototype = {
         var efectosDeSonido = Rompecabezas.sonidos.efectosDeSonido = Rompecabezas.game.add.audio('efectos');
         efectosDeSonido.addMarker('movimiento', 0.16, 0.232);
       } else if(asset == 'finalEtapa') {
-        Rompecabezas.sonidos.finalEtapa = Rompecabezas.game.add.audio('finalEtapa');
+        Rompecabezas.sonidos.finalEtapa = Rompecabezas.game.add.audio('finalEtapa',8);
       }
     });
 

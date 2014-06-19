@@ -71,7 +71,7 @@ module.exports = function(grunt) {
       appAssets: {
         expand: true,
         cwd: 'src/app/.meteor/local/build/programs/client/assets/',
-        src: ['**/*.{json,mp3}'],
+        src: ['**/*.{json,mp3,ogg}'],
         dest: 'dist/assets/'
       },
       appPackagedJs: {

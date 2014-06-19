@@ -77,7 +77,7 @@ Solver.prototype.solve = function(){
     }
   }
   this.boardI.draw();
-  Session.set('rompecabezasStep','fin');
+  Rompecabezas.resuelto();
   console.log('Solved: ' + this.open[this.open.length - 1].arrNumbs);
 };
 

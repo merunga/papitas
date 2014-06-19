@@ -214,7 +214,7 @@ Board.prototype.move = function(_where){
   var arrFinal = [1,2,3,4,5,6,7,8,0];
   if (this.arrNumbs.equals(arrFinal)){
     this.isFinal = true;
-    Session.set('rompecabezasStep','fin');
+    Rompecabezas.resuelto();
   }
   //this.logBoard();
 

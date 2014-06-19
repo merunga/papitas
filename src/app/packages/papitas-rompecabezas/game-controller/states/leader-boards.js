@@ -31,6 +31,8 @@ LeaderBoards.prototype = {
   },
 
   update: function() {
+    var game = Rompecabezas.game;
+    
     if(game.input.activePointer.justPressed()) {
       game.state.start('play');
     }

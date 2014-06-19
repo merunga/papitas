@@ -1,12 +1,14 @@
 Rompecabezas = {
   isMoving: false,
   blockDimension: 300,
+  sonidos: {},
   init: function() {
     Rompecabezas.isMoving = false;
     
     if(Rompecabezas.game) {
       Rompecabezas.game.destroy();
     }
+
     var game = Rompecabezas.game = new Phaser.Game(900, 1200, Phaser.AUTO, 'rompecabezas-container');
 
     game.state.add('boot', BootState);
@@ -16,6 +18,10 @@ Rompecabezas = {
     game.state.add('play', PlayState);
 
     game.state.start('boot');
+  },
+  resuelto: function() {
+    Session.set('rompecabezasStep','fin');
+    Rompecabezas.sonidos.finalEtapa.play()
   }
 };
 

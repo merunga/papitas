@@ -23,8 +23,7 @@ Play.prototype = {
     });
     this.movesTxt.anchor.setTo(0.5, 0.5);
 
-    this.efectosSonido = game.add.audio('efectos');
-    this.efectosSonido.addMarker('movimiento', 0.16, 0.232);
+    this.efectosDeSonido = Rompecabezas.sonidos.efectosDeSonido;
 
     this.upKey = game.input.keyboard.addKey(Phaser.Keyboard.UP);
     this.downKey = game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
@@ -39,7 +38,7 @@ Play.prototype = {
 
     function move(playState, direction) {
       if(playState.board.move(direction)) {
-        playState.efectosSonido.play('movimiento');
+        playState.efectosDeSonido.play('movimiento');
       }
     }
 

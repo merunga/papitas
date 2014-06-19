@@ -26,6 +26,10 @@ var events = {
     var newMute = !Rompecabezas.game.sound.mute;
     Rompecabezas.game.sound.mute = newMute;
     Session.set('rompecabezasIsMuted', newMute);
+  },
+  'change [data-action="toggle-help"]': function(e, tmpl) {
+    var helpOn = !(Session.get('rompecabezasHelpOn') || false);
+    Session.set('rompecabezasHelpOn', helpOn);
   }
 };
 

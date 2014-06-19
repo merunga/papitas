@@ -18,10 +18,20 @@ NumberBlock = function (x, y, number) {
   //this.input.enableDrag(true);
   //this.events.onInputDown.add(this.onDown, this);
   //this.events.onInputOut.add(outSprite, this);
-  this.txt = game.add.text(x + 20, y + 20, number, {
-    font: "20px Source Code Pro",
-    fill: "#F0F0F0",
-    align: "center"
+  this.txt = game.add.text(x + 100, y + 30, number, {
+    font: "250px Source Code Pro",
+    fill: "#000000",
+    align: "center",
+    weight: "bold"
+  });
+
+  var text = this.txt;
+  Deps.autorun(function() {
+    if(!Session.get('rompecabezasHelpOn')) {
+      text.fontSize = 1;
+    } else {
+      text.fontSize = 250;
+    }
   });
 };
 
@@ -29,8 +39,8 @@ NumberBlock.prototype = Object.create(Phaser.Sprite.prototype);
 NumberBlock.prototype.constructor = NumberBlock;
 
 NumberBlock.prototype.update = function() {
-  this.txt.x = this.x + 20;
-  this.txt.y = this.y + 20;
+  this.txt.x = this.x + 100;
+  this.txt.y = this.y + 30;
 };
 
 NumberBlock.prototype.move = function(_to){

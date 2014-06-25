@@ -9,18 +9,22 @@ Rompecabezas = {
       Rompecabezas.game.destroy();
     }
 
-    var game = Rompecabezas.game = new Phaser.Game(900, 1200, Phaser.AUTO, 'rompecabezas-container');
+    Session.set('rompecabezasMovimientos',0);
+    var game = Rompecabezas.game = new Phaser.Game(900, 900, Phaser.AUTO, 'rompecabezas-container');
 
     game.state.add('boot', BootState);
     game.state.add('preloader', PreloaderState);
-    game.state.add('credits', CreditsState);
-    game.state.add('leaderboards', LeaderBoardsState);
     game.state.add('play', PlayState);
 
     game.state.start('boot');
   },
+  restart: function() {
+    Rompecabezas.game.state.states.play.shuffleBoard();
+    Session.set('rompecabezasMovimientos',0);
+  },
   resuelto: function() {
     Session.set('rompecabezasStep','fin');
+    Session.set('rompecabezasMovimientos',0);
     Rompecabezas.sonidos.finalEtapa.play()
   }
 };

@@ -30,6 +30,15 @@ var events = {
   'change [data-action="toggle-help"]': function(e, tmpl) {
     var helpOn = !(Session.get('rompecabezasHelpOn') || false);
     Session.set('rompecabezasHelpOn', helpOn);
+  },
+  'click [data-action="reiniciar"]': function(e, tmpl) {
+    e.preventDefault();
+    bootbox.confirm("¿Estás segur@ de que quieres abandonar el juego?", function(result) {
+      if(result) {
+        Rompecabezas.restart();
+      }
+    }); 
+    return false;
   }
 };
 

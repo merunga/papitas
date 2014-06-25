@@ -112,7 +112,7 @@ Board.prototype.draw = function(){
   {
     for (j = 3; j > 0; j--){
       if (this.arrNumbs[k] !== 0){
-        tmpBlock = new NumberBlock((j-3)*-blockDimension, (i-3)*-blockDimension + (blockDimension/2),this.arrNumbs[k],this);
+        tmpBlock = new NumberBlock((j-3)*-blockDimension, (i-3)*-blockDimension,this.arrNumbs[k],this);
         this.add(tmpBlock);
       }
       k++;

@@ -5,23 +5,7 @@ Play.prototype = {
     var game = Rompecabezas.game;
 
     game.stage.backgroundColor = '#000';
-    game.add.sprite(0, Rompecabezas.blockDimension/2, 'fondo');
-    this.botonesolve = game.add.button(
-      game.world.centerX - 75 , this.world.height - 75,
-      'botones', function(){this.quitGame('mainmenu')}, this,
-      'restart1', 'restart0', 'restart2');
-
-    this.bttPlay = game.add.button(
-      game.world.centerX , this.world.height - 75,
-      'botones', this.shuffleBoard, this,
-      'random1', 'random0', 'random2');
-    
-    this.movesTxt = game.add.text(game.world.centerX, 35, 'Movimientos: ', {
-      font: "40px Source Code Pro",
-      fill: '#fff',
-      align: 'center'
-    });
-    this.movesTxt.anchor.setTo(0.5, 0.5);
+    game.add.sprite(0, 0, 'fondo');
 
     this.efectosDeSonido = Rompecabezas.sonidos.efectosDeSonido;
 
@@ -85,14 +69,15 @@ Play.prototype = {
     this.board.draw();
   },
   update: function() {
-    this.movesTxt.setText('Movimientos: ' + this.board.moves);
+    Session.set('rompecabezasMovimientos',this.board.moves);
     if(this.board.isFinal){
-      localStorage.setItem('lastScore',this.board.moves);
-      this.quitGame('leaderboards');
+      //localStorage.setItem('lastScore',this.board.moves);
+      this.quitGame();
     }
   },
   
   quitGame: function (state) {
+    console.log('quit game')
     this.board.clearBoard();
     this.board.destroy();
     this.board = null;
@@ -108,7 +93,7 @@ Play.prototype = {
     this.rightKey = null;
 
     Rompecabezas.isMoving = false;
-    Rompecabezas.game.state.start(state);
+    //Rompecabezas.game.state.start(state);
   },
 
   shuffleBoard: function (){
@@ -123,6 +108,8 @@ Play.prototype = {
     fn.genFinal();
     var solver = new Solver(this.board,fn);
     solver.solve();
+
+    //SolverAS.create(this.board);
   }
 };
 

@@ -16,12 +16,11 @@ Package.on_use(function (api) {
     'game-controller/prefabs/board.js',
     'game-controller/prefabs/block.js',
     'game-controller/states/boot.js',
-    'game-controller/states/credits.js',
-    'game-controller/states/leader-boards.js',
     'game-controller/states/play.js',
     'game-controller/states/preloader.js',
     'game-controller/main.js',
-    'game-controller/solver.js'
+    'game-controller/solver.js',
+    'game-controller/solver-astar.js'
   ], 'client');
 
   api.add_files([

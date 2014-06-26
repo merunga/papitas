@@ -39,6 +39,11 @@ var events = {
       }
     }); 
     return false;
+  },
+  'click [data-action="imprimir"]': function(e, tmpl) {
+    e.preventDefault();
+    window.print(); 
+    return false;
   }
 };
 

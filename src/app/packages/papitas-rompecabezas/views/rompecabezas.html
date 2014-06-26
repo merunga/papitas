@@ -93,7 +93,7 @@ Texto introducción selección etapa
 </template>
 
 <template name="rompecabezasFin">
-  <div class="row">
+  <div class="row no-print">
     <div class="col-lg-10 col-lg-offset-1">
       <h1>Muy bien!</h1>
     </div>
@@ -117,7 +117,12 @@ Texto introducción selección etapa
 {{etapaCompletada.descripcion}}
       {{/markdown}}
 
-      <a class="btn btn-primary" href="#" data-action="comenzar">Volver a jugar</a>
+      <button class="btn btn-primary" href="#" data-action="comenzar">
+        <span class="glyphicon glyphicon-repeat"></span> Volver a jugar
+      </button>
+      <button class="btn btn-primary" href="#" data-action="imprimir">
+        <span class="glyphicon glyphicon-print"></span> Imprimir
+      </button>
     </div>
   </div>
 </template>

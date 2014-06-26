@@ -6,7 +6,8 @@
       "underscore-string-latest": {},
       "pince": {},
       "bootstrap-3": {},
-      "collection2": {}
+      "collection2": {},
+      "moment-with-langs": {}
     },
     "packages": {
       "grounddb": {
@@ -33,6 +34,11 @@
         "git": "https://github.com/aldeed/meteor-collection2.git",
         "tag": "v0.4.1",
         "commit": "a9ffc9b285c3af8ad631f9cda4851b0ffc30c5ce"
+      },
+      "moment-with-langs": {
+        "git": "https://github.com/jeeeyul/meteor-moment-with-langs.git",
+        "tag": "v2.6.0",
+        "commit": "b09c5ef52871f0eafd8d908bb9c111031ec9f05d"
       },
       "ejson-minimax": {
         "git": "https://github.com/GroundMeteor/ejson-minimax.git",

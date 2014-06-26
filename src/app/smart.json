@@ -4,6 +4,7 @@
     "underscore-string-latest": {},
     "pince": {},
     "bootstrap-3": {},
-    "collection2": {}
+    "collection2": {},
+    "moment-with-langs": {}
   }
 }

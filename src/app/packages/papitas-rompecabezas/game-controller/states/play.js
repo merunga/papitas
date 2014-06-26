@@ -67,17 +67,58 @@ Play.prototype = {
     this.board = new Board();
     this.board.genRandom();
     this.board.draw();
+
+    // function queue(funcs, delay) {
+    //     var i;
+    //     var o;
+
+    //     setTimeout(function run() {
+    //         o = funcs.shift();
+    //         if (o !== undefined) {
+    //             o.fnc(o.args[0], o.args[1]);
+    //             setTimeout(run, delay);
+    //         }
+    //     }, delay);
+    // }
+
+    // var blocks = this.board.arrNumbs;
+    // var boardAS = new BoardAS(blocks);
+    // var solution = Rompecabezas.solver = SolverAS.create(boardAS);
+    // // Should always be solvable by the way we have set it up.
+
+    // console.log(solution);
+    // if (solution.isSolvable) {
+    //     var q = [];
+    //     var boards = solution.getSolution();
+
+    //     for (var i = 0; i < boards.length; i++) {
+    //         if (boards[i].move !== undefined) {
+    //             console.log(boards[i].move[0], boards[i].move[1])
+    //             console.log(board);
+    //         }
+    //     }
+
+    //     queue(q, 200);
+    // } else {
+    //     console.log("No solution found");
+    // }
+
   },
   update: function() {
-    Session.set('rompecabezasMovimientos',this.board.moves);
-    if(this.board.isFinal){
-      //localStorage.setItem('lastScore',this.board.moves);
-      this.quitGame();
-    }
+    var that = this;
+    Deps.nonreactive(function() {
+      if(that.board) {
+        Session.set('rompecabezasMovimientos',that.board.moves);
+        if(that.board.isFinal){
+          //localStorage.setItem('lastScore',this.board.moves);
+          that.quitGame();
+          Rompecabezas.resuelto()
+        }
+      }
+    });
   },
   
   quitGame: function (state) {
-    console.log('quit game')
     this.board.clearBoard();
     this.board.destroy();
     this.board = null;
@@ -86,11 +127,13 @@ Play.prototype = {
     this.downKey.onDown.removeAll();
     this.leftKey.onDown.removeAll();
     this.rightKey.onDown.removeAll();
+    this.spaceKey.onDown.removeAll();
 
     this.upKey = null;
     this.downKey = null;
     this.leftKey = null;
     this.rightKey = null;
+    this.spaceKey = null;
 
     Rompecabezas.isMoving = false;
     //Rompecabezas.game.state.start(state);
@@ -108,8 +151,6 @@ Play.prototype = {
     fn.genFinal();
     var solver = new Solver(this.board,fn);
     solver.solve();
-
-    //SolverAS.create(this.board);
   }
 };
 

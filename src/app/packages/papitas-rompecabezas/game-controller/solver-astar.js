@@ -61,7 +61,7 @@ MinPQ.prototype = {
 
 };
 
-function BoardAS(blocks) {
+BoardAS = function(blocks) {
 
   this.blocks = blocks;
   this.N = blocks[0].length;
@@ -71,13 +71,13 @@ function BoardAS(blocks) {
   this.blank;
   this.hammingScore = 0;
   this.manhattanScore = 0;
-  this.contructGoalBoard();
+  this.contructGoalBoardAS();
 
 };
 BoardAS.prototype.dimension = function () {
   return this.N;
 };
-BoardAS.prototype.contructGoalBoard = function(){
+BoardAS.prototype.contructGoalBoardAS = function(){
 
   var hScore = 0;
   var mScore = 0;
@@ -127,12 +127,10 @@ BoardAS.prototype.contructGoalBoard = function(){
   }
 
 };
-BoardAS.prototype.hamming = function () {
-  console.log('Hamming ',this, this.hammingScore);
+BoardAS.prototype.hamming = function () {;
   return this.hammingScore;
 };
 BoardAS.prototype.manhattan = function () {
-  console.log('Manhatan ',this, this.hammingScore);
   return this.manhattanScore;
 };
 BoardAS.prototype.getNeighbours = function () {
@@ -152,7 +150,7 @@ BoardAS.prototype.getNeighbours = function () {
   var neighbours = [];
   for (var i = 0; i < a.length; i++) {
     var newBlocks = this.createNewBlocks(a[i]);
-    var n = new Board(newBlocks);
+    var n = new BoardAS(newBlocks);
     n.move = newBlocks.move;
     n.prevBlank = { 'from': b, 'to': a[i] };
     n.steps = this.steps + 1;
@@ -172,13 +170,13 @@ BoardAS.prototype.twin = function () {
     // I can swap [0][0] and [0][1]
     this._tiles_swapped = { tile_1: { x: 0, y: 0 }, tile_2: { x: 0, y: 1 }};
     copiedBlocks = this.swap(copiedBlocks, 0, 0, 0, 1);
-    var brd = new Board(copiedBlocks);
+    var brd = new BoardAS(copiedBlocks);
     return brd;
   } else {
     // I can swap [1][0] and [1][1]
     this._tiles_swapped = { tile_1: { x: 1, y: 0 }, tile_2: { x: 1, y: 1 }};
     copiedBlocks = this.swap(copiedBlocks, 1, 0, 1, 1);
-    var brd = new Board(copiedBlocks);
+    var brd = new BoardAS(copiedBlocks);
     return brd;
   }
 
@@ -239,7 +237,7 @@ BoardAS.prototype.equals = function (other) {
   }
   return true;
 };
-BoardAS.prototype.printBoard = function () {
+BoardAS.prototype.printBoardAS = function () {
   var s = "";
   for (var i = 0; i < 3; i++) {
     for (var j = 0; j < 3; j++) {
@@ -284,10 +282,10 @@ function Node(board, prev, steps) {
 }
 Node.prototype.score = function (method) {
   if(method === undefined)
-    return this.BoardAS.manhattan() + this.steps;
+    return this.board.manhattan() + this.steps;
   
   if(method == "hamming")
-    return this.BoardAS.hamming() + this.steps;
+    return this.board.hamming() + this.steps;
 }
 
 Node.prototype.compareTo = function (other) {
@@ -321,7 +319,7 @@ SolverAS = (function () {
   function solve(board) {
     winning_board = board;
     var initialNode = new Node(board, undefined, 0);
-    var initialTwin = new Node(BoardAS.twin(), undefined, 0);
+    var initialTwin = new Node(board.twin(), undefined, 0);
      
     var PQ = new MinPQ();
     var PQTwin = new MinPQ();
@@ -334,16 +332,16 @@ SolverAS = (function () {
       var searchNode = PQ.delMin();
       var searchNodeTwin = PQTwin.delMin();
      
-      if (searchNode.BoardAS.isGoal()) {
+      if (searchNode.board.isGoal()) {
         this.isSolvable = true;
         this.steps = searchNode.steps;
 
         break;
       }
     
-      if (searchNodeTwin.BoardAS.isGoal()) {
+      if (searchNodeTwin.board.isGoal()) {
         this.isSolvable = false;
-        winning_board = winning_BoardAS.twin();
+        winning_board = winning_board.twin();
         break;
       }
       
@@ -370,12 +368,12 @@ SolverAS = (function () {
 
   function addNeighbours(queue, node) {
 
-    var neighbours = node.BoardAS.getNeighbours();
+    var neighbours = node.board.getNeighbours();
     neighbours.forEach(function (board, index) {
       var n = new Node(board, node, node.steps + 1);
 
       if (node.prev !== undefined) {
-        if (!BoardAS.equals(node.prev.board)) {
+        if (!board.equals(node.prev.board)) {
           queue.insert(n);
         }
       } else {
@@ -395,7 +393,7 @@ SolverAS = (function () {
       return solution;
     },
     getWinningBlocks : function(){
-      return winning_BoardAS.blocks;
+      return winning_board.blocks;
     },
     isSolvable: false
   };

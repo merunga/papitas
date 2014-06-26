@@ -18,8 +18,13 @@
 
     <div class="col-lg-8">
       <div class="row">
-        <div class="text-center">
-          <h2>Movimientos {{Session.get 'rompecabezasMovimientos'}}</h2>
+        <div class="col-lg-offset-3 col-lg-6">
+          <h2 class="pull-left text-left">
+            Movimientos: {{Session.get 'rompecabezasMovimientos'}}
+          </h2>
+          <h2 class="pull-right text-right">
+            {{timer rompecabezasTiempo}}
+          </h2>
         </div>
       </div>
       <div class="row">
@@ -43,7 +48,7 @@
       </div>
     </div>
 
-    <div class="col-lg-2">
+    <div class="col-lg-2meru">
     </div>
   </div>
 </template>
@@ -97,6 +102,8 @@ Texto introducción selección etapa
   <div class="row">
     <div class="col-lg-10 col-lg-offset-1">
       <h2><strong>{{etapaCompletada.nombre}}:</strong> {{etapaCompletada.titulo}}</h2>
+      <h3><strong>Movimientos:</strong> {{Session.get 'rompecabezasMovimientos'}}</h3>
+      <h3><strong>Tiempo:</strong> {{timer rompecabezasTiempo}}</h3>
     </div>
   </div>
 

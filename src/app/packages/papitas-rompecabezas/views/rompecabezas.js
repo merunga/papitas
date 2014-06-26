@@ -42,6 +42,10 @@ var events = {
   }
 };
 
+UI.registerHelper('rompecabezasTiempo', function() {
+  return Session.get('rompecabezasTiempo');
+});
+
 Template.rompecabezas.rendered = function() {
   Rompecabezas.init();
 }

@@ -1,3 +1,11 @@
+function timer() {
+  if(!Session.get('rompecabezasJueoPausado')) {
+    var timeElapsed = Session.get('rompecabezasTiempo') || 0;
+    timeElapsed++;
+    Session.set('rompecabezasTiempo',timeElapsed);
+  }
+};
+
 Rompecabezas = {
   isMoving: false,
   blockDimension: 300,
@@ -9,7 +17,6 @@ Rompecabezas = {
       Rompecabezas.game.destroy();
     }
 
-    Session.set('rompecabezasMovimientos',0);
     var game = Rompecabezas.game = new Phaser.Game(900, 900, Phaser.AUTO, 'rompecabezas-container');
 
     game.state.add('boot', BootState);
@@ -20,14 +27,30 @@ Rompecabezas = {
   },
   restart: function() {
     Rompecabezas.game.state.states.play.shuffleBoard();
-    Session.set('rompecabezasMovimientos',0);
+    resetContadores();
   },
   resuelto: function() {
     Session.set('rompecabezasStep','fin');
-    Session.set('rompecabezasMovimientos',0);
-    Rompecabezas.sonidos.finalEtapa.play()
+    if(Rompecabezas.timer) {
+      Meteor.clearInterval(Rompecabezas.timer);
+    }
+    Rompecabezas.sonidos.finalEtapa.play();
   }
 };
+
+function resetContadores() {
+  Session.set('rompecabezasMovimientos',0);
+  Session.set('rompecabezasTiempo',0);
+  if(Rompecabezas.timer) {
+    Meteor.clearInterval(Rompecabezas.timer);
+  }
+  Rompecabezas.timer = Meteor.setInterval(timer, 1000);
+}
+
+Deps.autorun(function() {
+  Session.get('rompecabezasEtapaElegida');
+  resetContadores();
+});
 
 var WebFontConfig;
 WebFontConfig = {

@@ -3,6 +3,14 @@ function Preload() {
   this.preloadBar = null;
 }
 
+function timerFunc() {
+  if(!Session.get('rompecabezasJuegoPausado')) {
+    var timeElapsed = Session.get('rompecabezasTiempo') || 0;
+    timeElapsed++;
+    Session.set('rompecabezasTiempo',timeElapsed);
+  }
+};
+
 Preload.prototype = {
   preload: function() {
     var game = Rompecabezas.game;
@@ -30,6 +38,7 @@ Preload.prototype = {
   create: function() {
     this.preloadBar.cropEnabled = false;
     Rompecabezas.game.state.start('play');
+    Rompecabezas.timer = Meteor.setInterval(timerFunc, 1000);
   }
 };
 

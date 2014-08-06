@@ -1,11 +1,3 @@
-function timer() {
-  if(!Session.get('rompecabezasJueoPausado')) {
-    var timeElapsed = Session.get('rompecabezasTiempo') || 0;
-    timeElapsed++;
-    Session.set('rompecabezasTiempo',timeElapsed);
-  }
-};
-
 Rompecabezas = {
   isMoving: false,
   blockDimension: 300,
@@ -44,7 +36,6 @@ function resetContadores() {
   if(Rompecabezas.timer) {
     Meteor.clearInterval(Rompecabezas.timer);
   }
-  Rompecabezas.timer = Meteor.setInterval(timer, 1000);
 }
 
 Deps.autorun(function() {

@@ -1,5 +1,5 @@
 Package.describe({
-  summary: "Juegos de las papitas"
+  summary: "Papitas - Rompecabezas"
 });
 
 Package.on_use(function (api) {

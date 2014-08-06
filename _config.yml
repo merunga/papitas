@@ -12,6 +12,6 @@ destination: ./dist
 
 keep_files: [ 'assets' ]
 
-permalink: /:categories/:year/:month/:day/:title
+permalink: /:year/:month/:day/:title
 
 exclude: [node_modules, bower_components, src/_styles, app]

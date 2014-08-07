@@ -208,6 +208,8 @@ module.exports = function(grunt) {
     'buildJekyll'//, 'concurrent:build'
   ]);
 
+  grunt.registerTask('dist',  ['build']);
+
   grunt.registerTask('deploy',  [
     'build', 'gh-pages'
   ]);

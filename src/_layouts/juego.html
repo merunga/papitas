@@ -7,15 +7,17 @@ assets: |
   <link rel="stylesheet" href="assets/css/papitas.css?meteor_css_resource=true">
 
   <script type="text/javascript">
-    UI.body.INSTANTIATED = true;
+    Template.__body__.__isInstantiated = true;
     if (typeof Package === 'undefined' ||
         ! Package.webapp ||
         ! Package.webapp.WebApp ||
         ! Package.webapp.WebApp._isCssLoaded())
       document.location.reload(); 
     Meteor.startup(function () {
-      UI.body.INSTANTIATED = true;
-      UI.DomRange.insert(UI.render(UI.body).dom, document.querySelector('#meteor-container') );
+      Template.__body__.__isInstantiated = true;
+      var range = Blaze.render(Template.__body__);
+      Template.__body__.__view = range.view;
+      range.attach(document.querySelector('#meteor-container'));
     });
   </script>
 ---

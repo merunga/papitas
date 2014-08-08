@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
     <!-- Custom page assets -->
-    {% if page.assets %}
-      {{page.assets}}
+    {% if page.meteorInclude %}
+      {% include meteor-include.html template=page.active %}
     {% endif %}
   </head>
 

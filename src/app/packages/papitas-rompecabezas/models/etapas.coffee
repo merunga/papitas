@@ -172,7 +172,7 @@ Schemas.Etapa = new SimpleSchema
 
   slug:
     type: String
-    label: "Título"
+    label: "Slug"
     max: 140
 
   titulo:

@@ -22,3 +22,37 @@
 //   src: url('/assets/fonts/glyphicons-halflings-regular.eot');
 //   src: url('/assets/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/packages/bootstrap-3/bootstrap-3/fonts/glyphicons-halflings-regular.woff') format('woff'), url('/packages/bootstrap-3/bootstrap-3/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('/packages/bootstrap-3/bootstrap-3/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 // }
+
+@width: 160px;
+@height: 240px;
+
+.experto-papa {
+  width: @width;
+  height: @height;
+  background-size: @width * 2 @height;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  z-index: 100;
+  
+  // &:hover {
+  //   background-position: @width 0;
+  // }
+  // &.active {
+  //   background: url('../images/web/btn/papa-btn-1.png') 128px 0;
+  //   pointer-events: none;
+  // }
+}
+
+.experto-incognita {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background-color: red;
+  border: 3px dotted black;
+  width: @width;
+  height: @height;
+
+  &.resulta {
+    background-color: green;
+  }
+}

@@ -1,0 +1,131 @@
+<template name="experto">
+  <a id="actionToggleSound" class="btn btn-primary" data-action="toggle-sound">
+    <span class="
+      {{#if Session.get 'expertoIsMuted' }}
+        glyphicon glyphicon-volume-off
+      {{else}}
+        glyphicon glyphicon-volume-up
+      {{/if}}
+      "
+    ></span>
+  </a>
+
+  {{> step }}
+
+  <div class="hidden">
+    <div id="experto-container"></div>
+  </div>
+</template>
+
+<template name="expertoIntro">
+  <div class="col-lg-5 col-lg-offset-2">
+    {{#markdown}}
+# Título Experto
+
+Texto introducción
+
+    {{/markdown}}
+  </div>
+
+  <div class="col-lg-3">
+    <a class="btn btn-primary" href="#" data-action="comenzar">Comenzar!</a>
+  </div>
+
+</template>
+
+<template name="expertoJuego">
+  <div class="row">
+    <div class="pull-left">
+      <h2>Fallos {{ Session.get 'expertoFallos' }}</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    {{#each papas1}}
+      {{> expertoJuegoOption}}
+    {{/each}}
+  </div>
+
+  <div class="row">
+    {{#each papasAAdivinar}}
+      {{> expertoJuegoIncognita}}
+    {{/each}}
+  </div>
+
+  <div class="row">
+    {{#each papas2}}
+      {{> expertoJuegoOption}}
+    {{/each}}
+  </div>
+
+</template>
+
+<template name="expertoJuegoOption">
+  <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+    <div class="experto-papa" data-action="reproducir-nombre" data-papanumero="{{numero}}"
+      style='background-image: url("/assets/images/papas/{{imageFileName}}")'>
+    </div>
+  </div>
+</template>
+
+<template name="expertoJuegoIncognita">
+  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+    <div class="experto-incognita" data-papanumero="{{numero}}">
+      
+      <p>{{nombre}}</p>
+    </div>
+  </div>
+</template>
+
+
+
+<template name="expertoIdentificarPapas">
+  {{#each papas}}
+    <div class="col-xs-6 col-md-2 col-lg-2 col-md-2 col-lg-2">
+      <div class="experto-papa" data-action="reproducir-nombre"
+        style='background-image: url("/assets/images/papas/{{imageFileName}}")'>
+      </div>
+    </div>
+  {{/each}}
+
+  <div class="col-lg-3">
+    <a class="btn btn-primary" href="#" data-action="papas-identificadas">Comenzar!</a>
+  </div>
+</template>
+
+<template name="expertoFin">
+  <div class="row no-print">
+    <div class="col-lg-10 col-lg-offset-1">
+      <h1>Muy bien!</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <h3><strong>Fallos:</strong> {{Session.get 'expertoFallos'}}</h3>
+    <!--h3><strong>Tiempo:</strong> {{timer rompecabezasTiempo}}</h3-->
+  </div>
+
+  <div class="row">
+    {{#each papasAdivinadas}}
+      {{> expertoPapaAdivinada}}
+    {{/each}}
+  </div>
+
+  <div class="row">
+    <button class="btn btn-primary" href="#" data-action="comenzar">
+      <span class="glyphicon glyphicon-repeat"></span> Volver a jugar
+    </button>
+    <button class="btn btn-primary" href="#" data-action="imprimir">
+      <span class="glyphicon glyphicon-print"></span> Imprimir
+    </button>
+  </div>
+</template>
+
+<template name="expertoPapaAdivinada">
+  <div class="col-xs-6 col-md-2 col-lg-2 col-md-2 col-lg-2 text-center">
+    <h3>{{nombre}}</h3>
+    <div class="experto-papa" data-action="reproducir-nombre"
+      style='background-image: url("/assets/images/papas/{{imageFileName}}")'>
+    </div>
+  </div>
+</template>

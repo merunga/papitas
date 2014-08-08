@@ -36,23 +36,23 @@ Texto introducción
 <template name="expertoJuego">
   <div class="row">
     <div class="pull-left">
-      <h2>Fallos {{ Session.get 'expertoFallos' }}</h2>
+      <h2>Fallos: {{ Session.get 'expertoFallos' }}</h2>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row text-center">
     {{#each papas1}}
       {{> expertoJuegoOption}}
     {{/each}}
   </div>
 
-  <div class="row">
+  <div class="row text-center">
     {{#each papasAAdivinar}}
       {{> expertoJuegoIncognita}}
     {{/each}}
   </div>
 
-  <div class="row">
+  <div class="row text-center">
     {{#each papas2}}
       {{> expertoJuegoOption}}
     {{/each}}

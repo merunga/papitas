@@ -1,3 +1,6 @@
+var PAPAS_A_MOSTRAR = 10;
+var PAPAS_A_ELEGIR  = 4;
+
 var events = {
   'click [data-action="comenzar"]': function(e, tmpl) {
     e.preventDefault();
@@ -51,9 +54,6 @@ UI.registerHelper('expertoTiempo', function() {
   return Session.get('expertoTiempo');
 });
 
-var PAPAS_A_MOSTRAR = 2;
-var PAPAS_A_ELEGIR  = 2;
-
 Template.experto.rendered = function() {
   Experto.init();
 }
@@ -71,14 +71,18 @@ Template.expertoIdentificarPapas.rendered = function(tmpl) {
   Experto.game.state.start('preloader');
 }
 
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+function getRandomInt(min, max, notIn) {
+  var trial;
+  do {
+    trial = Math.floor(Math.random() * (max - min + 1)) + min;
+  } while (notIn.indexOf(trial) > -1);
+  return trial;
 }
 
 Template.expertoIdentificarPapas.papas = function() {
   var numeros = [];
   for(var i=0; i<PAPAS_A_MOSTRAR; i++) {
-    numeros.push(getRandomInt(1,Papas.find().count()+1));
+    numeros.push(getRandomInt(1, Papas.find().count(), numeros));
   }
   Session.set('expertoPapasActuales', numeros);
   return safePapas(numeros);
@@ -89,9 +93,12 @@ Template.expertoJuego.rendered = function() {
 
   var tmpl = this;
   var numerosAAdivinar = [];
+  var indexesVisitados = [];
   for(var i=0; i<PAPAS_A_ELEGIR; i++) {
     var numerosDisponibles = Session.get('expertoPapasActuales');
-    numerosAAdivinar.push(numerosDisponibles[getRandomInt(0,numerosDisponibles.length-1)]);
+    var randomIdx = getRandomInt(0, numerosDisponibles.length-1, indexesVisitados);
+    numerosAAdivinar.push(numerosDisponibles[randomIdx]);
+    indexesVisitados.push(randomIdx);
   };
   Session.set('expertoPapasAAdivinar', numerosAAdivinar);
 }
@@ -125,7 +132,8 @@ Template.expertoJuegoIncognita.rendered = function() {
         && $(this).data('papanumero') == $(dropElem).data('papanumero');
     },
     drop: function(event, ui) {
-      tmpl.$(this).addClass("resulta");
+      ui.draggable.draggable( "destroy" );
+      tmpl.$(this).addClass("resuelta");
       var papaNumero = parseInt($(this).data('papanumero'));
       var pa = Session.get('expertoPapasAdivinadas') || [];
       if(pa.indexOf(papaNumero) < 0) {

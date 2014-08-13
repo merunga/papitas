@@ -10,13 +10,30 @@
     <link href='http://fonts.googleapis.com/css?family=Lemon|Bree+Serif|Cabin+Sketch:700'
       rel='stylesheet' type='text/css'>
 
-    <!-- Custom page assets -->
     {% if page.meteorInclude %}
       {% include meteor-include.html template=page.active %}
     {% endif %}
 
     <!-- Bootstrap theme -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    
+    <!--script type="text/javascript" src="assets/js/lib/base.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $.reject({  
+          reject: {
+            all: true,
+            msie: true,
+            unknown: true
+          },
+          close: false,
+          header: 'Lo sentimos, pero esta página no funciona en Internet Explorer',
+          paragraph1: '',
+          paragraph2: 'Te recomendamos usar alguno de los siguientes navegadores:',
+          display: ['chrome', 'firefox', 'safari', 'opera']
+        });
+      });
+    </script-->
   </head>
 
   <body class="{{page.bodyClass}}">

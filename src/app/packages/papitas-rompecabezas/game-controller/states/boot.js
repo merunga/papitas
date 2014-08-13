@@ -21,7 +21,7 @@ Boot.prototype = {
     this.load.image('loading', 'assets/images/Loading.png');
 
     // http://opengameart.org/content/stone-rock-or-wood-moved-sound
-    this.load.audio('efectos', 'assets/audio/experto-nombres.mp3', true);
+    this.load.audio('efectos', 'assets/audio/efectos.ogg', true);
 
     // http://opengameart.org/content/well-done
     this.load.audio('finalEtapa', 'assets/audio/final-etapa.ogg', true);

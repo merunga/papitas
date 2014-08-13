@@ -18,13 +18,13 @@
 
     <div class="col-lg-8">
       <div class="row">
-        <div class="col-lg-offset-3 col-lg-7">
-          <h2 class="pull-left text-left">
+        <div class="col-lg-offset-1 col-lg-10">
+          <h3 class="pull-left text-left">
             Movimientos: {{Session.get 'rompecabezasMovimientos'}}
-          </h2>
-          <h2 class="pull-right text-right">
+          </h3>
+          <h3 class="pull-right text-right">
             {{timer rompecabezasTiempo}}
-          </h2>
+          </h3>
         </div>
       </div>
       <div class="row">
@@ -32,7 +32,7 @@
       </div>
       <div class="row"></div>
       <div class="row">
-        <div  class="col-lg-offset-3 col-lg-6">
+        <div  class="col-lg-offset-2 col-lg-8">
           <div class="pull-left text-left">
             <button class="btn btn-primary" data-action="reiniciar">
               <span class="glyphicon glyphicon-repeat"></span> Reiniciar
@@ -54,33 +54,46 @@
 </template>
 
 <template name="rompecabezasIntro">
-  <div class="col-lg-5 col-lg-offset-2">
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-2">
     {{#markdown}}
-# Título Rompecabezas
+# Rompecabezas
 
-Texto introducción
+¡Hola!
+
+¿Sabías que? Para producir las papas que comemos los agricultores andinos realizan muchas 
+actividades agrícolas durante el año que han aprendido de sus ancestros.
+
+Descubre el ciclo agrícola de la papa armando los rompecabezas. 
 
     {{/markdown}}
+    </div>
   </div>
 
-  <div class="col-lg-3">
+  <br/>
+
+  <div class="row text-center">
     <a class="btn btn-primary" href="#" data-action="comenzar">Comenzar!</a>
   </div>
 
 </template>
 
 <template name="rompecabezasElegirEtapa">
-  <div class="col-lg-8 col-lg-offset-2">
-    {{#markdown}}
-## Título Selección de etapa
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      {{#markdown}}
+### Conoce el ciclo agrícola de la papa.
 
-Texto introducción selección etapa
-
-    {{/markdown}}
+Elije la figura que quieres armar en un rompecabezas.
+      {{/markdown}}
+    </div>
   </div>
 
+  <br/>
+
   {{#each etapas}}
-    <div class="col-xs-6 col-md-3">
+    <div class="col-xs-6 col-md-3 text-center">
+      <div class="etapa-titulo">{{#markdown}}{{titulo}}{{/markdown}}</div>
       <a href="#" class="thumbnail" data-action="etapa-elegida">
         <img src="assets/images/etapas/{{slug}}-thumb.jpg" alt="...">
       </a>
@@ -101,7 +114,7 @@ Texto introducción selección etapa
 
   <div class="row">
     <div class="col-lg-10 col-lg-offset-1">
-      <h2><strong>{{etapaCompletada.nombre}}:</strong> {{etapaCompletada.titulo}}</h2>
+      <h2>{{#markdown}}{{etapaCompletada.titulo}}{{/markdown}}</h2>
       <h3><strong>Movimientos:</strong> {{Session.get 'rompecabezasMovimientos'}}</h3>
       <h3><strong>Tiempo:</strong> {{timer rompecabezasTiempo}}</h3>
     </div>

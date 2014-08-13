@@ -211,8 +211,36 @@ Board.prototype.move = function(_where){
 
   Rompecabezas.isMoving = false;
   this.moves ++;
+
+  function arrEquals(one, another) {
+    // if the other array is a falsy value, return
+    if (!another){
+      return false;
+    }
+
+    // compare lengths - can save a lot of time
+    if (one.length != another.length){
+      return false;
+    }
+
+    for (var i = 0, l=one.length; i < l; i++) {
+      // Check if we have nested arrays
+      if (one[i] instanceof Array && another[i] instanceof Array) {
+        // recurse into the nested arrays
+        if (!one[i].compare(another[i])){
+          return false;
+        }
+      }
+      else if (one[i] != another[i]) {
+        // Warning - two different object instances will never be equal: {x:20} != {x:20}
+        return false;
+      }
+    }
+    return true;
+  }
+
   var arrFinal = [1,2,3,4,5,6,7,8,0];
-  if (this.arrNumbs.equals(arrFinal)){
+  if( arrEquals(this.arrNumbs, arrFinal) ) {
     this.isFinal = true;
     Rompecabezas.resuelto();
   }

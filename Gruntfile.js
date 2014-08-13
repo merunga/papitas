@@ -30,7 +30,8 @@ module.exports = function(grunt) {
         files: {
           'dist/assets/js/lib/base.js': [
             '<%= bowerDirectory %>/jquery/dist/jquery.min.js',
-            '<%= bowerDirectory %>/bootstrap/dist/js/bootstrap.min.js'
+            // '<%= bowerDirectory %>/bootstrap/dist/js/bootstrap.min.js',
+            '<%= bowerDirectory %>/jReject/js/jquery.reject.js'
           ],
           'dist/assets/js/lib/phaser.js': [
             '<%= bowerDirectory %>/phaser-official/build/custom/phaser-arcade-physics.min.js'
@@ -43,7 +44,9 @@ module.exports = function(grunt) {
         files: {
           'dist/assets/js/lib/base.js': [
             '<%= bowerDirectory %>/jquery/dist/jquery.js',
-            '<%= bowerDirectory %>/bootstrap/dist/js/bootstrap.js'
+            '<%= bowerDirectory %>/bootstrap/dist/js/bootstrap.js',
+            '<%= bowerDirectory %>/jquery.browser/dist/jquery.browser.min.js',
+            '<%= bowerDirectory %>/jReject/js/jquery.reject.js'
           ],
           'dist/assets/js/lib/phaser.js': [
             '<%= bowerDirectory %>/phaser-official/build/custom/phaser-arcade-physics.js'
@@ -101,6 +104,32 @@ module.exports = function(grunt) {
             dest: 'tmp/'
           },
         ]
+      },
+      'libs-css': {
+        files: [
+          {
+            expand: true,
+            cwd: '<%= bowerDirectory %>/jReject/css',
+            src: ['*.css'],
+            dest: 'tmp/'
+          },
+        ]
+      },
+      images: {
+        files: [
+          {
+            expand: true,
+            cwd: 'images/',
+            src: ['**/*.{png,jpg,gif}'],
+            dest: 'dist/assets/images/'
+          },
+          {
+            expand: true,
+            cwd: 'src/app/.meteor/local/build/programs/client/assets/images/',
+            src: ['**/*.{png,jpg,gif}'],
+            dest: 'dist/assets/images/'
+          },
+        ]
       }
     },
     image: {
@@ -115,9 +144,17 @@ module.exports = function(grunt) {
       app: {
         files: [{
           expand: true,
-          cwd: 'src/app/.meteor/local/build/programs/client/', 
+          cwd: '<%= bowerDirectory %>/jReject/images', 
           src: ['**/*.{png,jpg,gif}'],
           dest: 'dist/'
+        }]
+      },
+      libs: {
+        files: [{
+          expand: true,
+          cwd: '<%= bowerDirectory %>/jReject/images', 
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'dist/assets/img/browsers'
         }]
       }
     },
@@ -190,6 +227,8 @@ module.exports = function(grunt) {
   //grunt.registerTask('default', [ 'less', 'uglify', 'copy', 'exec:build' ]);
   grunt.registerTask('default', [
     'copy:less-src-files', 'less', 'concat', 'copy:unminified-css-files', //'image',
+    'copy:libs-css', 'copy:images',
+    'copy:appAssets', 'copy:appPackagedJs', 'copy:appPackagedCss',
     'copy:less-dist-files', 'clean', 'concurrent:default'
   ]);
 
@@ -199,7 +238,7 @@ module.exports = function(grunt) {
   ]); 
 
   grunt.registerTask('buildJekyll',  [
-    'image', 'copy:less-src-files', 'less', 'uglify', 'cssmin',
+    'image', 'copy:less-src-files', 'copy:libs-css', 'less', 'uglify', 'cssmin',
     'copy:less-dist-files', 'exec:build', 'copy:appAssets',
     'copy:appPackagedJs', 'copy:appPackagedCss', 'clean'
   ]);

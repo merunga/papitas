@@ -2,7 +2,9 @@
   "name": "papitas",
   "dependencies": {
     "jquery": "1.11.0",
-    "bootstrap": "3.1.0"
+    "bootstrap": "3.1.0",
+    "jReject": "~1.1.1",
+    "jquery.browser": "~0.0.6"
   },
   "ignore": [
     "**/.*",

@@ -144,7 +144,7 @@ module.exports = function(grunt) {
       app: {
         files: [{
           expand: true,
-          cwd: '<%= bowerDirectory %>/jReject/images', 
+          cwd: 'src/app/.meteor/local/build/programs/client/', 
           src: ['**/*.{png,jpg,gif}'],
           dest: 'dist/'
         }]

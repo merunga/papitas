@@ -63,7 +63,7 @@ Texto introducción
 <template name="expertoJuegoOption">
   <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
     <div class="experto-papa" data-action="reproducir-nombre" data-papanumero="{{numero}}"
-      style='background-image: url("/assets/images/papas/{{imageFileName}}")'>
+      style='background-image: url("assets/images/papas/{{imageFileName}}")'>
     </div>
   </div>
 </template>
@@ -78,17 +78,28 @@ Texto introducción
 </template>
 
 
+<template name="expertoPapaMuestra">
+  <div class="col-xs-6 col-md-2 col-lg-2 col-md-2 col-lg-2">
+    <div class="experto-papa" data-action="reproducir-nombre"
+      style='background-image: url("assets/images/papas/{{imageFileName}}")'>
+    </div>
+  </div>
+</template>
 
 <template name="expertoIdentificarPapas">
-  {{#each papas}}
-    <div class="col-xs-6 col-md-2 col-lg-2 col-md-2 col-lg-2">
-      <div class="experto-papa" data-action="reproducir-nombre"
-        style='background-image: url("/assets/images/papas/{{imageFileName}}")'>
-      </div>
-    </div>
-  {{/each}}
+  <div class="row text-center">
+    {{#each papas1}}
+      {{> expertoPapaMuestra}}
+    {{/each}}
+  </div>
 
-  <div class="col-lg-3">
+  <div class="row text-center">
+    {{#each papas2}}
+      {{> expertoPapaMuestra}}
+    {{/each}}
+  </div>
+
+  <div class="row text-center">
     <a class="btn btn-primary" href="#" data-action="papas-identificadas">Comenzar!</a>
   </div>
 </template>
@@ -125,7 +136,7 @@ Texto introducción
   <div class="col-xs-6 col-md-2 col-lg-2 col-md-2 col-lg-2 text-center">
     <h3>{{nombre}}</h3>
     <div class="experto-papa" data-action="reproducir-nombre"
-      style='background-image: url("/assets/images/papas/{{imageFileName}}")'>
+      style='background-image: url("assets/images/papas/{{imageFileName}}")'>
     </div>
   </div>
 </template>

@@ -81,6 +81,14 @@ papas = [
   {nombre: "Yana chilkas",         numero:  80, audioMarkerIni: 0, audioMarkerFin: 0}
   {nombre: "Yana k'usi",           numero:  81, audioMarkerIni: 0, audioMarkerFin: 0}
   {nombre: "Yuraq inkachu",        numero:  82, audioMarkerIni: 0, audioMarkerFin: 0}
+  {nombre: "Kuntur runtu",         numero:  83, audioMarkerIni: 0, audioMarkerFin: 0}
+  {nombre: "Uqi suytu",            numero:  84, audioMarkerIni: 0, audioMarkerFin: 0}
+  {nombre: "Pariwana",             numero:  85, audioMarkerIni: 0, audioMarkerFin: 0}
+  {nombre: "Puka churuspi",        numero:  86, audioMarkerIni: 0, audioMarkerFin: 0}
+  {nombre: "Puka k'usi",           numero:  87, audioMarkerIni: 0, audioMarkerFin: 0}
+  {nombre: "Yana ch'uruspi",       numero:  88, audioMarkerIni: 0, audioMarkerFin: 0}
+  {nombre: "Yuraq suytu",          numero:  89, audioMarkerIni: 0, audioMarkerFin: 0}
+  {nombre: "Wallpa supi",          numero:  90, audioMarkerIni: 0, audioMarkerFin: 0}
 ]
 
 Schemas = Schemas or {}

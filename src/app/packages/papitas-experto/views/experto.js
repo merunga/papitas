@@ -30,10 +30,6 @@ var events = {
     Experto.game.sound.mute = newMute;
     Session.set('expertoIsMuted', newMute);
   },
-  'change [data-action="toggle-help"]': function(e, tmpl) {
-    var helpOn = !(Session.get('expertoHelpOn') || false);
-    Session.set('expertoHelpOn', helpOn);
-  },
   'click [data-action="reiniciar"]': function(e, tmpl) {
     e.preventDefault();
     bootbox.confirm("¿Estás segur@ de que quieres abandonar el juego?", function(result) {
@@ -79,13 +75,26 @@ function getRandomInt(min, max, notIn) {
   return trial;
 }
 
-Template.expertoIdentificarPapas.papas = function() {
-  var numeros = [];
-  for(var i=0; i<PAPAS_A_MOSTRAR; i++) {
-    numeros.push(getRandomInt(1, Papas.find().count(), numeros));
+function papasAIdentificar() {
+  var papasActuales = Session.get('expertoPapasActuales');
+  if(!papasActuales) {
+    papasActuales = [];
+    for(var i=0; i<PAPAS_A_MOSTRAR; i++) {
+      papasActuales.push(getRandomInt(1, Papas.find().count(), papasActuales));
+    }
+    Session.set('expertoPapasActuales', papasActuales);
   }
-  Session.set('expertoPapasActuales', numeros);
-  return safePapas(numeros);
+  return safePapas(papasActuales);
+}
+
+Template.expertoIdentificarPapas.papas1 = function() {
+  papasAIdentificar();
+  return papas1();
+}
+
+Template.expertoIdentificarPapas.papas2 = function() {
+  papasAIdentificar();
+  return papas2();
 }
 
 Template.expertoJuego.rendered = function() {
@@ -149,12 +158,20 @@ function papasSlice(ini,fin) {
   return safePapas(numeros.slice(ini,fin));
 }
 
-Template.expertoJuego.papas1 = function() {
+function papas1() {
   return papasSlice(0, (PAPAS_A_MOSTRAR / 2));
 }
 
-Template.expertoJuego.papas2 = function() {
+function papas2() {
   return papasSlice((PAPAS_A_MOSTRAR / 2), PAPAS_A_MOSTRAR);
+}
+
+Template.expertoJuego.papas1 = function() {
+  return papas1();
+} 
+
+Template.expertoJuego.papas2 = function() {
+  return papas2();  
 }
 
 function safePapas(numerosArray) {

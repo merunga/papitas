@@ -21,11 +21,6 @@ Preload.prototype = {
 
     this.preloadBarBg = this.add.sprite(300, 400, 'loadingBG');
     this.preloadBar = this.add.sprite(304, 405, 'loading');
-    this.load.atlasJSONHash(
-      'botones',
-      'assets/spritesheets/botones.png',
-      'assets/spritesheets/botones.json'
-    );
 
     this.load.atlasJSONHash(
       'bloques',

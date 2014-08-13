@@ -4,6 +4,7 @@ title: papitas - Sobre el proyecto
 bodyClass: home
 meteorInclude: false
 active: sobre-nosotros
+withFooter: true
 ---
 
 <div class="row">
@@ -68,7 +69,7 @@ proyectos de Hope está en educación. HoPe tiene una alianza con el Centro
 Internacional de la Papa para el proyecto "Las papitas de mi comunidad". 
 
 
-#### [Connect4Change (C4C)](www.connect4change.nl){: target="_blank"}
+#### [Connect4Change (C4C)](http://www.connect4change.nl){: target="_blank"}
 
 Es un consorcio constituido por organizaciones holandesas que trabajan en varias áreas 
 de desarrollo y TIC: IICD, Edukans, ICCO, Cordaid y AKVO. Connect4Change busca 
@@ -77,6 +78,11 @@ logros de desarrollo humano y contribuir a reducir situaciones de pobreza y
 exclusión. En educación busca mejorar la calidad y la igualdad del sistema educativo
 a través de la integración de las TIC en la educación básica, la formación de docentes
 y la educación profesional, con énfasis en la formación de niñas.
+
+#### [Edukans](http://www.edukans.nl/){: target="_blank"}
+
+
+#### [IICD](http://www.iicd.org/){: target="_blank"}
 
   </div>
 </div>

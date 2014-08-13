@@ -146,11 +146,13 @@ Elije la figura que quieres armar en un rompecabezas.
           <h4 class="modal-title">Pregunta</h4>
         </div>
         <div class="modal-body text-center">
-          {{#unless Session.get 'rompecabezasRespuesta'}}
-            {{etapaCompletada.pregunta.texto}}
-          {{else}}
-            {{Session.get 'rompecabezasRespuesta'}}
-          {{/unless}}
+          {{#markdown}}
+            {{#unless Session.get 'rompecabezasRespuesta'}}
+{{etapaCompletada.pregunta.texto}}
+            {{else}}
+{{Session.get 'rompecabezasRespuesta'}}
+            {{/unless}}
+          {{/markdown}}
         </div>
         <div class="modal-footer text-center">
           {{#unless Session.get 'rompecabezasRespuesta'}}

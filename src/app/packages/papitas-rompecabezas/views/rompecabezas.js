@@ -1,9 +1,15 @@
+function comenzar(e, tmpl) {
+  e.preventDefault();
+  $('#preguntaModal').hide();
+  Session.set('rompecabezasEtapaElegida',undefined);
+  Session.set('rompecabezasRespuesta',undefined);
+  Session.set('rompecabezasStep','elegirEtapa');
+  return false;
+}
+
 var events = {
   'click [data-action="comenzar"]': function(e, tmpl) {
-    e.preventDefault();
-    Session.set('rompecabezasEtapaElegida',undefined);
-    Session.set('rompecabezasStep','elegirEtapa');
-    return false;
+    return comenzar(e, tmpl);
   },
   'click [data-action="etapa-elegida"]': function(e, tmpl) {
     e.preventDefault();
@@ -44,7 +50,23 @@ var events = {
     e.preventDefault();
     window.print(); 
     return false;
-  }
+  },
+  'click [data-action="respuesta"]': function(e, tmpl) {
+    e.preventDefault();
+    var siONo = $(e.currentTarget).data('respuesta');
+    var etapa = Session.get('rompecabezasEtapaElegida');
+    Session.set('rompecabezasRespuesta', etapa.pregunta.respuesta[siONo]);
+    return false;
+  },
+  'click [data-action="volver-a-jugar"]': function(e, tmpl) {
+    var $modal = $('#preguntaModal');
+    $modal.on('hidden.bs.modal', function(jqe) {
+      comenzar(e, tmpl);
+    });
+    $modal.modal('hide');
+    return false;
+  },
+
 };
 
 UI.registerHelper('rompecabezasTiempo', function() {

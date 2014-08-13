@@ -130,12 +130,41 @@ Elije la figura que quieres armar en un rompecabezas.
 {{etapaCompletada.descripcion}}
       {{/markdown}}
 
-      <button class="btn btn-success" href="#" data-action="comenzar">
-        <span class="glyphicon glyphicon-repeat"></span> Volver a jugar
+      <button class="btn btn-success" href="#" data-toggle="modal" data-target="#preguntaModal">
+        <span class="glyphicon glyphicon-arrow-right"></span> Continuar
       </button>
       <button class="btn btn-primary" href="#" data-action="imprimir">
         <span class="glyphicon glyphicon-print"></span> Imprimir
       </button>
+    </div>
+  </div>
+
+  <div id="preguntaModal" class="modal fade" data-keyboard="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Pregunta</h4>
+        </div>
+        <div class="modal-body text-center">
+          {{#unless Session.get 'rompecabezasRespuesta'}}
+            {{etapaCompletada.pregunta.texto}}
+          {{else}}
+            {{Session.get 'rompecabezasRespuesta'}}
+          {{/unless}}
+        </div>
+        <div class="modal-footer text-center">
+          {{#unless Session.get 'rompecabezasRespuesta'}}
+            <button type="button" class="btn btn-primary"
+              data-action="respuesta" data-respuesta="si">Si</button>
+            <button type="button" class="btn btn-primary"
+              data-action="respuesta" data-respuesta="no">No</button>
+          {{else}}
+            <button class="btn btn-success" href="#" data-action="volver-a-jugar">
+              <span class="glyphicon glyphicon-repeat"></span> Volver a jugar
+            </button>
+          {{/unless}}
+        </div>
+      </div>
     </div>
   </div>
 </template>

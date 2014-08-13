@@ -20,10 +20,10 @@ module.exports = function(grunt) {
         files: ['src/_styles/*.less'],
         tasks: ['less:compile', 'copy:unminified-css-files', 'clean']
       },
-      meteor: {
-        files: ['src/app/.meteor/local/build/programs/client/*.{js,css}'],
-        tasks: ['copyMeteorAssets']
-      }
+      // meteor: {
+      //   files: ['src/app/.meteor/local/build/programs/client/*.{js,css}'],
+      //   tasks: ['copyMeteorAssets']
+      // }
     },
     uglify: {
       libs: {

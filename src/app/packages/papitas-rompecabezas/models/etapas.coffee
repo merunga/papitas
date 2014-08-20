@@ -15,7 +15,7 @@ Les piden permiso para trabajar la tierra, fuerza en
 el trabajo y protección a las semillas que darán vida 
 a nuevas papitas. 
 
-### ¿Cómo se realiza la ofrenda?
+#### ¿Cómo se realiza la ofrenda?
 
 Se ofrece el "kintu" de coca (trío de hojas) y se 
 brinda por lo general con "chicha"; el primer vaso 
@@ -58,7 +58,7 @@ La siembra es la actividad más importante en el ciclo
 agrícola de la papa. Los preparativos se realizan 
 incluso una semana antes de la siembra. 
 
-### ¿Cuándo se realiza la siembra?
+#### ¿Cuándo se realiza la siembra?
 
 Cuando la Pachamama muestra sus señales:
 Aparición de ciertas flores, aullido del zorro cerca a
@@ -67,7 +67,7 @@ La siembra se extiende de agosto a octubre de
 acuerdo al ciclo de crecimiento de las papas que 
 produce la comunidad. 
 
-### ¿Cómo se realiza la siembra? 
+#### ¿Cómo se realiza la siembra? 
 
 Se forman grupos de tres personas; los varones 
 manejan las herramientas, un grupo de mujeres se 
@@ -102,7 +102,7 @@ El aporque es una actividad que realizan los varones
 haciendo uso de la lampa para ayudar al buen 
 crecimiento de las plantas de papa.
 
-### ¿Cuándo se realiza? 
+#### ¿Cuándo se realiza? 
 
 A partir de noviembre hasta enero, se realiza los 
 primeros aporques, aprovechando el agua de la 
@@ -110,7 +110,7 @@ lluvia. Si se observa que los tallos de la papa no
 están gruesos y las hojas no están firmes, entonces
 se aporca nuevamente.
 
-### ¿Cómo se realiza? 
+#### ¿Cómo se realiza? 
 - Se rectifican los surcos. 
 - Se quita la mala hierba. 
 - Se alimenta con más tierra el tallo de la planta de papa. 
@@ -146,7 +146,7 @@ dicen: *"La papa nos cría toda la vida porque nos
 alimenta, por eso nosotros también debemos criar a 
 la papa en la chacra"*.
 
-### ¿Cómo criamos a la papa? 
+#### ¿Cómo criamos a la papa? 
 
 Los criadores de la papita están siempre al cuidado
 de su parcela, le llevan guano, otros le echan ceniza 
@@ -184,7 +184,7 @@ Mientras las plantas de papa están creciendo en la
 parcela, los agricultores preparan nuevos terrenos 
 para la próxima siembra.
 
-### ¿Cómo se realiza? 
+#### ¿Cómo se realiza? 
 
 Primero se rotura la tierra. Esta actividad requiere 
 mucha coordinación, destreza y fuerza de los grupos
@@ -226,7 +226,7 @@ La cosecha consiste en extraer de la tierra y
 descubrir al sol del día las papitas multicolores que 
 son el fruto del trabajo de familias enteras. 
 
-### ¿Cuándo se realiza? 
+#### ¿Cuándo se realiza? 
 
 Se realiza en los meses de abril y mayo cuando el 
 ciclo de la planta ha culminado. Los agricultores 
@@ -266,7 +266,7 @@ Durante la cosecha se pueden ver muchas
 variedades de papa en colores y formas, ese día se 
 prepara la watias.
 
-### ¿Qué es la watia? 
+#### ¿Qué es la watia? 
 
 Es la comida favorita del día de cosecha, se prepara 
 en hornos hechos con terrones donde se asan las 
@@ -276,7 +276,7 @@ elaborado por los propios comuneros, también se
 puede acompañar con cuy asado en fogón. Toda la 
 familia forma un círculo y comparten la comida.
 
-### ¿Cómo finaliza la cosecha? 
+#### ¿Cómo finaliza la cosecha? 
 
 Con el traslado de la papa en costales a lomo de 
 caballos o llamas hasta el lugar de almacenamiento.
@@ -320,7 +320,7 @@ son de tipo comercial.
 En esta etapa también se hace la selección de la 
 semilla de cada variedad de papa.
 
-### ¿Cuál es el criterio de selección de las semillas de 
+#### ¿Cuál es el criterio de selección de las semillas de 
 papa?
 
 Los criterios más importantes son tener ojos 
@@ -355,7 +355,7 @@ papas que tiene ojos bonitos.
 Almacenamiento de papas.
     """
     descripcion: """
-### ¿Cómo se almacenan las papas? 
+#### ¿Cómo se almacenan las papas? 
 
 Las semillas de papa se guardan en montones 
 cubiertos con paja en forma de conos que se 
@@ -399,7 +399,7 @@ La papa está presente
 en la alimentación familiar.
     """
     descripcion: """
-### ¿Qué comidas preparamos con papa?
+#### ¿Qué comidas preparamos con papa?
 - Variedad de sopas donde la papa se acompaña por otros ingredientes. 
 - Asados para los banquetes de las fiestas familiares y comunales. 
 - Watias. 

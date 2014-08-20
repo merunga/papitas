@@ -107,14 +107,14 @@ Elije la figura que quieres armar en un rompecabezas.
 
 <template name="rompecabezasFin">
   <div class="row no-print">
-    <div class="col-lg-10 col-lg-offset-1">
+    <div class="col-lg-10 col-lg-offset-1"> 
       <h1>Muy bien!</h1>
     </div>
   </div>
 
   <div class="row">
     <div class="col-lg-10 col-lg-offset-1">
-      <h2>{{#markdown}}{{etapaCompletada.titulo}}{{/markdown}}</h2>
+      <h3 class="fin-etapa-titulo">{{#markdown}}{{etapaCompletada.titulo}}{{/markdown}}</h3>
       <h3><strong>Movimientos:</strong> {{Session.get 'rompecabezasMovimientos'}}</h3>
       <h3><strong>Tiempo:</strong> {{timer rompecabezasTiempo}}</h3>
     </div>
@@ -143,7 +143,7 @@ Elije la figura que quieres armar en un rompecabezas.
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Pregunta</h4>
+          <h4 class="modal-title">Para continuar, responde:</h4>
         </div>
         <div class="modal-body text-center">
           {{#markdown}}
@@ -157,7 +157,7 @@ Elije la figura que quieres armar en un rompecabezas.
         <div class="modal-footer text-center">
           {{#unless Session.get 'rompecabezasRespuesta'}}
             <button type="button" class="btn btn-primary"
-              data-action="respuesta" data-respuesta="si">Si</button>
+              data-action="respuesta" data-respuesta="si">Sí</button>
             <button type="button" class="btn btn-primary"
               data-action="respuesta" data-respuesta="no">No</button>
           {{else}}

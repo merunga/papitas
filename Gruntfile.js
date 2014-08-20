@@ -20,10 +20,10 @@ module.exports = function(grunt) {
         files: ['src/_styles/*.less'],
         tasks: ['less:compile', 'copy:unminified-css-files', 'clean']
       },
-      // meteor: {
-      //   files: ['src/app/.meteor/local/build/programs/client/*.{js,css}'],
-      //   tasks: ['copyMeteorAssets']
-      // }
+      meteor: {
+        files: ['src/app/.meteor/local/build/programs/client/*.{js,css}'],
+        tasks: ['copyAllAppAssets']
+      }
     },
     uglify: {
       libs: {
@@ -228,8 +228,13 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'copy:less-src-files', 'less', 'concat', 'copy:unminified-css-files', //'image',
     'copy:libs-css', 'copy:images',
-    'copy:appAssets', 'copy:appPackagedJs', 'copy:appPackagedCss',
+    'copyAllAppAssets',
     'copy:less-dist-files', 'clean', 'concurrent:default'
+  ]);
+
+  grunt.registerTask('copyAllAppAssets', [
+    'copy:appAssets', 'copy:appPackagedJs',
+    'copy:appPackagedCss'
   ]);
 
   grunt.registerTask('dev', [

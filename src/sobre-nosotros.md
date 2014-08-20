@@ -10,7 +10,7 @@ withFooter: true
 <div class="row">
   <div class="col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10" markdown="1">
 
-### Sobre el proyecto
+### El proyecto
 
 "Las papitas de mi comunidad" es un proyecto promovido por el Centro Internacional de la Papa 
 (CIP) y la Asociación Civil Fundación HoPe Holanda Perú, junto con sus aliados CADEP José María 
@@ -24,7 +24,9 @@ conservación en su hábitat natural, mediante un material educativo digital e i
 escolares y sus maestros, aplicando una metodología didáctica centrada en el protagonismo del 
 estudiante, como la que ha servido para colectar la información que se presenta en este material. 
 
-### Descripción del juego
+### Los Juegos
+
+#### Rompecabezas
 
 Este rompecabezas es uno de los juegos del material denominado “Las papitas de mi comunidad”. 
 Contiene escenas e información del ciclo de producción de la papa en las comunidades 
@@ -35,6 +37,9 @@ desarrollando muchas capacidades cognitivas (atención, memoria, análisis, sín
 del espacio, etc.) y conocerás más de la cultura de nuestros hermanos agricultores que crían a 
 las papitas en las chacras y son los custodios de más de 4,000 variedades de papas nativas que 
 son la riqueza biológica de nuestro país.
+
+#### El experto en papa
+
 
 ### Organizaciones que participan
 

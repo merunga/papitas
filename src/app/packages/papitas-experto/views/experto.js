@@ -1,5 +1,5 @@
 var PAPAS_A_MOSTRAR = 10;
-var PAPAS_A_ELEGIR  = 4;
+var PAPAS_A_ELEGIR  = 5;
 
 var events = {
   'click [data-action="comenzar"]': function(e, tmpl) {

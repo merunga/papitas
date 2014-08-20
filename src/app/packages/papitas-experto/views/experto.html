@@ -40,24 +40,25 @@ Texto introducción
     </div>
   </div>
 
-  <div class="row text-center">
-    {{#each papas1}}
-      {{> expertoJuegoOption}}
-    {{/each}}
-  </div>
+  <div class="row col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+    <div class="row">
+      {{#each papas1}}
+        {{> expertoJuegoOption}}
+      {{/each}}
+    </div>
 
-  <div class="row text-center">
-    {{#each papasAAdivinar}}
-      {{> expertoJuegoIncognita}}
-    {{/each}}
-  </div>
+    <div class="row">
+      {{#each papasAAdivinar}}
+        {{> expertoJuegoIncognita}}
+      {{/each}}
+    </div>
 
-  <div class="row text-center">
-    {{#each papas2}}
-      {{> expertoJuegoOption}}
-    {{/each}}
+    <div class="row">
+      {{#each papas2}}
+        {{> expertoJuegoOption}}
+      {{/each}}
+    </div>
   </div>
-
 </template>
 
 <template name="expertoJuegoOption">
@@ -69,8 +70,8 @@ Texto introducción
 </template>
 
 <template name="expertoJuegoIncognita">
-  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-    <div class="experto-incognita" data-papanumero="{{numero}}">
+  <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+    <div class="experto-incognita text-center" data-papanumero="{{numero}}">
       
       <p>{{nombre}}</p>
     </div>

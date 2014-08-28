@@ -47,7 +47,7 @@ Texto introducción
       {{/each}}
     </div>
 
-    <div class="row">
+    <div class="row experto-incognitas">
       {{#each papasAAdivinar}}
         {{> expertoJuegoIncognita}}
       {{/each}}
@@ -72,8 +72,7 @@ Texto introducción
 <template name="expertoJuegoIncognita">
   <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
     <div class="experto-incognita text-center" data-papanumero="{{numero}}">
-      
-      <p>{{nombre}}</p>
+      <div class="papa-nombre">{{nombre}}</div>
     </div>
   </div>
 </template>
@@ -118,9 +117,13 @@ Texto introducción
   </div>
 
   <div class="row">
-    {{#each papasAdivinadas}}
-      {{> expertoPapaAdivinada}}
-    {{/each}}
+    <div class="col-lg-4 col-md-4">
+      {{#each papasAdivinadas}}
+        {{> expertoPapaAdivinada}}
+      {{/each}}
+    </div>
+    <div class="col-lg-6 col-md-6">
+    </div>
   </div>
 
   <div class="row">

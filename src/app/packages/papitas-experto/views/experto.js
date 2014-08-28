@@ -1,5 +1,5 @@
-var PAPAS_A_MOSTRAR = 10;
-var PAPAS_A_ELEGIR  = 5;
+var PAPAS_A_MOSTRAR = 4;
+var PAPAS_A_ELEGIR  = 2;
 
 var events = {
   'click [data-action="comenzar"]': function(e, tmpl) {
@@ -202,6 +202,7 @@ Template.expertoFin.papasAdivinadas = function() {
 Template.expertoFin.papasCamposExtra = function() {
   return [
     { field: 'nombre',              label: 'Nombre' },
+    { printOnly: true,              label: 'Colorea' },
     { field: 'significadoNombre',   label: 'Significado del nombre' },
     { field: 'nombreAlternativo',   label: 'Nombre alternativo' },
     { field: 'colorFlor',           label: 'Color principal de la flor' },
@@ -220,6 +221,10 @@ Template.expertoFin.papaConsultada = function(field) {
   } else {
     papa = Papas.findOne({ numero:numeroPapa })
   }
+  return papa[field]
+}
+
+Template.expertoFin.papaConsultadaPrint = function(papa, field) {
   return papa[field]
 }
 

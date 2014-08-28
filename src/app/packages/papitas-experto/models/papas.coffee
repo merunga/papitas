@@ -577,9 +577,14 @@ Schemas.Papa = new SimpleSchema
     label: "Slug"
     max: 140
 
-  imageFileName:
+  imageFileNameScreen:
     type: String
-    label: "Image file name"
+    label: "Image file name (screen)"
+    max: 140
+
+  imageFileNamePrint:
+    type: String
+    label: "Image file name (print)"
     max: 140
 
 
@@ -590,5 +595,6 @@ Meteor.startup ->
   for papa in papas
     nroStr = ('00'+papa.numero).slice(-3)
     papa.slug = "#{nroStr}-#{_.slugify papa.nombre}"
-    papa.imageFileName = "#{nroStr}-#{papa.nombre}.png"
+    papa.imageFileNameScreen = "#{nroStr}.png"
+    papa.imageFileNamePrint  = "#{nroStr}-print.png"
     Papas.insert papa

@@ -64,7 +64,7 @@ Texto introducción
 <template name="expertoJuegoOption">
   <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
     <div class="experto-papa" data-action="reproducir-nombre" data-papanumero="{{numero}}"
-      style='background-image: url("assets/images/papas/{{imageFileName}}")'>
+      style='background-image: url("assets/images/papas/{{imageFileNameScreen}}")'>
     </div>
   </div>
 </template>
@@ -81,7 +81,7 @@ Texto introducción
 <template name="expertoPapaMuestra">
   <div class="col-xs-6 col-md-2 col-lg-2 col-md-2 col-lg-2">
     <div class="experto-papa" data-action="reproducir-nombre"
-      style='background-image: url("assets/images/papas/{{imageFileName}}")'>
+      style='background-image: url("assets/images/papas/{{imageFileNameScreen}}")'>
     </div>
   </div>
 </template>
@@ -105,7 +105,7 @@ Texto introducción
 </template>
 
 <template name="expertoFin">
-  <div class="row no-print">
+  <div class="row no-print hidden-print">
     <div class="col-lg-10 col-lg-offset-1">
       <h1>Muy bien!</h1>
     </div>
@@ -116,7 +116,7 @@ Texto introducción
     <!--h3><strong>Tiempo:</strong> {{timer rompecabezasTiempo}}</h3-->
   </div>
 
-  <div class="row">
+  <div class="row hidden-print">
     <div class="col-lg-4 col-md-4">
       {{#each papasAdivinadas}}
         {{> expertoPapaAdivinada}}
@@ -130,7 +130,9 @@ Texto introducción
               <h5><strong>{{this.label}}:</strong></h5>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7">
-              <h4>{{papaConsultada this.field}}</h4>
+              {{#unless this.printOnly}}
+                <h4>{{papaConsultada this.field}}</h4>
+              {{/unless}}
             </div>
           </div>
         {{/each}}
@@ -138,7 +140,32 @@ Texto introducción
     </div>
   </div>
 
+  <div class="row visible-print-inline-block">
+    {{#each papasAdivinadas}}
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="row experto-papa-detalles">
+          {{#each papasCamposExtra}}
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-5 col-xs-5">
+                <h5><strong>{{this.label}}:</strong></h5>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7">
+                {{#unless this.printOnly}}
+                  <h4>{{papaConsultadaPrint .. this.field}}</h4>
+                {{else}}
+                  <img class="img-responsive"
+                    src="assets/images/papas/{{papaConsultadaPrint .. 'imageFileNamePrint'}}">
+                {{/unless}}
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>  
+    {{/each}}
+  </div>
+
   <div class="row">
+    <br />
     <button class="btn btn-primary" href="#" data-action="comenzar">
       <span class="glyphicon glyphicon-repeat"></span> Volver a jugar
     </button>
@@ -151,8 +178,9 @@ Texto introducción
 <template name="expertoPapaAdivinada">
   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
     <div class="experto-papa" data-action="set-papa-actual"
-      style='background-image: url("assets/images/papas/{{imageFileName}}");
+      style='background-image: url("assets/images/papas/{{imageFileNameScreen}}");
       {{papaActualBgStyle}}'>
     </div>
   </div>
 </template>
+

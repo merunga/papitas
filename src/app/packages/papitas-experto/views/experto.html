@@ -122,7 +122,19 @@ Texto introducción
         {{> expertoPapaAdivinada}}
       {{/each}}
     </div>
-    <div class="col-lg-6 col-md-6">
+    <div class="col-lg-8 col-md-8">
+      <div class="row experto-papa-detalles">
+        {{#each papasCamposExtra}}
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-5 col-xs-5">
+              <h5><strong>{{this.label}}:</strong></h5>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7">
+              <h4>{{papaConsultada this.field}}</h4>
+            </div>
+          </div>
+        {{/each}}
+      </div>
     </div>
   </div>
 
@@ -137,10 +149,10 @@ Texto introducción
 </template>
 
 <template name="expertoPapaAdivinada">
-  <div class="col-xs-6 col-md-2 col-lg-2 col-md-2 col-lg-2 text-center">
-    <h3>{{nombre}}</h3>
-    <div class="experto-papa" data-action="reproducir-nombre"
-      style='background-image: url("assets/images/papas/{{imageFileName}}")'>
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
+    <div class="experto-papa" data-action="set-papa-actual"
+      style='background-image: url("assets/images/papas/{{imageFileName}}");
+      {{papaActualBgStyle}}'>
     </div>
   </div>
 </template>

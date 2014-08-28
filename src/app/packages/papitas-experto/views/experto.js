@@ -43,6 +43,10 @@ var events = {
     e.preventDefault();
     window.print(); 
     return false;
+  },
+  'click [data-action="set-papa-actual"]': function(e, tmpl) {
+    e.preventDefault();
+    Session.set('expertoPapaConsultada', this.numero);
   }
 };
 
@@ -187,9 +191,44 @@ Template.expertoJuego.papasAAdivinar = function() {
 
 Template.expertoJuego.events(events);
 
+function papasAdivinadas() {
+  return safePapas(Session.get('expertoPapasAdivinadas'));
+}
 
 Template.expertoFin.papasAdivinadas = function() {
-  return safePapas(Session.get('expertoPapasAdivinadas'))
+  return papasAdivinadas();
+}
+
+Template.expertoFin.papasCamposExtra = function() {
+  return [
+    { field: 'nombre',              label: 'Nombre' },
+    { field: 'significadoNombre',   label: 'Significado del nombre' },
+    { field: 'nombreAlternativo',   label: 'Nombre alternativo' },
+    { field: 'colorFlor',           label: 'Color principal de la flor' },
+    { field: 'toleranciaGranizada', label: 'Tolerancia a la granizada' },
+    { field: 'colorPulpa',          label: 'Color principal de la pulpa' },
+    { field: 'formaRara',           label: 'Forma rara' },
+    { field: 'toleranciaHelada',    label: 'Tolerancia a la helada '}
+  ];
+}
+
+Template.expertoFin.papaConsultada = function(field) {
+  var numeroPapa = Session.get('expertoPapaConsultada');
+  if( !numeroPapa ) {
+    papa = papasAdivinadas().fetch()[0];
+    Session.set('expertoPapaConsultada', papa.numero);
+  } else {
+    papa = Papas.findOne({ numero:numeroPapa })
+  }
+  return papa[field]
 }
 
 Template.expertoFin.events(events);
+
+Template.expertoPapaAdivinada.papaActualBgStyle = function() {
+  if( this.numero == Session.get('expertoPapaConsultada') ) {
+    return "background-position: -160px";
+  }
+}
+
+Template.expertoPapaAdivinada.events(events);

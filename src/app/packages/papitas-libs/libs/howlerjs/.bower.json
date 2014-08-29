@@ -1,0 +1,13 @@
+{
+  "name": "howlerjs",
+  "_cacheHeaders": {
+    "ETag": "\"6bfa6ae5685f44246984cba4737058297ca2eec5\"",
+    "Content-Length": "38487",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:6bfa6ae56",
+  "main": "index.js",
+  "_source": "https://raw.githubusercontent.com/goldfire/howler.js/master/howler.js",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/goldfire/howler.js/master/howler.js"
+}

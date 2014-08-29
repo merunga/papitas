@@ -2,6 +2,8 @@
   "name": "papitas-app",
   "dependencies": {
     "phaser": "https://github.com/photonstorm/phaser/raw/master/build/custom/phaser-arcade-physics.js",
-    "bootbox": "https://raw.githubusercontent.com/makeusabrew/bootbox/master/bootbox.js"
+    "bootbox": "https://raw.githubusercontent.com/makeusabrew/bootbox/master/bootbox.js",
+    "howlerjs": "https://raw.githubusercontent.com/goldfire/howler.js/master/howler.js",
+    "grumble.js": "*"
   }
 }

@@ -13,18 +13,13 @@ Package.on_use(function (api) {
   ], 'client');
 
   api.add_files([
-    'game-controller/states/boot.js',
-    'game-controller/states/preloader.js',
-    'game-controller/main.js'
-  ], 'client');
-
-  api.add_files([
     'lib/jquery-ui-custom/jquery-ui.min.js',
     'lib/jquery-ui-custom/jquery-ui.min.css',
     'lib/jquery-ui-custom/jquery-ui.structure.min.css'
   ], 'client');
 
   api.add_files([
+    'game-controller/main.js',
     'views/experto.html',
     'views/experto.js'
   ], 'client');

@@ -26,9 +26,13 @@ var events = {
     return false;
   },
   'click [data-action="toggle-sound"]': function(e, tmpl) {
-    var newMute = !Experto.game.sound.mute;
-    Experto.game.sound.mute = newMute;
-    Session.set('expertoIsMuted', newMute);
+    var toMute = !Experto.sonidos.manager._muted;
+    if( toMute ) {
+      Experto.sonidos.manager.mute();
+    } else {
+      Experto.sonidos.manager.unmute();
+    }
+    Session.set('expertoIsMuted', toMute);
   },
   'click [data-action="reiniciar"]': function(e, tmpl) {
     e.preventDefault();
@@ -39,14 +43,24 @@ var events = {
     }); 
     return false;
   },
-  'click [data-action="imprimir"]': function(e, tmpl) {
-    e.preventDefault();
-    window.print(); 
-    return false;
-  },
   'click [data-action="set-papa-actual"]': function(e, tmpl) {
     e.preventDefault();
     Session.set('expertoPapaConsultada', this.numero);
+  },
+  'click [data-action="presentarse"]': function(e, tmpl) {
+    e.preventDefault();
+    var $papa = tmpl.$(e.currentTarget);
+    var papaNro = $papa.data('papanumero');
+    var papa = Papas.findOne({numero: papaNro})
+    $papa.find('.centro').grumble({
+      text: papa.nombre, 
+      angle: 85, 
+      distance: 0, 
+      hideAfter: 1000 
+    });
+    
+    Experto.sonidos.papas.play(papa.numero);
+    return false;
   }
 };
 
@@ -68,7 +82,6 @@ Template.experto.events(events);
 Template.expertoIntro.events(events);
 
 Template.expertoIdentificarPapas.rendered = function(tmpl) {
-  Experto.game.state.start('preloader');
 }
 
 function getRandomInt(min, max, notIn) {
@@ -229,6 +242,13 @@ Template.expertoFin.papaConsultadaPrint = function(papa, field) {
 }
 
 Template.expertoFin.events(events);
+Template.expertoFin.events({
+  'click [data-action="imprimir"]': function(e, tmpl) {
+    e.preventDefault();
+    window.print(); 
+    return false;
+  }
+});
 
 Template.expertoPapaAdivinada.papaActualBgStyle = function() {
   if( this.numero == Session.get('expertoPapaConsultada') ) {

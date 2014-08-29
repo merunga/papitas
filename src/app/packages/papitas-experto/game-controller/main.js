@@ -1,55 +1,54 @@
-function timer() {
-  if(!Session.get('expertoJueoPausado')) {
-    var timeElapsed = Session.get('expertoTiempo') || 0;
-    timeElapsed++;
-    Session.set('expertoTiempo',timeElapsed);
-  }
-};
-
 Experto = {
-  isMoving: false,
-  blockDimension: 300,
-  sonidos: {},
+  sonidos: {
+    manager: Howler
+  },
   init: function() {
-    Experto.isMoving = false;
-    
-    if(Experto.game) {
-      Experto.game.destroy();
-    }
+    Experto.sonidos.cortina = new Howl({
+      urls: ['assets/audio/cortina.mp3', 'assets/audio/cortina.ogg'],
+      autoplay: true,
+      loop: true
+    });
 
-    var game = Experto.game = new Phaser.Game(1, 1, Phaser.AUTO, 'experto-container');
+    var sprite = {};
+    Papas.find().forEach(function(papa) {
+      sprite[papa.numero] = [papa.audio.ini, papa.audio.dur];
+    })
+    Experto.sonidos.papas = new Howl({
+      urls: ['assets/audio/papas.mp3', 'assets/audio/papas.ogg'],
+      sprite: sprite,
+      volume: 10
+    });
 
-    game.state.add('boot', BootState);
-    game.state.add('preloader', PreloaderState);
-
-    game.state.start('boot');
+    Experto.sonidos.finalEtapa = new Howl({
+      urls: ['assets/audio/final-etapa.mp3', 'assets/audio/final-etapa.ogg']
+    });
   },
   restart: function() {
-    Experto.game.state.states.play.shuffleBoard();
-    resetContadores();
+    // Experto.game.state.states.play.shuffleBoard();
+    // resetContadores();
   },
   resuelto: function() {
     Session.set('expertoStep','fin');
-    if(Experto.timer) {
-      Meteor.clearInterval(Experto.timer);
-    }
+    // if(Experto.timer) {
+    //   Meteor.clearInterval(Experto.timer);
+    // }
     Experto.sonidos.finalEtapa.play();
   }
 };
 
-function resetContadores() {
-  Session.set('expertoMovimientos',0);
-  Session.set('expertoTiempo',0);
-  if(Experto.timer) {
-    Meteor.clearInterval(Experto.timer);
-  }
-  Experto.timer = Meteor.setInterval(timer, 1000);
-}
+// function resetContadores() {
+//   Session.set('expertoMovimientos',0);
+//   Session.set('expertoTiempo',0);
+//   if(Experto.timer) {
+//     Meteor.clearInterval(Experto.timer);
+//   }
+//   Experto.timer = Meteor.setInterval(timer, 1000);
+// }
 
-Deps.autorun(function() {
-  Session.get('expertoEtapaElegida');
-  resetContadores();
-});
+// Deps.autorun(function() {
+//   Session.get('expertoEtapaElegida');
+//   resetContadores();
+// });
 
 var WebFontConfig;
 WebFontConfig = {

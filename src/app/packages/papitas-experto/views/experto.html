@@ -63,7 +63,7 @@ Texto introducción
 
 <template name="expertoJuegoOption">
   <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-    <div class="experto-papa" data-action="reproducir-nombre" data-papanumero="{{numero}}"
+    <div class="experto-papa" data-papanumero="{{numero}}"
       style='background-image: url("assets/images/papas/{{imageFileNameScreen}}")'>
     </div>
   </div>
@@ -77,11 +77,11 @@ Texto introducción
   </div>
 </template>
 
-
 <template name="expertoPapaMuestra">
   <div class="col-xs-6 col-md-2 col-lg-2 col-md-2 col-lg-2">
-    <div class="experto-papa" data-action="reproducir-nombre"
+    <div class="experto-papa" data-action="presentarse" data-papanumero="{{numero}}"
       style='background-image: url("assets/images/papas/{{imageFileNameScreen}}")'>
+      <div class="centro">&nbsp;</div>
     </div>
   </div>
 </template>

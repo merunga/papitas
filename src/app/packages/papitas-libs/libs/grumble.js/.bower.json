@@ -1,0 +1,14 @@
+{
+  "name": "grumble.js",
+  "homepage": "https://github.com/jamescryer/grumble.js",
+  "_release": "0bac3c0d96",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "0bac3c0d96c88dac08d9e1154d209bc8d9908892"
+  },
+  "_source": "git://github.com/jamescryer/grumble.js.git",
+  "_target": "*",
+  "_originalSource": "grumble.js",
+  "_direct": true
+}

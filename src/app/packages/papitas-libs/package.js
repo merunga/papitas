@@ -4,12 +4,12 @@ Package.describe({
 
 Package.on_use(function (api, where) {
   api.use([
-  	'templating', 'spacebars', 'session', 'jquery', 'less'
+  	'templating', 'spacebars', 'session', 'jquery'
   ], ['client']);
 
   api.add_files([
   	'utils.js',
-    'libs.less',
+    'libs.css',
   	'libs/phaser/index.js',
   	'libs/bootbox/index.js',
   	'libs/howlerjs/index.js',

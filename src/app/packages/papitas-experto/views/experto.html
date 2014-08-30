@@ -71,7 +71,8 @@ Texto introducción
 
 <template name="expertoJuegoIncognita">
   <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-    <div class="experto-incognita text-center" data-papanumero="{{numero}}">
+    <div class="experto-incognita" data-papanumero="{{numero}}">
+      <div class="chakana">&nbsp;</div>
       <div class="papa-nombre">{{nombre}}</div>
     </div>
   </div>
@@ -125,16 +126,20 @@ Texto introducción
     <div class="col-lg-8 col-md-8">
       <div class="row experto-papa-detalles">
         {{#each papasCamposExtra}}
-          <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-5 col-xs-5">
-              <h5><strong>{{this.label}}:</strong></h5>
+          {{#unless this.printOnly}}
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-5 col-xs-5">
+                <h4><strong>{{this.label}}:</strong></h4>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7">
+                {{#if this.mainField}}
+                  <h3>{{papaConsultada this.field}}</h3>
+                {{else}}
+                  <h4>{{papaConsultada this.field}}</h4>
+                {{/if}}
+              </div>
             </div>
-            <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7">
-              {{#unless this.printOnly}}
-                <h4>{{papaConsultada this.field}}</h4>
-              {{/unless}}
-            </div>
-          </div>
+          {{/unless}}
         {{/each}}
       </div>
     </div>

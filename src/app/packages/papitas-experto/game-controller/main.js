@@ -19,8 +19,9 @@ Experto = {
       volume: 10
     });
 
-    Experto.sonidos.finalEtapa = new Howl({
-      urls: ['assets/audio/final-etapa.mp3', 'assets/audio/final-etapa.ogg']
+    Experto.sonidos.final = new Howl({
+      urls: ['assets/audio/final-etapa.mp3', 'assets/audio/final-etapa.ogg'],
+      volume: 5
     });
   },
   restart: function() {

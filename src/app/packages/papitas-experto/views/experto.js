@@ -56,7 +56,7 @@ var events = {
       text: papa.nombre, 
       angle: 85, 
       distance: 0, 
-      hideAfter: 1000 
+      hideAfter: 1000
     });
     
     Experto.sonidos.papas.play(papa.numero);
@@ -208,13 +208,17 @@ function papasAdivinadas() {
   return safePapas(Session.get('expertoPapasAdivinadas'));
 }
 
+Template.expertoFin.rendered = function() {
+  Experto.sonidos.final.play()
+}
+
 Template.expertoFin.papasAdivinadas = function() {
   return papasAdivinadas();
 }
 
 Template.expertoFin.papasCamposExtra = function() {
   return [
-    { field: 'nombre',              label: 'Nombre' },
+    { field: 'nombre',              label: 'Nombre',  mainField: true },
     { printOnly: true,              label: 'Colorea' },
     { field: 'significadoNombre',   label: 'Significado del nombre' },
     { field: 'nombreAlternativo',   label: 'Nombre alternativo' },

@@ -204,3 +204,18 @@
 .linear-gradient-darken( @dir: top, @start-color: #eee, @end-color: #aaa ) {
   .linear-gradient(top, darken(@start-color, 5%), darken(@end-color, 5%));
 }
+
+#camion-container {
+  position: absolute;
+  top: 0;
+  margin-top: 20%;
+  z-index: 1000;
+
+  svg {
+    width: 100%;
+
+    #camion {
+      width: 30%;
+    }
+  }
+}

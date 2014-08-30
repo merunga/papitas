@@ -1,0 +1,13 @@
+{
+  "name": "snapsvg",
+  "_cacheHeaders": {
+    "ETag": "\"9b0699bceaae929e997a4cafd6656a6dbd1b1932\"",
+    "Content-Length": "251221",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:9b0699bce",
+  "main": "index.js",
+  "_source": "https://raw.githubusercontent.com/adobe-webplatform/Snap.svg/master/dist/snap.svg.js",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/adobe-webplatform/Snap.svg/master/dist/snap.svg.js"
+}

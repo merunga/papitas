@@ -9,7 +9,8 @@ Package.on_use(function (api) {
   ], 'client');
 
   api.add_files([
-    'models/papas.coffee'
+    'models/papas.js',
+    'models/papas-schema.coffee'
   ], 'client');
 
   api.add_files([
@@ -19,6 +20,7 @@ Package.on_use(function (api) {
   ], 'client');
 
   api.add_files([
+    'game-controller/camion.js',
     'game-controller/main.js',
     'views/experto.html',
     'views/experto.js'

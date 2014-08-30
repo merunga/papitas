@@ -15,6 +15,7 @@ Package.on_use(function (api, where) {
   	'libs/howlerjs/index.js',
     'libs/grumble.js/js/Bubble.js',
     'libs/grumble.js/js/jquery.grumble.js',
+    'libs/snapsvg/index.js',
   ],'client');
 });
 

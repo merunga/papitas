@@ -147,7 +147,9 @@ Deps.autorun(function(){
   if(papasAdivinadas && papasAAdivinar
       && papasAdivinadas.length == papasAAdivinar.length
       && _(_(papasAAdivinar).difference(papasAdivinadas)).isEmpty()) {
-    Session.set('expertoStep', 'fin');
+    Experto.camion.go(function() {
+      Session.set('expertoStep', 'fin');
+    });
   }
 });
 
@@ -226,9 +228,10 @@ Template.expertoFin.papasCamposExtra = function() {
     { field: 'nombreAlternativo',   label: 'Nombre alternativo' },
     { field: 'colorFlor',           label: 'Color principal de la flor' },
     { field: 'toleranciaGranizada', label: 'Tolerancia a la granizada' },
-    { field: 'colorPulpa',          label: 'Color principal de la pulpa' },
+    { field: 'colorPulpa',          label: 'Color principal de la pulpa del tubérculo' },
     { field: 'formaRara',           label: 'Forma rara' },
-    { field: 'toleranciaHelada',    label: 'Tolerancia a la helada '}
+    { field: 'toleranciaHelada',    label: 'Tolerancia a la helada'},
+    { field: 'usoCocina',           label: 'Uso en la cocina'}
   ];
 }
 

@@ -33,6 +33,8 @@ Experto = {
       urls: ['assets/audio/incorrecto.mp3', 'assets/audio/incorrecto.ogg'],
       volume: 3
     });
+
+    Experto.camion = new Camion('#camion-container');
   },
   restart: function() {
     // Experto.game.state.states.play.shuffleBoard();

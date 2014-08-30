@@ -10,6 +10,10 @@
     ></span>
   </a>
 
+  <div id="camion-container"
+    class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  </div>
+
   {{> step }}
 
   <div class="hidden">
@@ -107,14 +111,12 @@ Texto introducción
 
 <template name="expertoFin">
   <div class="row no-print hidden-print">
-    <div class="col-lg-10 col-lg-offset-1">
+    <div class="col-lg-4 col-md-4">
       <h1>Muy bien!</h1>
     </div>
-  </div>
-
-  <div class="row">
-    <h3><strong>Fallos:</strong> {{Session.get 'expertoFallos'}}</h3>
-    <!--h3><strong>Tiempo:</strong> {{timer rompecabezasTiempo}}</h3-->
+    <div class="col-lg-6 col-md-6">
+      <h3><strong>Fallos:</strong> {{Session.get 'expertoFallos'}}</h3>
+    </div>
   </div>
 
   <div class="row hidden-print">

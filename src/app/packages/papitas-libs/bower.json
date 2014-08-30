@@ -4,6 +4,7 @@
     "phaser": "https://github.com/photonstorm/phaser/raw/master/build/custom/phaser-arcade-physics.js",
     "bootbox": "https://raw.githubusercontent.com/makeusabrew/bootbox/master/bootbox.js",
     "howlerjs": "https://raw.githubusercontent.com/goldfire/howler.js/master/howler.js",
-    "grumble.js": "*"
+    "grumble.js": "*",
+    "snapsvg": "https://raw.githubusercontent.com/adobe-webplatform/Snap.svg/master/dist/snap.svg.js"
   }
 }

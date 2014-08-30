@@ -17,7 +17,7 @@ Camion.prototype._init = function(container, cb) {
     self.snapElement = f.select("svg");
     self.camion = self.snapElement.select("#camion");
     self.camion.drag();
-    self.camion.attr({opacity: 0, transform: "matrix(1,0,0,1,-310,0)"});
+    self.camion.attr({opacity: 0, transform: "matrix(1,0,0,1,-290,0)"});
     self.snapContainer.append(self.snapElement);
     self.ready = true;
     if(cb) {

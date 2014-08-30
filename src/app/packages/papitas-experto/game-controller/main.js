@@ -21,7 +21,17 @@ Experto = {
 
     Experto.sonidos.final = new Howl({
       urls: ['assets/audio/final-etapa.mp3', 'assets/audio/final-etapa.ogg'],
+      volume: 7
+    });
+
+    Experto.sonidos.correcto = new Howl({
+      urls: ['assets/audio/correcto.mp3', 'assets/audio/correcto.ogg'],
       volume: 5
+    });
+
+    Experto.sonidos.incorrecto = new Howl({
+      urls: ['assets/audio/incorrecto.mp3', 'assets/audio/incorrecto.ogg'],
+      volume: 3
     });
   },
   restart: function() {

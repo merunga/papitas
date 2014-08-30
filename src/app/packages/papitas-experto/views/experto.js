@@ -134,6 +134,7 @@ Template.expertoJuegoOption.rendered = function() {
   tmpl.$('.experto-papa').draggable({ revert: function(droppable) {
     if(!droppable) {
       Session.set('expertoFallos',Session.get('expertoFallos')+1);
+      Experto.sonidos.incorrecto.play();
     }
     return !droppable
   } });
@@ -166,6 +167,7 @@ Template.expertoJuegoIncognita.rendered = function() {
         pa.push(papaNumero);
         Session.set('expertoPapasAdivinadas',pa);
       }
+      Experto.sonidos.correcto.play();
     }
   });
 }

@@ -320,8 +320,7 @@ son de tipo comercial.
 En esta etapa también se hace la selección de la 
 semilla de cada variedad de papa.
 
-#### ¿Cuál es el criterio de selección de las semillas de 
-papa?
+#### ¿Cuál es el criterio de selección de las semillas de papa?
 
 Los criterios más importantes son tener ojos 
 bonitos, color uniforme, regular tamaño y no 

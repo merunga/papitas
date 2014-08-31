@@ -85,5 +85,14 @@ a través de la integración de las TIC en la educación básica, la formación 
 y la educación profesional, con énfasis en la formación de niñas.
 
 
+#### [Grupo Yanapai](http://www.yanapai.org){: target="_blank"}
+
+El Grupo Yanapai es una asociación peruana de investigadores interdisciplinarios sin
+fines de lucro que orienta sus actividades a potenciar procesos de investigación y desarrollo;
+propiciando la innovación e intercambio de experiencias y conocimientos para mejorar la
+gestión y manejo de los recursos, para sistemas agroecológicos sostenibles. Trabaja
+mancomunadamente con comunidades campesinas, organizaciones de pequeños productores,
+grupos organizados de mujeres.
+
   </div>
 </div>

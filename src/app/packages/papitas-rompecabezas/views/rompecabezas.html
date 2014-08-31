@@ -32,20 +32,19 @@
       </div>
       <div class="row"></div>
       <div class="row">
-        <div  class="col-lg-offset-2 col-lg-4 col-md-offset-1 col-md-5 col-sm-6 col-xs-6">
-          <div class="pull-left text-left">
+        <div  class="col-lg-offset-2 col-lg-5 col-md-offset-2
+            col-md-4 col-sm-offset-2 col-sm-4 col-xs-6">
+          <div class="pull-right text-right">
             <button class="btn btn-primary" data-action="reiniciar">
               <span class="glyphicon glyphicon-repeat"></span> Reiniciar
             </button>
             <input type="checkbox" data-action="toggle-help"> Ayuda
           </div>
         </div>
-        <div  class="col-lg-offset-2 col-lg-4 col-md-offset-1 col-md-5 col-sm-6 col-xs-6">
-          <div class="pull-right text-right">
-            <button class="btn btn-danger" data-action="volver-al-comienzo">
-              <span class="glyphicon glyphicon-arrow-left"></span> Volver
-            </button>
-          </div>
+        <div  class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+          <button class="btn btn-danger" data-action="volver-al-comienzo">
+            <span class="glyphicon glyphicon-arrow-left"></span> Volver
+          </button>
         </div>
       </div>
     </div>
@@ -108,11 +107,11 @@ Descubre el ciclo agrícola de la papa armando los rompecabezas.
 
 <template name="rompecabezasFin">
   <div class="row no-print">
-    <div class="col-lg-3 col-lg-offset-1"> 
+    <div class="col-lg-4 col-lg-offset-1"> 
       <h1>Muy bien!</h1>
     </div>
     <div class="col-lg-6 narracion-controls">
-      <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12"> 
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"> 
         <button type="button" class="btn btn-primary"
           data-action="audio-es">
           Español
@@ -128,7 +127,7 @@ Descubre el ciclo agrícola de la papa armando los rompecabezas.
           {{/if}}
         </button>
       </div>
-      <div class="col-lg-4 col-md-8 col-sm-10 col-xs-10"> 
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-10"> 
         <button type="button" class="btn btn-primary"
           data-action="audio-pause">
           <span class="glyphicon glyphicon-pause"></span>

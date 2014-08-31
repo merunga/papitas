@@ -1,14 +1,18 @@
 var PAPAS_A_MOSTRAR = 10;
 var PAPAS_A_ELEGIR  = 5;
 
+function comenzar() {
+  Session.set('expertoStep','identificarPapas');
+  _(['expertoTiempo','expertoPapasActuales','expertoFallos',
+    'expertoPapasAAdivinar','expertoPapasAdivinadas']).each( function(varname) {
+    Session.set(varname, undefined);
+  });
+}
+
 var events = {
   'click [data-action="comenzar"]': function(e, tmpl) {
     e.preventDefault();
-    Session.set('expertoStep','identificarPapas');
-    _(['expertoTiempo','expertoPapasActuales','expertoFallos',
-      'expertoPapasAAdivinar','expertoPapasAdivinadas']).each( function(varname) {
-      Session.set(varname, undefined);
-    });
+    comenzar();
     return false;
   },
   'click [data-action="papas-identificadas"]': function(e, tmpl) {
@@ -34,22 +38,13 @@ var events = {
     }
     Session.set('expertoIsMuted', toMute);
   },
-  'click [data-action="reiniciar"]': function(e, tmpl) {
-    e.preventDefault();
-    bootbox.confirm("¿Estás segur@ de que quieres abandonar el juego?", function(result) {
-      if(result) {
-        Experto.restart();
-      }
-    }); 
-    return false;
-  },
   'click [data-action="set-papa-actual"]': function(e, tmpl) {
     e.preventDefault();
     Session.set('expertoPapaConsultada', this.numero);
   },
   'click [data-action="mezclar"]': function(e, tmpl) {
     e.preventDefault();
-    Session.set('expertoPapasActuales',undefined);
+    Session.set('expertoPapasActuales', undefined);
   },
   'click [data-action="presentarse"]': function(e, tmpl) {
     e.preventDefault();
@@ -132,6 +127,18 @@ Template.expertoJuego.rendered = function() {
   };
   Session.set('expertoPapasAAdivinar', numerosAAdivinar);
 }
+
+Template.expertoJuego.events({
+  'click [data-action="reiniciar"]': function(e, tmpl) {
+    e.preventDefault();
+    bootbox.confirm("¿Estás segur@ de que quieres abandonar el juego?", function(result) {
+      if(result) {
+        comenzar();
+      }
+    }); 
+    return false;
+  }
+});
 
 Template.expertoJuegoOption.rendered = function() {  
   var tmpl = this;

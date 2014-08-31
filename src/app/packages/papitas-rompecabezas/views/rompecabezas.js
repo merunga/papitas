@@ -66,7 +66,48 @@ var events = {
     $modal.modal('hide');
     return false;
   },
+  'click [data-action="audio-que"]': function(e, tmpl) {
+    e.preventDefault()
+    Session.set('rompecabezasFinAudio','que');
+    Session.set('rompecabezasFinAudioPaused', false );
+  },
+  'click [data-action="audio-es"]': function(e, tmpl) {
+    e.preventDefault()
+    Session.set('rompecabezasFinAudio','es');
+    Session.set('rompecabezasFinAudioPaused', false );
+  },
+  'click [data-action="audio-pause"]': function(e, tmpl) {
+    e.preventDefault();
+    var muted = !Session.get('rompecabezasFinAudioPaused');
 
+    var etapa = Session.get('rompecabezasEtapaElegida').numero;
+    var lang = Session.get('rompecabezasFinAudio');
+
+    if( muted ) {
+      Rompecabezas.sonidos.etapas[etapa][lang].pause();
+    } else {
+      Rompecabezas.sonidos.etapas[etapa][lang].play();
+    }
+
+    Session.set('rompecabezasFinAudioPaused', muted );
+  },
+  'click [data-action="audio-restart"]': function(e, tmpl) {
+    e.preventDefault()
+    var lang = Session.get('rompecabezasFinAudio');
+    if( lang ) {
+      var etapa = Session.get('rompecabezasEtapaElegida').numero;
+      var audio = Rompecabezas.sonidos.etapas[etapa][lang];
+      // audio.play();
+      if(audio.pos() > 0 && Session.get('rompecabezasFinAudioPaused') ) {
+        audio.play();
+      }
+      audio.stop();
+      setTimeout( function() {
+        audio.play();
+        Session.set('rompecabezasFinAudioPaused', false );
+      }, 250);
+    }
+  }  
 };
 
 UI.registerHelper('rompecabezasTiempo', function() {
@@ -100,9 +141,32 @@ Template.rompecabezasJuego.rendered = function(tmpl) {
 
 Template.rompecabezasJuego.events(events);
 
+Template.rompecabezasFin.rendered = function() {
+  Session.set('rompecabezasFinAudio','es');
+  Rompecabezas.narracionMuted = false;
+};
+
+Template.rompecabezasFin.audioEnQuechua = function() {
+  return Session.get('rompecabezasFinAudio') === 'que';
+};
 
 Template.rompecabezasFin.etapaCompletada = function() {
   return Session.get('rompecabezasEtapaElegida');
 }
 
-Template.rompecabezasFin.events(events);
+Template.langSoundGlyph.audioPaused = function() {
+  return Session.get('rompecabezasFinAudioPaused');
+}
+
+Deps.autorun( function() {
+  var lang = Session.get('rompecabezasFinAudio');
+  if( lang ) {
+    var etapa = Session.get('rompecabezasEtapaElegida').numero;
+    if( lang === 'que' ) {
+      Rompecabezas.sonidos.etapas[etapa]['es'].pause();
+    } else {
+      Rompecabezas.sonidos.etapas[etapa]['que'].pause();
+    }
+    Rompecabezas.sonidos.etapas[etapa][lang].play();
+  }
+});

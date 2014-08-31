@@ -1,7 +1,9 @@
 Rompecabezas = {
   isMoving: false,
   blockDimension: 300,
-  sonidos: {},
+  sonidos: {
+    etapas: {}
+  },
   init: function() {
     Rompecabezas.isMoving = false;
     

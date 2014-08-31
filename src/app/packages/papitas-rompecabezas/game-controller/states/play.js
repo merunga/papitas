@@ -2,12 +2,30 @@ function Play() {}
 
 Play.prototype = {
   create: function() {
+    var self = this;
     var game = Rompecabezas.game;
 
     game.stage.backgroundColor = '#000';
     game.add.sprite(0, 0, 'fondo');
 
     this.efectosDeSonido = Rompecabezas.sonidos.efectosDeSonido;
+
+    var etapa = Session.get('rompecabezasEtapaElegida').numero;
+    Rompecabezas.sonidos.etapas[etapa] = {};
+    _.each(['es','que'], function(lang) {
+      var baseurl = 'assets/audio/etapas/'+('0'+etapa).slice(-2)+'-'+lang;
+      var urls = _.collect(['mp3', 'ogg'], function(ext) { return baseurl+'.'+ext; })
+      Rompecabezas.sonidos.etapas[etapa][lang] = new Howl({
+        urls: urls,
+        volume: 4,
+        onplay: function() {
+          Rompecabezas.sonidos.cortinaDeFondo.pause();
+        },
+        onend: function() {
+          Rompecabezas.sonidos.cortinaDeFondo.play();
+        }
+      });
+    });
 
     this.upKey = game.input.keyboard.addKey(Phaser.Keyboard.UP);
     this.downKey = game.input.keyboard.addKey(Phaser.Keyboard.DOWN);

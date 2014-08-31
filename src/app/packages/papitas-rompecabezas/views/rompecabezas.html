@@ -107,8 +107,32 @@ Elije la figura que quieres armar en un rompecabezas.
 
 <template name="rompecabezasFin">
   <div class="row no-print">
-    <div class="col-lg-10 col-lg-offset-1"> 
+    <div class="col-lg-3 col-lg-offset-1"> 
       <h1>Muy bien!</h1>
+    </div>
+    <div class="col-lg-6"> 
+      <button type="button" class="btn btn-primary"
+        data-action="audio-es">
+        Español
+        {{#unless audioEnQuechua }}
+          {{> langSoundGlyph}}
+        {{/unless}}
+      </button>
+      <button type="button" class="btn btn-primary"
+        data-action="audio-que">
+        Quechua
+        {{#if audioEnQuechua }}
+          {{> langSoundGlyph}}
+        {{/if}}
+      </button>
+      <button type="button" class="btn btn-primary"
+        data-action="audio-pause">
+        <span class="glyphicon glyphicon-pause"></span>
+      </button>
+      <button type="button" class="btn btn-primary"
+        data-action="audio-restart">
+        <span class="glyphicon glyphicon-repeat"></span>
+      </button>
     </div>
   </div>
 
@@ -169,4 +193,12 @@ Elije la figura que quieres armar en un rompecabezas.
       </div>
     </div>
   </div>
+</template>
+
+<template name="langSoundGlyph">
+  {{#if audioPaused }}
+    <span class="glyphicon glyphicon-volume-off"></span>
+  {{else}}
+    <span class="glyphicon glyphicon-volume-up"></span>
+  {{/if}}
 </template>

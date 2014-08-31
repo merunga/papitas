@@ -47,6 +47,10 @@ var events = {
     e.preventDefault();
     Session.set('expertoPapaConsultada', this.numero);
   },
+  'click [data-action="mezclar"]': function(e, tmpl) {
+    e.preventDefault();
+    Session.set('expertoPapasActuales',undefined);
+  },
   'click [data-action="presentarse"]': function(e, tmpl) {
     e.preventDefault();
     var $papa = tmpl.$(e.currentTarget);

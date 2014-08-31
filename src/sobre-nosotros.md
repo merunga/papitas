@@ -1,7 +1,7 @@
 ---
 layout: juego
 title: papitas - Sobre el proyecto
-bodyClass: home
+bodyClass: juego
 meteorInclude: false
 active: sobre-nosotros
 withFooter: true

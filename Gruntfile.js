@@ -109,9 +109,8 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: '<%= bowerDirectory %>/jReject/css',
-            src: ['*.css'],
-            dest: 'tmp/'
+            src: '<%= bowerDirectory %>/jReject/css/jquery.reject.css',
+            dest: 'tmp/z.css'
           },
         ]
       },
@@ -154,7 +153,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: '<%= bowerDirectory %>/jReject/images', 
           src: ['**/*.{png,jpg,gif}'],
-          dest: 'dist/assets/img/browsers'
+          dest: 'dist/assets/images/browsers'
         }]
       }
     },

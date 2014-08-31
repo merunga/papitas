@@ -14,9 +14,9 @@ Experto = {
       sprite[papa.numero] = [papa.audio.ini, papa.audio.dur];
     })
     Experto.sonidos.papas = new Howl({
-      urls: ['assets/audio/papas.mp3', 'assets/audio/papas.ogg'],
+      urls: ['assets/audio/papas.ogg', 'assets/audio/papas.mp3'],
       sprite: sprite,
-      volume: 10
+      volume: 6
     });
 
     Experto.sonidos.final = new Howl({

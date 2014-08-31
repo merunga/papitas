@@ -1,5 +1,5 @@
 ###
-numero,nombre,nombreAlternativo,significadoNombre,colorFlor,toleranciaGranizada,colorPulpa,formaRara,toleranciaHelada,usoCocina,lugar
+numero,nombre,nombreAlternativo,significadoNombre,colorFlor,toleranciaGranizada,colorPulpa,formaRara,toleranciaHelada,usoCocina,lugar,lugar,audioIni,audioFin
 ###
 
 Schemas = Schemas or {}
@@ -85,13 +85,22 @@ Papas = new Meteor.Collection 'papas', {connection: null}
 Papas.attachSchema Schemas.Papa
 
 Meteor.startup ->
-  duracionAudio = 500
+  lengthSoFar = moment.duration(0)
   for papa in papas
     nroStr = ('00'+papa.numero).slice(-3)
     papa.slug = "#{nroStr}-#{_.slugify papa.nombre}"
+    audioIni = moment.duration(papa.audioIni)
+    audioFin = moment.duration(papa.audioFin)
+    duration = audioFin.as('milliseconds') - audioIni.as('milliseconds')
     papa.audio =
-      ini: (papa.numero - 1)*duracionAudio
-      dur: duracionAudio
+      ini: audioIni.as('milliseconds') / 60
+      dur: duration / 60
+    console.log(papa.numero, papa.audioIni, papa.audioFin )
+    console.log(papa.audio)
+    console.log('')
+
     papa.imageFileNameScreen = "#{nroStr}.png"
     papa.imageFileNamePrint  = "#{nroStr}-print.png"
+    delete papa.audioIni
+    delete papa.audioFin
     Papas.insert papa

@@ -5,7 +5,7 @@ Package.describe({
 Package.on_use(function (api) {
   api.use([
     'coffeescript','deps','session','papitas-libs','underscore','templating','spacebars',
-    'showdown','collection2'
+    'showdown','collection2', 'moment-with-langs'
   ], 'client');
 
   api.add_files([

@@ -317,4 +317,30 @@ module.exports = function(grunt) {
       done();
     }, 10000);
   });
+
+  grunt.registerTask('updatePapas', 'Busca la ultima version de google docs y crea el json', function() {
+    var done = this.async();
+    var reloadurl = 'https://docs.google.com/spreadsheets/d/1jVo4O67KOY4YdZg6sTCOiKdJHWvLomZQTw_hnZwAR_w/export?gid=1793186240&format=csv';
+    var header = "numero,nombre,nombreAlternativo,significadoNombre,colorFlor,"+
+      "toleranciaGranizada,colorPulpa,formaRara,toleranciaHelada,usoCocina,lugar,audioIni,audioFin";
+
+    fetchUrl(null, reloadurl, function(fileData) {
+      fileData = fileData.replace(/$.*\n.+/,header);
+      grunt.log.writeln(fileData);
+
+      // grunt.log.writeln('Writing to: dist/assets/js/papitas.js');
+      // grunt.file.write('dist/assets/js/papitas.js',pageData2);
+
+      // var js = $page.find("script[src]").attr('src');
+      // fetchUrl(null, reloadurl+js, function(pageData2) {
+        
+      // });
+
+      // var css = $page.find("link[href]").attr('href');
+      // fetchUrl(done, reloadurl+css, function(pageData2) {
+      //   grunt.log.writeln('Writing to: dist/assets/css/papitas.css');
+      //   grunt.file.write('dist/assets/css/papitas.css',pageData2);
+      // });
+    });
+  });
 };

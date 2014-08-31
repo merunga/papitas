@@ -20,7 +20,7 @@ body {
   color: white;
   vertical-align: middle;
   text-align: center;
-  padding: 1.2em 1em;
+  padding: 1em 1em;
   a {
     color: white;
     &:hover {
@@ -35,7 +35,9 @@ body {
 }
 
 #juego-header {
-  font-size: 1.6em;
+  h3 {
+    font-family: 'Cabin Sketch', cursive;
+  }
   .papas-header();
   background-size: 50%;
 }
@@ -49,8 +51,13 @@ body {
   .btn-lg();
 }
 
-.etapa-titulo {
-  min-height: 75px;
+.etapa-thumb {
+  @media (max-width: @screen-sm-min) {
+    min-height: 315px;
+  }
+  @media (max-width: @screen-md-min) {
+    min-height: 360px;
+  }
 }
 
 .fin-etapa-titulo {

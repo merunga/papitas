@@ -131,13 +131,13 @@ Texto introducción
           {{#unless this.printOnly}}
             <div class="row">
               <div class="col-lg-4 col-md-4 col-sm-5 col-xs-5">
-                <h4><strong>{{this.label}}:</strong></h4>
+                <h5><strong>{{this.label}}:</strong></h5>
               </div>
               <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7">
                 {{#if this.mainField}}
                   <h3>{{papaConsultada this.field}}</h3>
                 {{else}}
-                  <h4>{{papaConsultada this.field}}</h4>
+                  <h5>{{papaConsultada this.field}}</h5>
                 {{/if}}
               </div>
             </div>
@@ -158,7 +158,7 @@ Texto introducción
               </div>
               <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7">
                 {{#unless this.printOnly}}
-                  <h4>{{papaConsultadaPrint .. this.field}}</h4>
+                  <h5>{{papaConsultadaPrint .. this.field}}</h5>
                 {{else}}
                   <img class="img-responsive"
                     src="assets/images/papas/{{papaConsultadaPrint .. 'imageFileNamePrint'}}">

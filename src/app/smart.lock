@@ -2,7 +2,14 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "grounddb": {},
+      "grounddb": {
+        "git": "https://github.com/GroundMeteor/Meteor-GroundDB.git",
+        "tag": "v0.0.21"
+      },
+      "ejson-minimax": {
+        "git": "https://github.com/GroundMeteor/ejson-minimax.git",
+        "branch": "master"
+      },
       "underscore-string-latest": {},
       "pince": {},
       "bootstrap-3": {},
@@ -14,6 +21,11 @@
         "git": "https://github.com/GroundMeteor/Meteor-GroundDB.git",
         "tag": "v0.0.21",
         "commit": "7132b9dbb1dc681fd940a31bc586de059b3871bb"
+      },
+      "ejson-minimax": {
+        "git": "https://github.com/GroundMeteor/ejson-minimax.git",
+        "branch": "master",
+        "commit": "87e77a2e1704f0ae2d2a7b914030b898519f7964"
       },
       "underscore-string-latest": {
         "git": "https://github.com/TimHeckel/meteor-underscore-string.git",
@@ -32,23 +44,18 @@
       },
       "collection2": {
         "git": "https://github.com/aldeed/meteor-collection2.git",
-        "tag": "v0.4.5",
-        "commit": "336903730249197b3358dac31b1bd5ed64fecc50"
+        "tag": "v0.4.6",
+        "commit": "80554182486be0d8e74f7ed02194a5649d712e27"
       },
       "moment-with-langs": {
         "git": "https://github.com/jeeeyul/meteor-moment-with-langs.git",
         "tag": "v2.6.0",
         "commit": "b09c5ef52871f0eafd8d908bb9c111031ec9f05d"
       },
-      "ejson-minimax": {
-        "git": "https://github.com/GroundMeteor/ejson-minimax.git",
-        "branch": "master",
-        "commit": "87e77a2e1704f0ae2d2a7b914030b898519f7964"
-      },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",
-        "tag": "v0.6.0",
-        "commit": "418ec496612fb2afc853e342f0d2269b6674a2fe"
+        "tag": "v0.7.0",
+        "commit": "77d267aec4ba8a70f677e5d9ef9fb91fb0e3f0f6"
       }
     }
   }

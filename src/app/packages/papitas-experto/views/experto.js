@@ -56,7 +56,7 @@ var events = {
       text: papa.nombre, 
       angle: 85, 
       distance: 0, 
-      hideAfter: 1000
+      hideAfter: papa.audio.dur
     });
     
     Experto.sonidos.papas.play(papa.numero);

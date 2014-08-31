@@ -1,6 +1,14 @@
 {
   "packages": {
-    "grounddb": {},
+    "grounddb": {
+      "git": "https://github.com/GroundMeteor/Meteor-GroundDB.git",
+      "tag": "v0.0.21"
+    },
+    "ejson-minimax": {
+      "git": "https://github.com/GroundMeteor/ejson-minimax.git",
+      "commit": "87e77a2e1704f0ae2d2a7b914030b898519f7964"
+    },
+
     "underscore-string-latest": {},
     "pince": {},
     "bootstrap-3": {},

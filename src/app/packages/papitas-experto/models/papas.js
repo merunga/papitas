@@ -10,7 +10,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"0:00",
+    "audioFin":"0:02"
   },
   {
     "numero":2,
@@ -23,7 +25,9 @@ papas = [
     "formaRara":"Aplanado",
     "toleranciaHelada":"Fuerte",
     "usoCocina":"Watia, hervido y sopa",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"0:05",
+    "audioFin":"0:07"
   },
   {
     "numero":3,
@@ -36,7 +40,9 @@ papas = [
     "formaRara":"Oblongo",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"0:11",
+    "audioFin":"0:13"
   },
   {
     "numero":4,
@@ -49,7 +55,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Débil",
     "usoCocina":"Hervido, sopas",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"0:16",
+    "audioFin":"0:19"
   },
   {
     "numero":5,
@@ -62,7 +70,9 @@ papas = [
     "formaRara":"Oblongo alargado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"0:23",
+    "audioFin":"0:26"
   },
   {
     "numero":6,
@@ -75,7 +85,9 @@ papas = [
     "formaRara":"Ojos azules",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"0:29",
+    "audioFin":"0:32"
   },
   {
     "numero":7,
@@ -88,7 +100,9 @@ papas = [
     "formaRara":"Oblongo alargado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"0:35",
+    "audioFin":"0:38"
   },
   {
     "numero":8,
@@ -101,7 +115,9 @@ papas = [
     "formaRara":"Oblongo alargado",
     "toleranciaHelada":"Fuerte",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"0:41",
+    "audioFin":"0:44"
   },
   {
     "numero":9,
@@ -114,7 +130,9 @@ papas = [
     "formaRara":"Comprimida",
     "toleranciaHelada":"Débil",
     "usoCocina":"Watia, hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"0:47",
+    "audioFin":"0:50"
   },
   {
     "numero":10,
@@ -127,7 +145,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"0:53",
+    "audioFin":"0:56"
   },
   {
     "numero":11,
@@ -140,7 +160,9 @@ papas = [
     "formaRara":"Ovalado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido y bonda",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"0:59",
+    "audioFin":"1:01"
   },
   {
     "numero":12,
@@ -153,7 +175,9 @@ papas = [
     "formaRara":"Comprimida",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"1:05",
+    "audioFin":"1:07"
   },
   {
     "numero":13,
@@ -166,7 +190,9 @@ papas = [
     "formaRara":"Oblongo",
     "toleranciaHelada":"Débil",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"1:10",
+    "audioFin":"1:12"
   },
   {
     "numero":14,
@@ -179,7 +205,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"1:16",
+    "audioFin":"1:18"
   },
   {
     "numero":15,
@@ -192,7 +220,9 @@ papas = [
     "formaRara":"Oblongo alargado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"1:21",
+    "audioFin":"1:24"
   },
   {
     "numero":16,
@@ -205,7 +235,9 @@ papas = [
     "formaRara":"Comprimida",
     "toleranciaHelada":"Fuerte",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"1:26",
+    "audioFin":"1:30"
   },
   {
     "numero":17,
@@ -218,7 +250,9 @@ papas = [
     "formaRara":"Oblongo",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"1:33",
+    "audioFin":"1:36"
   },
   {
     "numero":18,
@@ -231,7 +265,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"1:40",
+    "audioFin":"1:42"
   },
   {
     "numero":19,
@@ -244,7 +280,9 @@ papas = [
     "formaRara":"Oblondo Alargado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido y watia",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"1:45",
+    "audioFin":"1:48"
   },
   {
     "numero":20,
@@ -257,7 +295,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"4:57",
+    "audioFin":"5:00"
   },
   {
     "numero":21,
@@ -270,7 +310,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Débil",
     "usoCocina":"Watia, hervido y chuño",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"1:50",
+    "audioFin":"1:53"
   },
   {
     "numero":22,
@@ -283,7 +325,9 @@ papas = [
     "formaRara":"Oblongo",
     "toleranciaHelada":"Fuerte",
     "usoCocina":"Watia, hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"1:56",
+    "audioFin":"1:59"
   },
   {
     "numero":23,
@@ -296,7 +340,9 @@ papas = [
     "formaRara":"Enroscado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Chuño",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"2:02",
+    "audioFin":"2:04"
   },
   {
     "numero":24,
@@ -309,7 +355,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"2:08",
+    "audioFin":"2:10"
   },
   {
     "numero":25,
@@ -322,7 +370,9 @@ papas = [
     "formaRara":"Tuberosado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"2:13",
+    "audioFin":"2:17"
   },
   {
     "numero":26,
@@ -335,7 +385,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Fuerte",
     "usoCocina":"",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"2:19",
+    "audioFin":"2:22"
   },
   {
     "numero":27,
@@ -348,7 +400,9 @@ papas = [
     "formaRara":"Oblongo alargado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"2:25",
+    "audioFin":"2:28"
   },
   {
     "numero":28,
@@ -361,7 +415,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Mondar, pelar y sopas",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"2:31",
+    "audioFin":"2:33"
   },
   {
     "numero":29,
@@ -374,7 +430,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Pelar, sopas",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"2:36",
+    "audioFin":"2:39"
   },
   {
     "numero":30,
@@ -387,7 +445,9 @@ papas = [
     "formaRara":"Obovado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido, sopas, al horno",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"2:41",
+    "audioFin":"2:44"
   },
   {
     "numero":31,
@@ -400,7 +460,9 @@ papas = [
     "formaRara":"Oblongo",
     "toleranciaHelada":"Fuerte",
     "usoCocina":"Watia, hervido y chuño",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"2:46",
+    "audioFin":"2:49"
   },
   {
     "numero":32,
@@ -413,7 +475,9 @@ papas = [
     "formaRara":"Oblongo",
     "toleranciaHelada":"Débil",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"2:53",
+    "audioFin":"2:55"
   },
   {
     "numero":33,
@@ -426,7 +490,9 @@ papas = [
     "formaRara":"Redondo",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"2:58",
+    "audioFin":"3:02"
   },
   {
     "numero":34,
@@ -439,7 +505,9 @@ papas = [
     "formaRara":"Oblongo",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"3:03",
+    "audioFin":"3:06"
   },
   {
     "numero":35,
@@ -452,7 +520,9 @@ papas = [
     "formaRara":"Fusiforme",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido y chuño",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"3:10",
+    "audioFin":"3:12"
   },
   {
     "numero":36,
@@ -465,7 +535,9 @@ papas = [
     "formaRara":"Comprimida",
     "toleranciaHelada":"Débil",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"3:16",
+    "audioFin":"3:19"
   },
   {
     "numero":37,
@@ -478,7 +550,9 @@ papas = [
     "formaRara":"Oblongo alargado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido, sopas y chuño",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"3:22",
+    "audioFin":"3:25"
   },
   {
     "numero":38,
@@ -491,7 +565,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Débil",
     "usoCocina":"Hervido y watias",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"3:28",
+    "audioFin":"3:31"
   },
   {
     "numero":39,
@@ -504,7 +580,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"3:33",
+    "audioFin":"3:37"
   },
   {
     "numero":40,
@@ -517,7 +595,9 @@ papas = [
     "formaRara":"Oblongo alargado concertinada y ojos profundos.",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido, papa seca, al horno, watias",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"3:40",
+    "audioFin":"3:44"
   },
   {
     "numero":41,
@@ -530,7 +610,9 @@ papas = [
     "formaRara":"Bastantes ojos",
     "toleranciaHelada":"Fuerte",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"3:47",
+    "audioFin":"3:50"
   },
   {
     "numero":42,
@@ -543,7 +625,9 @@ papas = [
     "formaRara":"Ovalado aplanado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Chuño, hervido, watia, chuño",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"3:53",
+    "audioFin":"3:56"
   },
   {
     "numero":43,
@@ -556,7 +640,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"3:59",
+    "audioFin":"4:02"
   },
   {
     "numero":44,
@@ -569,7 +655,9 @@ papas = [
     "formaRara":"Oblongo alargado",
     "toleranciaHelada":"Débil",
     "usoCocina":"Watia, hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"4:05",
+    "audioFin":"4:08"
   },
   {
     "numero":45,
@@ -582,7 +670,9 @@ papas = [
     "formaRara":"mano u garra del puma",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Chuño",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"4:12",
+    "audioFin":"4:14"
   },
   {
     "numero":46,
@@ -595,7 +685,9 @@ papas = [
     "formaRara":"Oblongo",
     "toleranciaHelada":"Fuerte",
     "usoCocina":"Watia, hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"4:17",
+    "audioFin":"4:19"
   },
   {
     "numero":47,
@@ -608,7 +700,9 @@ papas = [
     "formaRara":"Comprimida",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, purés y hervido",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"4:23",
+    "audioFin":"4:25"
   },
   {
     "numero":48,
@@ -621,7 +715,9 @@ papas = [
     "formaRara":"Alargada",
     "toleranciaHelada":"Débil",
     "usoCocina":"Moraya, chuño",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"4:29",
+    "audioFin":"4:31"
   },
   {
     "numero":49,
@@ -634,7 +730,9 @@ papas = [
     "formaRara":"Oblongo alargado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"4:34",
+    "audioFin":"4:37"
   },
   {
     "numero":50,
@@ -647,7 +745,9 @@ papas = [
     "formaRara":"Ojos profundos",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"4:40",
+    "audioFin":"4:43"
   },
   {
     "numero":51,
@@ -660,7 +760,9 @@ papas = [
     "formaRara":"Oblongo",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"4:46",
+    "audioFin":"4:49"
   },
   {
     "numero":52,
@@ -673,7 +775,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"4:52",
+    "audioFin":"4:54"
   },
   {
     "numero":53,
@@ -686,7 +790,9 @@ papas = [
     "formaRara":"Redondo",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Causa, hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"4:57",
+    "audioFin":"5:00"
   },
   {
     "numero":54,
@@ -699,7 +805,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"5:03",
+    "audioFin":"5:05"
   },
   {
     "numero":55,
@@ -712,7 +820,9 @@ papas = [
     "formaRara":"Redondo",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"5:08",
+    "audioFin":"5:11"
   },
   {
     "numero":56,
@@ -725,7 +835,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Fuerte",
     "usoCocina":"Moraya y chuño",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"5:14",
+    "audioFin":"5:17"
   },
   {
     "numero":57,
@@ -738,7 +850,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"5:20",
+    "audioFin":"5:22"
   },
   {
     "numero":58,
@@ -751,7 +865,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Mondar o pelar",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"5:26",
+    "audioFin":"5:28"
   },
   {
     "numero":59,
@@ -764,7 +880,9 @@ papas = [
     "formaRara":"Elíptica",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido y bonda",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"8:10",
+    "audioFin":"8:12"
   },
   {
     "numero":60,
@@ -777,7 +895,9 @@ papas = [
     "formaRara":"Oblongo",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido, sopas y guisos",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"5:31",
+    "audioFin":"5:33"
   },
   {
     "numero":61,
@@ -790,7 +910,9 @@ papas = [
     "formaRara":"Comprimida",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"5:36",
+    "audioFin":"5:39"
   },
   {
     "numero":62,
@@ -803,7 +925,9 @@ papas = [
     "formaRara":"Fusiforme alargado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido y sopas",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"5:42",
+    "audioFin":"5:45"
   },
   {
     "numero":63,
@@ -816,7 +940,9 @@ papas = [
     "formaRara":"Aplanado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"5:48",
+    "audioFin":"5:51"
   },
   {
     "numero":64,
@@ -829,7 +955,9 @@ papas = [
     "formaRara":"Oblongo",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"5:54",
+    "audioFin":"5:57"
   },
   {
     "numero":65,
@@ -842,7 +970,9 @@ papas = [
     "formaRara":"Oblondo Alargado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Chuño",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"6:01",
+    "audioFin":"6:03"
   },
   {
     "numero":66,
@@ -855,7 +985,9 @@ papas = [
     "formaRara":"Comprimida",
     "toleranciaHelada":"Débil",
     "usoCocina":"Watia, hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"6:06",
+    "audioFin":"6:09"
   },
   {
     "numero":67,
@@ -868,7 +1000,9 @@ papas = [
     "formaRara":"Oblongo alargado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido y watias",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"6:12",
+    "audioFin":"6:15"
   },
   {
     "numero":68,
@@ -881,7 +1015,9 @@ papas = [
     "formaRara":"Tuberosado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"6:18",
+    "audioFin":"6:21"
   },
   {
     "numero":69,
@@ -894,7 +1030,9 @@ papas = [
     "formaRara":"Comprimida",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido, chuño, watia y sopas",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"6:23",
+    "audioFin":"6:27"
   },
   {
     "numero":70,
@@ -907,7 +1045,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Fuerte",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"6:29",
+    "audioFin":"6:32"
   },
   {
     "numero":71,
@@ -920,7 +1060,9 @@ papas = [
     "formaRara":"Tuberosado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"6:35",
+    "audioFin":"6:38"
   },
   {
     "numero":72,
@@ -933,7 +1075,9 @@ papas = [
     "formaRara":"Oblongo",
     "toleranciaHelada":"Fuerte",
     "usoCocina":"Chuño y sopa",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"6:41",
+    "audioFin":"6:44"
   },
   {
     "numero":73,
@@ -946,7 +1090,9 @@ papas = [
     "formaRara":"Comprimida",
     "toleranciaHelada":"Fuerte",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"6:47",
+    "audioFin":"6:50"
   },
   {
     "numero":74,
@@ -959,7 +1105,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"6:53",
+    "audioFin":"6:56"
   },
   {
     "numero":75,
@@ -972,7 +1120,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"6:58",
+    "audioFin":"7:00"
   },
   {
     "numero":76,
@@ -985,7 +1135,9 @@ papas = [
     "formaRara":"Ovalado aplanado",
     "toleranciaHelada":"Débil",
     "usoCocina":"Chuño, hervido, watia, chuño",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"7:03",
+    "audioFin":"7:07"
   },
   {
     "numero":77,
@@ -998,7 +1150,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"7:10",
+    "audioFin":"7:13"
   },
   {
     "numero":78,
@@ -1011,7 +1165,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Mondar, pelar y sopas",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"7:16",
+    "audioFin":"7:19"
   },
   {
     "numero":79,
@@ -1024,7 +1180,9 @@ papas = [
     "formaRara":"",
     "toleranciaHelada":"",
     "usoCocina":"",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"7:23",
+    "audioFin":"7:25"
   },
   {
     "numero":80,
@@ -1037,7 +1195,9 @@ papas = [
     "formaRara":"Oblondo Alargado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Chuño, moraya",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"7:28",
+    "audioFin":"7:31"
   },
   {
     "numero":81,
@@ -1050,7 +1210,9 @@ papas = [
     "formaRara":"Alargada",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"7:35",
+    "audioFin":"7:37"
   },
   {
     "numero":82,
@@ -1063,7 +1225,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Débil",
     "usoCocina":"Hervido y watias",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"7:40",
+    "audioFin":"7:44"
   },
   {
     "numero":83,
@@ -1076,7 +1240,9 @@ papas = [
     "formaRara":"Alargada",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Chuño",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"7:47",
+    "audioFin":"7:50"
   },
   {
     "numero":84,
@@ -1089,7 +1255,9 @@ papas = [
     "formaRara":"Oblongo",
     "toleranciaHelada":"Fuerte",
     "usoCocina":"Hervido",
-    "lugar":"Huancavelica"
+    "lugar":"Huancavelica",
+    "audioIni":"7:51",
+    "audioFin":"7:53"
   },
   {
     "numero":85,
@@ -1102,7 +1270,9 @@ papas = [
     "formaRara":"Oblondo Obovado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido y chuño",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"7:57",
+    "audioFin":"7:59"
   },
   {
     "numero":86,
@@ -1115,7 +1285,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Mondar, pelar y sopas",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"8:03",
+    "audioFin":"8:05"
   },
   {
     "numero":87,
@@ -1128,7 +1300,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"8:09",
+    "audioFin":"8:12"
   },
   {
     "numero":88,
@@ -1141,7 +1315,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Watia, hervido",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"8:14",
+    "audioFin":"8:17"
   },
   {
     "numero":89,
@@ -1154,7 +1330,9 @@ papas = [
     "formaRara":"No tiene",
     "toleranciaHelada":"Fuerte",
     "usoCocina":"Chuño y moraya",
-    "lugar":"Apurímac"
+    "lugar":"Apurímac",
+    "audioIni":"8:21",
+    "audioFin":"8:23"
   },
   {
     "numero":90,
@@ -1167,6 +1345,8 @@ papas = [
     "formaRara":"Obovado",
     "toleranciaHelada":"Intermedio",
     "usoCocina":"Hervido, chuño, bonda y sopas",
-    "lugar":"Cusco"
+    "lugar":"Cusco",
+    "audioIni":"8:26",
+    "audioFin":"8:28"
   }
-]
+];

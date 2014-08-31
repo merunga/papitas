@@ -92,7 +92,7 @@ Elije la figura que quieres armar en un rompecabezas.
   <br/>
 
   {{#each etapas}}
-    <div class="col-xs-6 col-md-3 text-center">
+    <div class="etapa-thumb col-xs-6 col-md-3 text-center">
       <div class="etapa-titulo">{{#markdown}}{{titulo}}{{/markdown}}</div>
       <a href="#" class="thumbnail" data-action="etapa-elegida">
         <img src="assets/images/etapas/{{slug}}-thumb.jpg" alt="...">
@@ -167,7 +167,7 @@ Elije la figura que quieres armar en un rompecabezas.
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Para continuar, responde:</h4>
+          <h2 class="modal-title">Para continuar, responde:</h2>
         </div>
         <div class="modal-body text-center">
           {{#markdown}}

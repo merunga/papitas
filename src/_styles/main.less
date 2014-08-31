@@ -1,7 +1,21 @@
 body {
   &.home {
     .container {
-      padding-top: 4em;
+      @media (max-width: @screen-xs-min) {
+        padding-top: 2em;
+      }
+      @media (min-width: @screen-xs-min) {
+        padding-top: 2em;
+      }
+      @media (min-width: @screen-sm-min) {
+        padding-top: 2em;
+      }
+      @media (min-width: @screen-md-min) {
+        padding-top: 3em;
+      }
+      @media (min-width: @screen-lg-min) {
+        padding-top: 4em;
+      }
     }
   }
   &:not(.home) {
@@ -20,7 +34,7 @@ body {
   color: white;
   vertical-align: middle;
   text-align: center;
-  padding: 1em 1em;
+  
   a {
     color: white;
     &:hover {
@@ -30,8 +44,35 @@ body {
 }
 
 #home-header {
-  font-size: 3em;
+  @media (max-width: @screen-xs-min) {
+    padding-top: .3em;
+    font-size: @font-size-h3;
+  }
+  @media (min-width: @screen-xs-min) {
+    padding-top: .3em;
+    font-size: @font-size-h3;
+  }
+  @media (min-width: @screen-sm-min) {
+    padding-top: 2em;
+    font-size: @font-size-h2;
+  }
+  @media (min-width: @screen-md-min) {
+    padding-top: 2.5em;
+    font-size: @font-size-h2;
+  }
+  @media (min-width: @screen-lg-min) {
+    padding-top: 1.5em;
+    font-size: @font-size-h1;
+  }
   .papas-header();
+}
+
+#home-sidebar {
+  @media (min-width: @screen-md-min) {
+    ul.nav {
+      .nav-stacked()
+    }
+  }
 }
 
 #juego-header {

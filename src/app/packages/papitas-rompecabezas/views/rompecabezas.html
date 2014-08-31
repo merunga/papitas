@@ -32,13 +32,15 @@
       </div>
       <div class="row"></div>
       <div class="row">
-        <div  class="col-lg-offset-2 col-lg-8">
+        <div  class="col-lg-offset-2 col-lg-4 col-md-offset-1 col-md-5 col-sm-6 col-xs-6">
           <div class="pull-left text-left">
             <button class="btn btn-primary" data-action="reiniciar">
               <span class="glyphicon glyphicon-repeat"></span> Reiniciar
             </button>
             <input type="checkbox" data-action="toggle-help"> Ayuda
           </div>
+        </div>
+        <div  class="col-lg-offset-2 col-lg-4 col-md-offset-1 col-md-5 col-sm-6 col-xs-6">
           <div class="pull-right text-right">
             <button class="btn btn-danger" data-action="volver-al-comienzo">
               <span class="glyphicon glyphicon-arrow-left"></span> Volver
@@ -80,12 +82,14 @@ Descubre el ciclo agrícola de la papa armando los rompecabezas.
 
 <template name="rompecabezasElegirEtapa">
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
-      {{#markdown}}
-### Conoce el ciclo agrícola de la papa.
+    <div class="col-lg-8 col-lg-offset-2 col-md-11 col-sm-11 col-xs-11">
+      <h3>Conoce el ciclo agrícola de la papa.</h3>
+    </div>
+  </div>
 
-Elije la figura que quieres armar en un rompecabezas.
-      {{/markdown}}
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      Elije la figura que quieres armar en un rompecabezas.
     </div>
   </div>
 
@@ -110,36 +114,44 @@ Elije la figura que quieres armar en un rompecabezas.
     <div class="col-lg-3 col-lg-offset-1"> 
       <h1>Muy bien!</h1>
     </div>
-    <div class="col-lg-6"> 
-      <button type="button" class="btn btn-primary"
-        data-action="audio-es">
-        Español
-        {{#unless audioEnQuechua }}
-          {{> langSoundGlyph}}
-        {{/unless}}
-      </button>
-      <button type="button" class="btn btn-primary"
-        data-action="audio-que">
-        Quechua
-        {{#if audioEnQuechua }}
-          {{> langSoundGlyph}}
-        {{/if}}
-      </button>
-      <button type="button" class="btn btn-primary"
-        data-action="audio-pause">
-        <span class="glyphicon glyphicon-pause"></span>
-      </button>
-      <button type="button" class="btn btn-primary"
-        data-action="audio-restart">
-        <span class="glyphicon glyphicon-repeat"></span>
-      </button>
+    <div class="col-lg-6 narracion-controls">
+      <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12"> 
+        <button type="button" class="btn btn-primary"
+          data-action="audio-es">
+          Español
+          {{#unless audioEnQuechua }}
+            {{> langSoundGlyph}}
+          {{/unless}}
+        </button>
+        <button type="button" class="btn btn-primary"
+          data-action="audio-que">
+          Quechua
+          {{#if audioEnQuechua }}
+            {{> langSoundGlyph}}
+          {{/if}}
+        </button>
+      </div>
+      <div class="col-lg-4 col-md-8 col-sm-10 col-xs-10"> 
+        <button type="button" class="btn btn-primary"
+          data-action="audio-pause">
+          <span class="glyphicon glyphicon-pause"></span>
+        </button>
+        <button type="button" class="btn btn-primary"
+          data-action="audio-restart">
+          <span class="glyphicon glyphicon-repeat"></span>
+        </button>
+      </div>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row indicadores">
     <div class="col-lg-10 col-lg-offset-1">
       <h3 class="fin-etapa-titulo">{{#markdown}}{{etapaCompletada.titulo}}{{/markdown}}</h3>
+    </div>
+    <div class="col-lg-10 col-lg-offset-1 col-sm-10 col-xs-10">
       <h3><strong>Movimientos:</strong> {{Session.get 'rompecabezasMovimientos'}}</h3>
+    </div>
+    <div class="col-lg-10 col-lg-offset-1 col-sm-10 col-xs-10">
       <h3><strong>Tiempo:</strong> {{timer rompecabezasTiempo}}</h3>
     </div>
   </div>

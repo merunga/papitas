@@ -1,5 +1,5 @@
-var PAPAS_A_MOSTRAR = 10;
-var PAPAS_A_ELEGIR  = 5;
+var PAPAS_A_MOSTRAR = 2;
+var PAPAS_A_ELEGIR  = 1;
 
 var events = {
   'click [data-action="comenzar"]': function(e, tmpl) {
@@ -259,9 +259,9 @@ Template.expertoFin.events({
   }
 });
 
-Template.expertoPapaAdivinada.papaActualBgStyle = function() {
+Template.expertoPapaAdivinada.active = function() {
   if( this.numero == Session.get('expertoPapaConsultada') ) {
-    return "background-position: -160px";
+    return "active";
   }
 }
 

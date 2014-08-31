@@ -95,9 +95,6 @@ Meteor.startup ->
     papa.audio =
       ini: audioIni.as('milliseconds') / 60
       dur: duration / 60
-    console.log(papa.numero, papa.audioIni, papa.audioFin )
-    console.log(papa.audio)
-    console.log('')
 
     papa.imageFileNameScreen = "#{nroStr}.png"
     papa.imageFileNamePrint  = "#{nroStr}-print.png"

@@ -61,10 +61,16 @@ var events = {
   'click [data-action="volver-a-jugar"]': function(e, tmpl) {
     var $modal = $('#preguntaModal');
     $modal.on('hidden.bs.modal', function(jqe) {
+      var etapa = Session.get('rompecabezasEtapaElegida').numero;
+      Rompecabezas.sonidos.etapas[etapa]['es'].unload();
+      Rompecabezas.sonidos.etapas[etapa]['que'].unload();
       comenzar(e, tmpl);
     });
     $modal.modal('hide');
     return false;
+  },
+  'click [data-toggle="modal"][data-target="#preguntaModal"]': function(e, tmpl) {
+
   },
   'click [data-action="audio-que"]': function(e, tmpl) {
     e.preventDefault()
@@ -79,17 +85,7 @@ var events = {
   'click [data-action="audio-pause"]': function(e, tmpl) {
     e.preventDefault();
     var muted = !Session.get('rompecabezasFinAudioPaused');
-
-    var etapa = Session.get('rompecabezasEtapaElegida').numero;
-    var lang = Session.get('rompecabezasFinAudio');
-
-    if( muted ) {
-      Rompecabezas.sonidos.etapas[etapa][lang].pause();
-    } else {
-      Rompecabezas.sonidos.etapas[etapa][lang].play();
-    }
-
-    Session.set('rompecabezasFinAudioPaused', muted );
+    pauseNarracion(muted);
   },
   'click [data-action="audio-restart"]': function(e, tmpl) {
     e.preventDefault()
@@ -109,6 +105,19 @@ var events = {
     }
   }  
 };
+
+function pauseNarracion(muted) {
+  var etapa = Session.get('rompecabezasEtapaElegida').numero;
+  var lang = Session.get('rompecabezasFinAudio');
+
+  if( muted ) {
+    Rompecabezas.sonidos.etapas[etapa][lang].pause();
+  } else {
+    Rompecabezas.sonidos.etapas[etapa][lang].play();
+  }
+
+  Session.set('rompecabezasFinAudioPaused', muted );
+}
 
 UI.registerHelper('rompecabezasTiempo', function() {
   return Session.get('rompecabezasTiempo');
@@ -143,7 +152,14 @@ Template.rompecabezasJuego.events(events);
 
 Template.rompecabezasFin.rendered = function() {
   Session.set('rompecabezasFinAudio','es');
-  Rompecabezas.narracionMuted = false;
+
+  var $modal = $('#preguntaModal');
+  $modal.on('shown.bs.modal', function(jqe) {
+    pauseNarracion(true);
+  });
+  $modal.on('hidden.bs.modal', function(jqe) {
+    pauseNarracion(false);
+  });
 };
 
 Template.rompecabezasFin.audioEnQuechua = function() {

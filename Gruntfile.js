@@ -143,7 +143,7 @@ module.exports = function(grunt) {
       app: {
         files: [{
           expand: true,
-          cwd: 'src/app/.meteor/local/build/programs/client/', 
+          cwd: 'src/app/public/', 
           src: ['**/*.{png,jpg,gif}'],
           dest: 'dist/'
         }]

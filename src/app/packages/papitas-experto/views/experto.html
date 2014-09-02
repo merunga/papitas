@@ -25,10 +25,14 @@
   <div class="row">
     <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-2">
     {{#markdown}}
-# Título Experto
+# Experto en papa
 
-Texto introducción
+¡Tú puedes ser un experto en papa!
 
+Perú tiene más de 3,000 variedades de papa. Con este juego 
+aprenderás a reconocer algunas variedades de papa. 
+
+¡Comienza ya!
     {{/markdown}}
     </div>
   </div>
@@ -42,6 +46,13 @@ Texto introducción
 </template>
 
 <template name="expertoJuego">
+  <div class="row">
+    <div class="pull-left">
+      <p>Arrastra cada papita hasta su nombre.</p>
+      <p>¡Es fácil!</p>
+    </div>
+  </div>
+  
   <div class="row">
     <div class="pull-left">
       <h2>Fallos: {{ Session.get 'expertoFallos' }}</h2>
@@ -102,6 +113,8 @@ Texto introducción
 </template>
 
 <template name="expertoIdentificarPapas">
+  <h3>Haz click en cada papa para descubrir su nombre.</h3>
+
   <div class="row text-center papas-muestrario">
     <div class="col-lg-1 col-md-1 hidden-sm hidden-xs">&nbsp;</div>
     {{#each papas1}}
@@ -111,6 +124,9 @@ Texto introducción
       {{> expertoPapaMuestra}}
     {{/each}}
   </div>
+
+  <h4>Ahora que sabes como se llama cada papa, vamos a ponerte a prueba.</h4>
+  <h4>¡Comienza ya!</h4>
 
   <div class="row text-center">
     <button class="btn btn-default" data-action="mezclar">
@@ -122,12 +138,15 @@ Texto introducción
 
 <template name="expertoFin">
   <div class="row no-print hidden-print">
-    <div class="col-lg-4 col-md-4">
-      <h1>Muy bien!</h1>
-    </div>
-    <div class="col-lg-6 col-md-6">
-      <h3><strong>Fallos:</strong> {{Session.get 'expertoFallos'}}</h3>
-    </div>
+    <h2>¡Muy bien, ya eres un experto!</h2>
+  </div>
+
+  <div class="row no-print hidden-print">
+    <h3><strong>Fallos:</strong> {{Session.get 'expertoFallos'}}</h3>
+  </div>
+ 
+  <div class="row no-print hidden-print">
+    <p>Haz click en cada papa para descubrir sus características.</p>
   </div>
 
   <div class="row hidden-print">
